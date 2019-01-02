@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Root SYSTEM "./config.dtd">
+<root>
+	<section>
+		LLOYDS
+		<tag>
+			RETAIL
+			<value>LTSBRetail</value>
+		</tag>
+		<tag>
+			COMMERCIAL
+			<value>LTSBCommercial</value>
+		</tag>
+	</section>
+	<section>
+		BOS
+		<tag>
+			RETAIL
+			<value>BOSRetail</value>
+		</tag>
+		<tag>
+			COMMERCIAL
+			<value>BOSCommercial</value>
+		</tag>
+	</section>
+	<section>
+		HALIFAX
+		<tag>
+			RETAIL
+			<value>HalifaxRetail</value>
+		</tag>
+	</section>
+	<!-- Verde Changes - UI layer - starts -->
+	<section>
+		VERDE
+		<tag>
+			RETAIL
+			<value>VerdeRetail</value>
+		</tag>
+		<tag>
+			COMMERCIAL
+			<value>VerdeCommercial</value>
+		</tag>
+	</section>
+	<!-- Verde Changes - UI layer - ends -->
+	<!-- Entries added for Multichannel Project - Starts -->
+	<section>
+		POINT_OF_ORIGIN
+		<tag>
+			BRANCH
+			<value>Branch</value>
+		</tag>
+		<tag>
+			TELEPHONY
+			<value>Telephony</value>
+		</tag>
+	</section>
+	<!--  Entries added for Multichannel Project - Ends -->
+	<!-- Multichannel COM1 validation entry start here -->
+	<section>
+		POINT_OF_ORIGIN_SCOPE
+		<tag>
+			SCOPE
+			<value>SESSION</value>
+			<!--  The possible values for POINT_OF_ORIGIN_SCOPE are - SESSION.-->
+		</tag>
+	</section>
+	<section>
+		POINT_OF_ORIGIN_VALIDATION
+		<tag>
+			ENABLED
+			<value>1</value>
+			<!--  The possible values are 1- Enabled, 2- Disabled -->
+		</tag>
+		<tag>
+			POINT_OF_ORIGIN_VALIDATION_CLASS
+			<value>com.lloydstsb.ea.validator.PointOfOriginValidator</value>
+			<!--  Fully qualified name of brand validator class, this class should implement IValidator Command-->
+		</tag>
+	</section>
+	<!-- Multichannel COM1 validation entry end here -->
+	
+	<section>
+	   CHANNEL_ID
+	   <tag>
+	       LTSBRetail
+	       <value>IBL</value>
+	   </tag>
+	   <tag>
+	       BOSRetail
+	       <value>IBS</value>
+	   </tag>
+	   <tag>
+	       HalifaxRetail
+	       <value>IBH</value>
+	   </tag>
+	   <tag>
+	       VerdeRetail
+	       <value>IBV</value>
+	   </tag>
+	   <tag>
+	       LTSBCommercial
+	       <value>STL</value>
+	   </tag>
+	   <tag>
+	       BOSCommercial
+	       <value>STS</value>
+	   </tag>
+	   <tag>
+	       VerdeCommercial
+	       <value>STV</value>
+	   </tag>
+	</section>
+</root>

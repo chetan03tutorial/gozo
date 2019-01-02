@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!DOCTYPE Root SYSTEM "./config.dtd">
+<root>
+   <section>BRAND_NAME
+        <tag>IBL
+            <value>LTB</value>
+        </tag>
+        <tag>IBH
+            <value>HAL</value>
+        </tag>
+        <tag>IBS
+            <value>BOS</value>
+        </tag>
+        
+    </section>
+
+    <section>product_brand
+        <tag>
+            LTB
+            <value>LLOYDS</value>
+        </tag>
+        <tag>
+            HAL
+            <value>HALIFAX</value>
+        </tag>
+        <tag>
+            BOS
+            <value>BOS</value>
+        </tag>
+        
+    </section>
+
+
+    <section>REVERSE_PRODUCT_BRAND
+        <tag>
+            LLOYDS
+            <value>LTB</value>
+        </tag>
+        <tag>
+            HALIFAX
+            <value>HAL</value>
+        </tag>
+        <tag>
+            BOS
+            <value>BOS</value>
+        </tag>
+
+    </section>
+    
+    <section>JWT_BRAND_NAME
+        <tag>LTB
+            <value>IBL</value>
+        </tag>
+        <tag>HAL
+            <value>IBH</value>
+        </tag>
+        <tag>BOS
+            <value>IBS</value>
+        </tag>
+        
+    </section>
+
+</root>
+

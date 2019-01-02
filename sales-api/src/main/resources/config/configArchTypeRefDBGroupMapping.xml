@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<section>ARCHTYPE_REF_DB_MAPPING
+		<tag>mobiledefault
+			<value>DFLT_MBL_ARCTYP</value>
+		</tag>
+	</section>
+</root>
+

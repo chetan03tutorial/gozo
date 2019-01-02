@@ -1,0 +1,36 @@
+[
+   {
+      "partyId":428409025,
+      "partyType":"Organisation",
+      "postalAddress":{
+         "postalAddressType":"REGISTERED_OFFICE",
+         "addressLines":[
+            "123 Westcott Lane",
+            "Trumpton"
+         ],
+         "postCode":"TN1 123",
+         "countryCode":"GBR"
+      },
+      "agreementRole":[
+         "NOMINEE",
+         "PRODUCT_HOLDER"
+      ]
+   },
+   {
+      "partyId":428409028,
+      "partyType":"Organisation",
+      "postalAddress":{
+         "postalAddressType":"REGISTERED_OFFICE",
+         "addressLines":[
+            "42 Main St",
+            "Kirby Armdale",
+            "Up North"
+         ],
+         "postCode":"UN75 7XZ",
+         "countryCode":"GBR"
+      },
+      "agreementRole":[
+         "FUNDS_OWNER"
+      ]
+   }
+]

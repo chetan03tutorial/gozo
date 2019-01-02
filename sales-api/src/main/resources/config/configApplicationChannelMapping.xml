@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Root SYSTEM "./config.dtd">
+<root>
+	<section>
+		GIB
+		<tag>
+			LTSBRetail
+			<value>LTSB.Retail</value>
+		</tag>
+		<tag>
+			LTSBCommercial
+			<value>LTSB.Comm</value>
+		</tag>
+		<tag>
+			BOSRetail
+			<value>BOS.Retail</value>
+		</tag>
+		<tag>
+			BOSCommercial
+			<value>BOS.Comm</value>
+		</tag>
+		<tag>
+			HalifaxRetail
+			<value>Hfx.Retail</value>
+		</tag>
+		<!-- Verde Changes - UI layer - starts -->
+		<tag>
+			VerdeRetail
+			<value>VER.Retail</value>
+		</tag>
+		<tag>
+			VerdeCommercial
+			<value>VER.Comm</value>
+		</tag>
+		<!-- Verde Changes - UI layer - ends -->
+	</section>
+
+	<section>
+		UA
+		<tag>
+			LTSBRetail
+			<value>Retail</value>
+		</tag>
+		<tag>
+			LTSBCommercial
+			<value>Commercial</value>
+		</tag>
+		<tag>
+			BOSRetail
+			<value>Retail</value>
+		</tag>
+		<tag>
+			BOSCommercial
+			<value>Commercial</value>
+		</tag>
+		<tag>
+			HalifaxRetail
+			<value>Retail</value>
+		</tag>
+		<!-- Verde Changes - UI layer - starts -->
+		<tag>
+			VerdeRetail
+			<value>Retail</value>
+		</tag>
+		<tag>
+			VerdeCommercial
+			<value>Commercial</value>
+		</tag>
+		<!-- Verde Changes - UI layer - ends -->
+	</section>
+
+	<section>
+		APP_TYPE
+		<tag>
+			APP_TYPE_ID
+			<value>&APPLICATION_LOGGING_MODE;</value>
+		</tag>
+	</section>
+
+	<!-- STPCC Changes Start-->
+	<section>
+		AUTHENTICATION_TYPE
+		<tag>
+			AuthenticationValueType
+			<value>&AUTH_SITE;</value>
+		</tag>
+	</section>
+	<!-- STPCC Changes End-->
+</root>

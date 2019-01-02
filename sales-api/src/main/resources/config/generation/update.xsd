@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="configId" type="xsd:string"/>
+  <xsd:element name="serverRef" type="xsd:string"/>
+  <xsd:element name="componentUpdates">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="configId"/>
+        <xsd:element ref="serverRef"/>
+        <xsd:element ref="mbeanName"/>
+        <xsd:element ref="oldValue"/>
+        <xsd:element ref="newValue"/>
+        <xsd:element ref="timestamp"/>
+        <xsd:element ref="user"/>
+        <xsd:element ref="status"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="user" type="xsd:string"/>
+  <xsd:element name="oldValue" type="xsd:string"/>
+  <xsd:element name="status" type="xsd:string"/>
+  <xsd:element name="mbeanName" type="xsd:string"/>
+  <xsd:element name="newValue" type="xsd:string"/>
+  <xsd:element name="timestamp" type="xsd:string"/>
+</xsd:schema>

@@ -1,0 +1,19 @@
+{  
+   "overDraftDetails":{  
+      "amount":"100"
+   },
+   "location":{  
+      "lat":51.6248346,
+      "lng":-0.3218756999999641
+   },
+   "conditions":[  
+      {  
+         "name":"LIFE_STYLE_BENEFIT_CODE",
+         "value":"MAG"
+      },
+      {  
+         "name":"DEBIT_CARD_REQUIRED_FLAG",
+         "value":"Y"
+      }
+   ]
+}

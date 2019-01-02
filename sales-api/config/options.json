@@ -1,0 +1,15 @@
+{
+    "CACHE_HASH_ALGORITHM": "sha1",
+    "DOWNLOAD_METHOD": "custom",
+    "DOWNLOAD_CLASS": "luis_build_pack.CurlCustomDownloader",
+    "JAVA_DOWNLOAD_PREFIX": "http://nexus.sandbox.extranet.group/nexus/content/sites/binaries/jdk/",
+    "JAVA_PACKAGE": "jdk-7u79-linux-x64.tar.gz",
+    "JAVA_PACKAGE_HASH": "e1a2cb92a6da4261394fa9e346333a19",
+    "JAVA_STRIP": true,
+    "MAVEN_DOWNLOAD_PREFIX": "http://nexus.sandbox.extranet.group/nexus/content/sites/binaries/mvn/",
+    "MAVEN_PACKAGE": "apache-maven-3.0.5-bin.tar.gz",
+    "MAVEN_PACKAGE_HASH": "630eea2107b0742acb315b214009ba08602dda5f",
+    "MAVEN_STRIP": true,
+    "MAVEN_BUILD_COMMAND": "clean install -P sandbox",
+    "MAVEN_RUN_COMMAND": "clean luis:run -P sandbox"
+}

@@ -1,0 +1,11 @@
+{
+	"locator": "com.lloydsbanking.xml.E588_AddCBSNewAc_ServiceLocator",
+	"headers": [
+		"com.lbg.ib.api.sales.header.builder.ServiceRequestHeader",
+		"com.lbg.ib.api.sales.header.builder.SecurityHeader",
+		"com.lbg.ib.api.sales.header.builder.ContactPointHeader",
+		"com.lbg.ib.api.sales.header.builder.CbsAppGroupHeader"
+	],
+	"address":"E588",
+	"operation" : "e588"
+}

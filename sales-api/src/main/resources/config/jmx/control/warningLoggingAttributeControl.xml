@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<MBeanAssociation>
+		<ManagedComponent>
+		WarningLoggingConfigMBean
+			<Attribute>
+				<AttributeName>enabled</AttributeName>
+				<AttributeControl>DirectUpdate</AttributeControl>
+			</Attribute>
+			<Attribute>
+				<AttributeName>filename</AttributeName>
+				<AttributeControl>ReadOnly</AttributeControl>
+			</Attribute>
+			<Attribute>
+				<AttributeName>rolloverSize</AttributeName>
+				<AttributeControl>ManagedUpdate</AttributeControl>
+			</Attribute>
+			<Attribute>
+				<AttributeName>rolloverCount</AttributeName>
+				<AttributeControl>ManagedUpdate</AttributeControl>
+			</Attribute>
+		</ManagedComponent>
+	</MBeanAssociation>
+	

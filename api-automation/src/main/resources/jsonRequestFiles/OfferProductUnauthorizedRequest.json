@@ -1,0 +1,69 @@
+{
+  "primaryInvolvedParty": {
+    "title": "Mr",
+    "firstName": "firstName",
+    "middleName": "middleName",
+    "lastName": "lastName",
+    "dob": "1994-01-01",
+    "gender": "001",
+    "currentAddress": {
+      "durationOfStay": "0503",
+      "isPAFFormat": true,
+      "isBFPOAddress": false,
+      "structuredAddress": {
+        "district": "district",
+        "town": "town",
+        "county": "county",
+        "organisationName": "orgName",
+        "subBuildingName": "subBuilding",
+        "buildingName": "building",
+        "buildingNumber": "houseNo",
+        "addressLines": ["L1","L2"],
+        "postcode": "E16DU",
+        "deliveryPointSuffix": "suffix"
+      }
+    },
+    "maritalStatus": "002",
+    "residentialStatus": "005",
+    "numberOfDependents": 1,
+    "fundSource": "fundSource",
+    "purpose": "purpose",
+    "mobileNumber": {
+      "countryCode": 44,
+      "number": 7466713042
+    },
+    "email": "sushovan.samal@gmail.com",
+    "marketPrefPhone": "false",
+    "marketPrefEmail": "false",
+    "marketPrefText": "true",
+    "marketPrefPost": "true",
+    "tinNumber": "DQ123456C",
+    "birthCountry": "India",
+    "nationalities": [ "India", "UK"],
+    "taxResidencies": [ "India", "UK"],
+    "ukArrivalDate": "1970-01-01",
+    "visaExpiryDate": "2025-01-01",
+    "ilrStatus": true,
+    "income": 5,
+    "employmentStatus": "003",
+    "occupnType": "occupnType",
+    "employer": {
+      "name":"employer",
+      "addressLine1":"addressLine1",
+      "addressLine2":"addressLine2",
+      "postcode":"E16DU",
+      "elapsedYears":"10",
+      "elapsedMonths":"10"
+    },
+    "rentMortgCost": 10,
+    "maintnCost": 20,
+    "savingsAmount": 30,
+    "prevBankYear": 40,
+    "prevBankMonth": 50
+  },
+  "productArrangement": {
+    "name": "eSavings",
+    "mnemonic": "P_ESAVER",
+    "conditions": []
+  }
+}

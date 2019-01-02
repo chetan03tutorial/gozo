@@ -1,0 +1,91 @@
+{
+  "primaryInvolvedParty":{
+    "intendSwitch":"No",
+    "intendOverDraft":true,
+    "title":"Mr",
+    "firstName":"uututu",
+    "middleName":"",
+    "lastName":"tuuuyu",
+    "email":"",
+    "dob":"1997-01-01",
+    "gender":"001",
+    "maritalStatus":"001",
+    "tinDetails":{
+      "birthCountry":"GBR",
+      "nationalities":[
+        "GBR"
+      ],
+      "taxResidencies":[
+        {
+          "taxResidency":"GBR",
+          "tinNumber":""
+        }
+      ]
+    },
+    "ilrStatus":false,
+    "currentAddress":{
+      "isPAFFormat":true,
+      "isBFPOAddress":false,
+      "structuredAddress":{
+        "district":"EARLSWOOD",
+        "town":"CHEPSTOW",
+        "county":"",
+        "organisationName":"",
+        "subBuildingName":"",
+        "buildingName":"FOST",
+        "buildingNumber":"",
+        "addressLines":[
+
+        ],
+        "postcode":"NP166RF",
+        "deliveryPointSuffix":"1D"
+      },
+      "durationOfStay":"0309"
+    },
+    "residentialStatus":"006",
+    "previousAddress":{
+      "isPAFFormat":true,
+      "isBFPOAddress":false,
+      "structuredAddress":{
+        "district":"",
+        "town":"ROWLANDS GILL",
+        "county":"",
+        "organisationName":"",
+        "subBuildingName":"",
+        "buildingName":"HAINING BANK",
+        "buildingNumber":"",
+        "addressLines":[
+          "STRATHMORE ROAD"
+        ],
+        "postcode":"NE391JA",
+        "deliveryPointSuffix":"1B"
+      },
+      "durationOfStay":"9911"
+    },
+    "marketPrefPhone":false,
+    "marketPrefEmail":true,
+    "marketPrefText":false,
+    "marketPrefPost":false,
+    "income":"300",
+    "fundSource":"2",
+    "purpose":"SPORI",
+    "employmentStatus":"004",
+    "savingsAmount":"500",
+    "rentMortgCost":"0",
+    "currentYearOfStudy":3,
+    "anticipateDateOfGraduation":"1806",
+    "mobileNumber":{
+      "countryCode":44,
+      "number":"7654566456"
+    },
+    "numberOfDependents":"0",
+    "maintnCost":"0"
+  },
+  "productArrangement":{
+    "name":"Student Account",
+    "mnemonic":"P_STUDENT",
+    "conditions":[
+
+    ]
+  }
+}

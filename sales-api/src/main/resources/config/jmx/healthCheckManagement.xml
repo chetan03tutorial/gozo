@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MBean SYSTEM "MbeanDescriptor.dtd">
+<MBean type="HealthCheckConfig" version="5.0" platform="dynamicproxy"
+	description="Switches MBean."
+	excludeAccessCheck="true">
+
+	<operation name="setSwitchesInstance" role="operation"
+		type="java.lang.String" targetObjectType="objectReference"
+		impact="ACTION" proxyInvokeType="multicall">
+		<signature>
+			<parameter name="aGlobalSwitch" description="New value"
+				type="java.lang.Object" />
+		</signature>
+	</operation>
+
+	<operation name="getHealthCheckStatus" role="operation"
+		type="java.lang.String" targetObjectType="objectReference"
+		impact="INFO" proxyInvokeType="multicall">
+		<signature>
+			<parameter name="" description="" type="" />
+		</signature>
+	</operation>
+
+	<operation name="getCurrentDetails" role="operation"
+		type="java.lang.String" targetObjectType="objectReference"
+		impact="INFO" proxyInvokeType="multicall">
+		<signature>
+			<parameter name="" description="" type="" />
+		</signature>
+	</operation>
+	
+	<!-- QC 27719 changes for WCM multibranding -->
+	<operation name="getSwitchStatus" role="operation"
+		type="java.lang.String" targetObjectType="objectReference"
+		impact="ACTION" proxyInvokeType="multicall">
+		<signature>
+			<parameter name="channel" description="New value"
+				type="java.lang.Object" />
+			<parameter name="switchName" description="New value"
+				type="java.lang.Object" />
+		</signature>
+	</operation>
+	<!-- QC 27719 changes for WCM multibranding -->
+	
+	<operation name="getStatusChecks" role="operation"
+		type="java.lang.String" targetObjectType="objectReference"
+		impact="INFO" proxyInvokeType="multicall">
+		<signature>
+			<parameter name="" description="" type="" />
+		</signature>
+	</operation>
+
+	<operation name="setInitialPollDelay" role="operation"
+		type="java.lang.String" targetObjectType="objectReference"
+		impact="ACTION" proxyInvokeType="multicall">
+		<signature>
+			<parameter name="anInitialPollDelay" description="The new poll delay" type="java.lang.Object" />
+			<parameter name="anUpdateType" description="Managed or Direct Update." type="java.lang.Object"/>
+		</signature>
+	</operation>
+	
+	<operation name="setPollTime" role="operation"
+		type="java.lang.String" targetObjectType="objectReference"
+		impact="ACTION" proxyInvokeType="multicall">
+		<signature>
+			<parameter name="anInitialPollDelay" description="The new poll time" type="java.lang.Object" />
+			<parameter name="aPollTime" description="Managed or Direct Update." type="java.lang.Object"/>
+		</signature>
+	</operation>
+	
+	<operation name="setControlAttributes" role="operation"  type="" targetObjectType="objectReference" impact="ACTION" proxyInvokeType="multicall">
+		<signature>
+	   		<parameter name="someAttributes" description="The list of attributes for this EA component" type="java.lang.Object"/>
+		</signature>
+	 </operation> 
+</MBean>
+

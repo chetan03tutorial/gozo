@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MBean SYSTEM "MbeanDescriptor.dtd">
+<MBean type="CachingMBean"
+ version="5.0"
+ platform="dynamicproxy"
+ description="Caching MBean.">
+   
+   	 <operation name="setControlAttributes" role="operation"  type="" targetObjectType="objectReference" impact="ACTION" proxyInvokeType="multicall">
+		<signature>
+	   		<parameter name="someAttributes" description="The list of attributes for this EA component" type="java.lang.String"/>
+		</signature>
+	 </operation> 
+ 	 
+ 	 <operation name="modifyPriority" role="operation"  type="java.lang.String" targetObjectType="objectReference" impact="ACTION" proxyInvokeType="multicall">
+	 	<signature>
+	 		<parameter name="aSectionName" description="The cache section name" type="java.lang.String"/>
+	   		<parameter name="aPriority" description="New priority value." type="java.lang.String"/>
+	  	</signature>
+	 </operation>
+	 
+	 <operation name="modifyTimeout" role="operation"  type="java.lang.String" targetObjectType="objectReference" impact="ACTION" proxyInvokeType="multicall">
+	 	<signature>
+	 		<parameter name="aSectionName" description="The cache section name" type="java.lang.String"/>
+	   		<parameter name="aTimeout" description="New timeout value." type="java.lang.String"/>
+	  	</signature>
+	 </operation>
+ 	 
+ 	 <operation name="modifyInactivity" role="operation"  type="java.lang.String" targetObjectType="objectReference" impact="ACTION" proxyInvokeType="multicall">
+	 	<signature>
+	 		<parameter name="aSectionName" description="The cache section name" type="java.lang.String"/>
+	   		<parameter name="anInactivity" description="New inactivity value." type="java.lang.String"/>
+	  	</signature>
+	 </operation>
+	 
+	<operation name="getNamespace" role="operation"  type="java.lang.String" targetObjectType="objectReference" impact="ACTION" proxyInvokeType="multicall">
+		<signature>
+	   		<parameter name="aSectionName" description="The cache section name" type="java.lang.String"/>
+		</signature>
+	 </operation>
+ 
+	<operation name="getPriority" role="operation"  type="java.lang.String" targetObjectType="objectReference" impact="ACTION" proxyInvokeType="multicall">
+		<signature>
+	   		<parameter name="aSectionName" description="The cache section name" type="java.lang.String"/>
+		</signature>
+	 </operation>
+	 
+	 <operation name="getTimeout" role="operation"  type="java.lang.String" targetObjectType="objectReference" impact="ACTION" proxyInvokeType="multicall">
+		<signature>
+	   		<parameter name="aSectionName" description="The cache section name" type="java.lang.String"/>
+		</signature>
+	 </operation>
+	 
+	 <operation name="getInactivity" role="operation"  type="java.lang.String" targetObjectType="objectReference" impact="ACTION" proxyInvokeType="multicall">
+		<signature>
+	   		<parameter name="aSectionName" description="The cache section name" type="java.lang.String"/>
+		</signature>
+	 </operation>
+ 
+  	<notification name="applicationSwitchesBroadcaster" severity="3">
+		<notificationType>ib.switches.notification</notificationType>
+	</notification>
+</MBean> 
+ 

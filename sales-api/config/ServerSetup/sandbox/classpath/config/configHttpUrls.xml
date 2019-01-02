@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!DOCTYPE Root SYSTEM "./config.dtd">
+<root>
+    <section>HTTP_URLS
+        <tag>
+            ALL                                      
+            <value>/</value>                  
+        </tag>
+    </section>
+</root>

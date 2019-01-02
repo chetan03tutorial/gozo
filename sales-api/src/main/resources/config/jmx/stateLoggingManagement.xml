@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MBean SYSTEM "MbeanDescriptor.dtd">
+<MBean type="StateLoggingConfigMBean"
+ version="5.0"
+ platform="dynamicproxy"
+ description="Logging MBean.">  
+	 	 
+   <operation name="setControlAttributes" role="operation"  type="" targetObjectType="objectReference" impact="ACTION" proxyInvokeType="multicall">
+		<signature>
+	   		<parameter name="someAttributes" description="The list of attributes for this EA component" type="java.lang.Object"/>
+		</signature>
+	 </operation> 
+ 
+	<operation name="getEnabled" role="operation"  type="java.lang.String" targetObjectType="objectReference" impact="INFO" proxyInvokeType="multicall">
+		<signature>
+	   		<parameter name="" description="" type=""/>
+		</signature>
+	 </operation>
+	 
+	 <operation name="getFilename" role="operation"  type="java.lang.String" targetObjectType="objectReference" impact="INFO" proxyInvokeType="multicall">
+		<signature>
+	   		<parameter name="" description="" type=""/>
+		</signature>
+	 </operation>
+	 
+	 <operation name="getFileRolloverSize" role="operation"  type="java.lang.String" targetObjectType="objectReference" impact="INFO" proxyInvokeType="multicall">
+		<signature>
+	   		<parameter name="" description="" type=""/>
+		</signature>
+	 </operation>
+ 
+ 	 <operation name="getFileRolloverCount" role="operation"  type="java.lang.String" targetObjectType="objectReference" impact="INFO" proxyInvokeType="multicall">
+		<signature>
+	   		<parameter name="" description="" type=""/>
+		</signature>
+	 </operation>
+  
+  	<operation name="setEnabled" role="operation"  type="java.lang.String" targetObjectType="objectReference" impact="ACTION" proxyInvokeType="multicall">
+		<signature>
+	   		<parameter name="anEnabled" description="New value" type="java.lang.Object"/>
+	   		<parameter name="anUpdateType" description="Managed or Direct Update." type="java.lang.Object"/>
+		</signature>
+	 </operation>
+	 
+	 <operation name="setFilename" role="operation"  type="java.lang.String" targetObjectType="objectReference" impact="ACTION" proxyInvokeType="multicall">
+		<signature>
+	   		<parameter name="aFilename" description="New value" type="java.lang.Object"/>
+	   		<parameter name="anUpdateType" description="Managed or Direct Update." type="java.lang.Object"/>
+		</signature>
+	 </operation>
+	 
+	 <operation name="setFileRolloverSize" role="operation"  type="java.lang.String" targetObjectType="objectReference" impact="ACTION" proxyInvokeType="multicall">
+		<signature>
+	   		<parameter name="aRolloverSize" description="New value" type="java.lang.Object"/>
+	   		<parameter name="anUpdateType" description="Managed or Direct Update." type="java.lang.Object"/>
+		</signature>
+	 </operation>
+ 
+ 	 <operation name="setFileRolloverCount" role="operation"  type="java.lang.String" targetObjectType="objectReference" impact="ACTION" proxyInvokeType="multicall">
+		<signature>
+	   		<parameter name="aRolloverCount" description="New value" type="java.lang.Object"/>
+	   		<parameter name="anUpdateType" description="Managed or Direct Update." type="java.lang.Object"/>
+		</signature>
+	 </operation>
+  
+   	 <operation name="getXMLConfig" role="operation"  type="java.lang.String" targetObjectType="objectReference" impact="INFO" proxyInvokeType="multicall">
+		<signature>
+	   		<parameter name="" description="" type=""/>
+		</signature>
+	 </operation>
+	 
+	<operation name="updateXMLConfig" role="operation"  type="" targetObjectType="objectReference" impact="ACTION" proxyInvokeType="multicall">
+		<signature>
+	   		<parameter name="anXMLConfig" description="the new XML" type="java.lang.Object"/>
+	   		<parameter name="anUpdateType" description="Managed or Direct Update." type="java.lang.Object"/>
+		</signature>
+	 </operation>
+  
+  	<notification name="applicationJMXBroadcaster" severity="3">
+		<notificationType>JMX.mbean.registered</notificationType>
+	</notification>
+</MBean> 
+ 

@@ -1,0 +1,34 @@
+{
+  "involvedPartyRole": {
+    "userName": "userName",
+    "password": "password"
+  },
+  "productId" : "productId",
+  "conditions": [
+    {
+      "name": "name",
+      "key": 1,
+      "value": false
+    }
+  ],
+  "location": {
+    "lat":"10",
+    "lng":"20"
+  },
+  "overDraftDetails": {
+    "amount":"50"
+  },
+  "accountSwitchingDetails":{
+    "sortCode":"402715",
+    "accountNumber":"74885074",
+    "accountName":"JohnyyDoeyy",
+    "hasDebitCard":"true",
+    "cardNumber":"1234567890123456",
+    "cardExpiryDate":"0916",
+    "canBeOverDrawn":"true",
+    "payOdAmount":"50",
+    "textAlert":"false",
+    "consent":"true"
+  },
+  "isVantageOpted":"false"
+}

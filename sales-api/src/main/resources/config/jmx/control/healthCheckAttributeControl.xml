@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+	<MBeanAssociation>
+		<ManagedComponent>
+		HealthCheckConfig
+			<Attribute>
+				<AttributeName>initialPollDelay</AttributeName>
+				<AttributeControl>DirectUpdate</AttributeControl>
+			</Attribute>
+			<Attribute>
+				<AttributeName>pollPeriod</AttributeName>
+				<AttributeControl>ManagedUpdate</AttributeControl>
+			</Attribute>
+		</ManagedComponent>
+	</MBeanAssociation>
+	

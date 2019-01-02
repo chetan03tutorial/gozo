@@ -1,0 +1,700 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:jee="http://www.springframework.org/schema/jee"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+            http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd"> 
+            
+     <!-- WS Bridge factories -->
+
+    <bean id="applicationPortTypeFactory" class="com.lbg.ib.api.sales.soapapis.wsbridge.application.ApplicationLocator" />
+    <!-- WS Bridge services used by DAOs to contact the Foundation Server -->
+    <bean id="applicationPortType" class="com.lbg.ib.api.sales.soapapis.wsbridge.application.ApplicationPortType" factory-bean="applicationPortTypeFactory" factory-method="getApplication">
+        <constructor-arg>
+            <!-- Look up endpoint URL from JNDI context -->
+            <jee:jndi-lookup jndi-name="BAPIWS" expected-type="java.net.URL" />
+        </constructor-arg>
+    </bean>	
+
+    <bean id="systemPortTypeFactory" class="com.lbg.ib.api.sales.soapapis.wsbridge.system.SystemLocator" />
+    <bean id="systemPortType" class="com.lbg.ib.api.sales.soapapis.wsbridge.system.SystemPortType" factory-bean="systemPortTypeFactory" factory-method="getSystem">
+        <constructor-arg>
+            <!-- Look up endpoint URL from JNDI context -->
+            <jee:jndi-lookup jndi-name="BAPIWS" expected-type="java.net.URL" />
+        </constructor-arg>
+    </bean>
+
+    <bean id="accountTypeFactory" class="com.lbg.ib.api.sales.soapapis.wsbridge.account.AccountLocator"/>
+    <!-- WS Bridge services used by DAOs to contact the Foundation Server -->
+    <bean id = "accountPort" class="com.lbg.ib.api.sales.soapapis.wsbridge.account.AccountPortType" factory-bean="accountTypeFactory" factory-method="getAccount">
+    <constructor-arg>
+            <!-- Look up endpoint URL from JNDI context -->
+            <jee:jndi-lookup jndi-name="BAPIWS" expected-type="java.net.URL" />
+        </constructor-arg>
+    </bean>
+
+
+    <bean id="threadMatrixServiceLocator" class="com.lbg.ib.api.sales.soapapis.threatmatrix.schema.enterprise.common.ThreadMatrixServiceLocator"/>
+    <bean id = "threadMatrix" class="com.lbg.ib.api.sales.soapapis.threatmatrix.schema.enterprise.common.ThreadMatrix" factory-bean="threadMatrixServiceLocator" factory-method="getThreadMatrixSOAPPort">
+    <constructor-arg>
+            <!-- Look up endpoint URL from JNDI context -->
+            <jee:jndi-lookup jndi-name="ThreatMatrixWS" expected-type="java.net.URL" />
+        </constructor-arg>
+    </bean>
+
+
+	<bean id="verifyInvolvedPartyPortTypeFactory"
+		class="com.lbg.ib.api.sales.soapapis.involvedpartymanagement.InvolvedPartyAuthorisationServiceLocator" />
+	<!-- WS Bridge services used by DAOs to contact the Foundation Server -->
+	<bean id="verifyInvolvedPartyPortType"
+		class="com.lbg.ib.api.sales.soapapis.involvedpartymanagement.InvolvedPartyAuthorisation"
+		factory-bean="verifyInvolvedPartyPortTypeFactory" factory-method="getInvolvedPartyAuthorisationSOAPPort">
+		<constructor-arg>
+			<!-- Look up endpoint URL from JNDI context -->
+			<jee:jndi-lookup jndi-name="InvolvedPartyAuthorisation_PTWS"
+				expected-type="java.net.URL" />
+		</constructor-arg>
+	</bean>
+
+    <bean id="involvedPartyManagementPortTypeFactory"
+          class="com.lloydstsb.lcsm.involvedpartymanagement.InvolvedPartyManagementServiceLocator" />
+    <bean id="involvedPartyManagement"
+          class="com.lloydstsb.lcsm.involvedpartymanagement.InvolvedPartyManagement"
+          factory-bean="involvedPartyManagementPortTypeFactory" factory-method="getInvolvedPartyManagementSOAPPort">
+        <constructor-arg>
+            <!-- Look up endpoint URL from JNDI context -->
+            <jee:jndi-lookup jndi-name="InvolvedPartyManagement_PTWS"
+                             expected-type="java.net.URL" />
+        </constructor-arg>
+    </bean>
+	<jee:jndi-lookup id="productHoldingURL" jndi-name="ProductHoldingCFWS"
+		expected-type="java.net.URL" />	
+   <!-- Determine Eligible Customer Instructions WPS service -->
+    <bean id="eligibilityServiceLocator" class="com.lbg.ib.sales.soapapis.determineeligibility.conditions.Exp_IA_DetermineEligibleCustomerInstructions_SOAP_IA_DetermineEligibleCustomerInstructionsHttpServiceLocator" />
+
+    <bean id="eligibilityService" class="com.lbg.ib.sales.soapapis.determineeligibility.conditions.IA_DetermineEligibleCustomerInstructions" factory-bean="eligibilityServiceLocator" factory-method="getExp_IA_DetermineEligibleCustomerInstructions_SOAP_IA_DetermineEligibleCustomerInstructionsHttpPort">
+        <constructor-arg>
+            <!-- Look up endpoint URL from JNDI context -->
+            <jee:jndi-lookup jndi-name="EligibilitySalsaPCAWS" expected-type="java.net.URL" />
+        </constructor-arg>
+    </bean>
+
+    <!-- Determine Promotional Customer Instructions WPS service -->
+    <bean id="promotionalCustomerInstructionsServiceLocator" class="com.lbg.ib.api.sales.soapapis.determinepromotional.conditions.Exp_IA_DeterminePromotionalCustomerInstructions_SOAP_IA_DeterminePromotionalCustomerInstructionsHttpServiceLocator" />
+
+    <bean id="promotionalCustomerInstructionsService" class="com.lbg.ib.api.sales.soapapis.determinepromotional.conditions.IA_DeterminePromotionalCustomerInstructions" factory-bean="promotionalCustomerInstructionsServiceLocator" factory-method="getExp_IA_DeterminePromotionalCustomerInstructions_SOAP_IA_DeterminePromotionalCustomerInstructionsHttpPort">
+        <constructor-arg>
+            <!-- Look up endpoint URL from JNDI context -->
+            <jee:jndi-lookup jndi-name="PromotionalCustomerInstructionsSalsaPCAWS" expected-type="java.net.URL" />
+        </constructor-arg>
+    </bean>
+
+	<!-- Record Arrangement Questionnaire WPS service -->
+    <bean id="recordArrangementServiceLocator"
+        class="LIB_SIM_ArrangementNegotiation.ID_ArrangementSetupExport1_ID_ArrangementSetupHttpServiceLocator" />
+
+    <bean id="recordArrangementService"
+        class="LIB_SIM_ArrangementNegotiation.ID_ArrangementSetup"
+        factory-bean="recordArrangementServiceLocator"
+        factory-method="getID_ArrangementSetupExport1_ID_ArrangementSetupHttpPort">
+        <constructor-arg>
+            <!-- Look up endpoint URL from JNDI context -->
+            <jee:jndi-lookup jndi-name="RecordArrangementWS"
+                expected-type="java.net.URL" />
+        </constructor-arg>
+    </bean>
+
+
+    <!-- Retrieve Product Conditions WPS service -->
+    <bean id="retrieveServiceLocator"
+        class="com.lbg.ib.api.sales.soapapis.retrieveproduct.conditions.binding.Exp_IA_RetrieveProductConditions_SOAP_IA_RetrieveProductConditionsHttpServiceLocator" />
+
+    <bean id="retrieveService"
+        class="com.lbg.ib.api.sales.soapapis.retrieveproduct.conditions.IA_RetrieveProductConditions"
+        factory-bean="retrieveServiceLocator"
+        factory-method="getExp_IA_RetrieveProductConditionsExport_SOAP_IA_RetrieveProductConditionsHttpPort">
+        <constructor-arg>
+            <!-- Look up endpoint URL from JNDI context -->
+            <jee:jndi-lookup jndi-name="RetrieveProductSalsaPCAWS"
+                expected-type="java.net.URL" />
+        </constructor-arg>
+    </bean>
+
+    <!-- Offer Product Conditions WPS service -->
+    <bean id="offerServiceLocator"
+        class="com.lbg.ib.api.sales.soapapis.offerproduct.arrangement.Exp_IA_OfferProductArrangementExport_Savings_IA_OfferProductArrangementHttpServiceLocator" />
+
+    <bean id="offerService"
+        class="com.lbg.ib.api.sales.soapapis.offerproduct.arrangement.IA_OfferProductArrangement"
+        factory-bean="offerServiceLocator"
+        factory-method="getExp_IA_OfferProductArrangementExport_Savings_IA_OfferProductArrangementHttpPort">
+        <constructor-arg>
+            <!-- Look up endpoint URL from JNDI context -->
+            <jee:jndi-lookup jndi-name="OfferProductWS"
+                expected-type="java.net.URL" />
+        </constructor-arg>
+    </bean>
+
+    <bean id="offerPCAService"
+          class="com.lbg.ib.api.sales.soapapis.offerproduct.arrangement.IA_OfferProductArrangement"
+          factory-bean="offerServiceLocator"
+          factory-method="getExp_IA_OfferProductArrangementExport_Savings_IA_OfferProductArrangementHttpPort">
+        <constructor-arg>
+            <!-- Look up endpoint URL from JNDI context -->
+            <jee:jndi-lookup jndi-name="OfferProductSalsaPCAWS"
+                             expected-type="java.net.URL" />
+        </constructor-arg>
+    </bean>
+
+ <!-- <bean id="rAQServiceLocator"
+        class="lib_sim_productsalesreferencedatamanager.ia_arrangementsetup.binding2.ExpIAArrangementSetupExport1IAArrangementSetupHttpService" />
+
+    <bean id="retrieveArrangementQuestionnarieService"
+        class="lib_sim_productsalesreferencedatamanager.ia_arrangementsetup.IAArrangementSetup"
+        factory-bean="rAQServiceLocator"
+        factory-method="getExpIAArrangementSetupExport1IAArrangementSetupHttpPort">
+        <constructor-arg>
+            Look up endpoint URL from JNDI context 
+            <jee:jndi-lookup jndi-name="RetrieveArrangmentQuestionnaireWS"
+                expected-type="java.net.URL" />
+        </constructor-arg>
+    </bean> -->
+    
+    <!-- Retrieve product arrangement service -->
+    <bean id="retrieveProductArrangementServiceLocator"
+        class="LIB_SIM_PendingArrangementMaster.Exp_IA_PendingArrangementMaster_Export1_IA_PendingArrangementMasterHttpServiceLocator" />
+
+    <bean id="pendingArrangementSerive"
+        class="com.lbg.ib.api.sales.soapapis.retrievearrangement.ia_pendingarrangementmaster.IA_PendingArrangementMaster"
+        factory-bean="retrieveProductArrangementServiceLocator"
+        factory-method="getExp_IA_PendingArrangementMaster_Export1_IA_PendingArrangementMasterHttpPort">
+        <constructor-arg>
+            <!-- Look up endpoint URL from JNDI context -->
+            <jee:jndi-lookup jndi-name="RetrieveProductArrangementWS"
+                expected-type="java.net.URL" />
+        </constructor-arg>
+    </bean>
+    
+    <!-- Activate Product Conditions WPS service -->
+    <bean id="activateServiceLocator"
+        class="com.lbg.ib.api.sales.soapapis.activateproduct.conditions.Exp_IA_ActivateProductArrangementExport1_IA_ActivateProductArrangementHttpServiceLocator" />
+        
+   <bean id="cardUpgradeService"
+        class="com.lbg.ib.api.sales.party.service.CardOrderService" />
+
+    <bean id="activatePCAService"
+        class="com.lbg.ib.api.sales.soapapis.activateproduct.conditions.IA_ActivateProductArrangement"
+        factory-bean="activateServiceLocator"
+        factory-method="getExp_IA_ActivateProductArrangementExport1_IA_ActivateProductArrangementHttpPort">
+        <constructor-arg>
+            <!-- Look up endpoint URL from JNDI context -->
+            <jee:jndi-lookup jndi-name="ActivateProductSalsaPCAWS"
+                expected-type="java.net.URL" />
+        </constructor-arg>
+    </bean>
+
+    <bean id="activateService"
+          class="com.lbg.ib.api.sales.soapapis.activateproduct.conditions.IA_ActivateProductArrangement"
+          factory-bean="activateServiceLocator"
+          factory-method="getExp_IA_ActivateProductArrangementExport1_IA_ActivateProductArrangementHttpPort">
+        <constructor-arg>
+            <!-- Look up endpoint URL from JNDI context -->
+            <jee:jndi-lookup jndi-name="ActivateProductWS"
+                             expected-type="java.net.URL" />
+        </constructor-arg>
+    </bean>
+<!-- KYC Details FO75 OCIS  -->
+	<bean id="f075KYCDetailsPortTypeFactory"
+		class="com.lbg.ib.api.sales.soapapis.ocis.f075.F075_EnqKYCDetails_ServiceLocator" />
+	<!-- WS Bridge services used by DAOs to contact the Foundation Server -->
+	<bean id="f075KYCDetailsPortType"
+		class="com.lbg.ib.api.sales.soapapis.ocis.f075.F075_EnqKYCDetails_PortType"
+		factory-bean="f075KYCDetailsPortTypeFactory" factory-method="getF075_EnqKYCDetails">
+		<constructor-arg>
+			<!-- Look up endpoint URL from JNDI context -->
+			<jee:jndi-lookup jndi-name="FO75KYCDetailsWS"
+				expected-type="java.net.URL" />
+		</constructor-arg>
+	</bean>
+
+    <!-- ClassifyInvolvedParty SALSA service -->
+    <bean id="classifyInvolvedPartyServiceLocator"
+        class="LB_GBO_Sales.IA_CommonReportingStandardsHttpServiceLocator" />
+
+    <bean id="classifyService"
+        class="LB_GBO_Sales.IA_CommonReportingStandards"
+        factory-bean="classifyInvolvedPartyServiceLocator"
+        factory-method="getIA_CommonReportingStandardsHttpPort">
+        <constructor-arg>
+            <!-- Look up endpoint URL from JNDI context -->
+            <jee:jndi-lookup jndi-name="ClassifyInvolvedPartySALSAWS"
+                expected-type="java.net.URL" />
+        </constructor-arg>
+    </bean>
+    
+     <bean id="involvedPartyAuthorisationServiceLocatorFS"
+		class="com.lbg.ib.api.sales.soapapis.involvedpartymanagement.InvolvedPartyAuthorisationServiceLocator" />
+	<!-- WS Bridge services used by DAOs to contact the Foundation Server -->
+	<bean id="involvedPartyAuthorisationServiceFS"
+		class="com.lbg.ib.api.sales.soapapis.involvedpartymanagement.InvolvedPartyAuthorisation"
+		factory-bean="involvedPartyAuthorisationServiceLocatorFS" factory-method="getInvolvedPartyAuthorisationSOAPPort">
+		<constructor-arg>
+			<!-- Look up endpoint URL from JNDI context -->
+			<jee:jndi-lookup jndi-name="InvolvedPartyAuthorisationFS"
+				expected-type="java.net.URL" />
+		</constructor-arg>
+	</bean>
+	
+	<bean id="involvedPartyManagementServicingLocatorFactory"
+          class="com.lloydstsb.lcsm.involvedpartymanagement.InvolvedPartyManagementServiceLocator" />
+    <bean id="involvedPartyManagementServicing"
+          class="com.lloydstsb.lcsm.involvedpartymanagement.InvolvedPartyManagement"
+          factory-bean="involvedPartyManagementServicingLocatorFactory" factory-method="getInvolvedPartyManagementSOAPPort">
+        <constructor-arg>
+            <!-- Look up endpoint URL from JNDI context -->
+            <jee:jndi-lookup jndi-name="InvolvedPartyManagementServicing"
+                             expected-type="java.net.URL" />
+        </constructor-arg>
+    </bean>
+    
+    <bean id="CREATE_CASE_ENDPOINT" class="com.lbg.ib.api.sales.docupload.util.SalsaEndpoints" factory-method="valueOf">
+		<constructor-arg>
+			<value>CREATE_CASE_ENDPOINT</value>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="CREATE_DOC_ENDPOINT" class="com.lbg.ib.api.sales.docupload.util.SalsaEndpoints" factory-method="valueOf">
+		<constructor-arg>
+			<value>CREATE_DOC_ENDPOINT</value>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="UPDATE_CASE_ENDPOINT" class="com.lbg.ib.api.sales.docupload.util.SalsaEndpoints" factory-method="valueOf">
+		<constructor-arg>
+			<value>UPDATE_CASE_ENDPOINT</value>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="REF_DATA_ENDPOINT" class="com.lbg.ib.api.sales.docupload.util.SalsaEndpoints" factory-method="valueOf">
+		<constructor-arg>
+			<value>REF_DATA_ENDPOINT</value>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="RETRIEVE_DOC_ENDPOINT" class="com.lbg.ib.api.sales.docupload.util.SalsaEndpoints" factory-method="valueOf">
+		<constructor-arg>
+			<value>RETRIEVE_DOC_ENDPOINT</value>
+		</constructor-arg>
+	</bean>
+
+	<bean id="RETRIEVE_PARTY_DETAILS_ENDPOINT" class="com.lbg.ib.api.sales.docupload.util.SalsaEndpoints" factory-method="valueOf">
+		<constructor-arg>
+			<value>RETRIEVE_PARTY_DETAILS_ENDPOINT</value>
+		</constructor-arg>
+	</bean>
+
+    <bean id="Q226_ENDPOINT" class="com.lbg.ib.api.sales.docupload.util.SalsaEndpoints" factory-method="valueOf">
+        <constructor-arg>
+            <value>Q226_ENDPOINT</value>
+        </constructor-arg>
+    </bean>
+
+	<bean id="CARD_ORDER_CMAS_ENDPOINT" class="com.lbg.ib.api.sales.docupload.util.SalsaEndpoints"	factory-method="valueOf">
+		<constructor-arg>
+			<value>CARD_ORDER_CMAS_ENDPOINT</value>
+		</constructor-arg>
+	</bean>
+
+	<bean id="SEARCH_CASE_ENDPOINT" class="com.lbg.ib.api.sales.docupload.util.SalsaEndpoints" factory-method="valueOf">
+		<constructor-arg>
+			<value>SEARCH_CASE_ENDPOINT</value>
+		</constructor-arg>
+	</bean>
+
+	<!--External Rest service endpoints -->
+	<jee:jndi-lookup id="createCaseEndPoint" jndi-name="CreateCaseV2PCA"
+		expected-type="java.net.URL" />
+
+	<jee:jndi-lookup id="updateCaseEndPoint" jndi-name="UpdateCasePCA"
+        expected-type="java.net.URL" />
+        
+    <jee:jndi-lookup id="refDocUploadEndPoint"
+		jndi-name="RetrieveDocUploadRefDataForProcessV2" expected-type="java.net.URL" />
+                
+    <jee:jndi-lookup id="createDocumentEndpoint" jndi-name="CreateDocumentationPCA"
+        expected-type="java.net.URL" />
+        
+    <jee:jndi-lookup id="retrieveDocumentEndpoint" jndi-name="RetrieveDocumentationPCA"
+        expected-type="java.net.URL" />
+
+	<jee:jndi-lookup id="retrievePartyDetailsEndpoint" jndi-name="RetrievePartyDetailsPCA"
+					 expected-type="java.net.URL" />
+
+    <jee:jndi-lookup id="q226Service" jndi-name="Q226WS"
+                     expected-type="java.net.URL" />
+	<jee:jndi-lookup id="cardOrderService" jndi-name="CMASCardOrder"
+					 expected-type="java.net.URL" />
+
+	<jee:jndi-lookup id="searchCaseEndpoint" jndi-name="SearchCasePCA"
+					 expected-type="java.net.URL" />
+
+	<bean id="uriResolver" class="com.lbg.ib.api.sales.docupload.util.UriResolver">
+		<property name="salsaEndpoints">
+			<map>
+				<entry key-ref="CREATE_CASE_ENDPOINT" value-ref="createCaseEndPoint"></entry>
+				<entry key-ref="UPDATE_CASE_ENDPOINT" value-ref="updateCaseEndPoint"></entry>
+				<entry key-ref="CREATE_DOC_ENDPOINT" value-ref="createDocumentEndpoint"></entry>
+				<entry key-ref="REF_DATA_ENDPOINT" value-ref="refDocUploadEndPoint"></entry>
+				<entry key-ref="RETRIEVE_DOC_ENDPOINT" value-ref="retrieveDocumentEndpoint"></entry>
+				<entry key-ref="RETRIEVE_PARTY_DETAILS_ENDPOINT" value-ref="retrievePartyDetailsEndpoint"></entry>
+                <entry key="Q226_ENDPOINT" value-ref="q226Service"></entry>
+				<entry key="CARD_ORDER_CMAS_ENDPOINT" value-ref="cardOrderService"></entry>
+				<entry key-ref="SEARCH_CASE_ENDPOINT" value-ref="searchCaseEndpoint"></entry>
+			</map>
+		</property>
+	</bean>     
+    
+     
+     <!-- Bank wizard service -->
+   <bean id="bankWizardServiceLocator"
+		class="com.lbg.ib.api.sales.soapapis.bw.arrangementnegotiation.ArrangementSetupServiceLocator" />
+    
+    <bean id="bankWizardAccountValidation"
+		class="com.lbg.ib.api.sales.soapapis.bw.arrangementnegotiation.ArrangementSetup"
+		factory-bean="bankWizardServiceLocator"
+		factory-method="getArrangementSetupSOAPPort">
+		<constructor-arg>
+			<jee:jndi-lookup jndi-name="BankWizardSALSAWS"
+				expected-type="java.net.URL" />
+		</constructor-arg>
+	</bean>
+
+   <!--  <bean class="com.lbg.ib.api.sales.common.spring.SpringContextHolder" /> -->
+    
+    	<bean id="restTemplate" class="org.springframework.web.client.RestTemplate">
+		<property name="messageConverters">
+			<list>
+				<ref bean="mappingJacksonHttpMessageConverter" />
+				<bean
+					class="org.springframework.http.converter.StringHttpMessageConverter" />
+				<ref bean="formHttpMessageConverter" />
+				<bean
+					class="org.springframework.http.converter.ResourceHttpMessageConverter" />
+				<bean
+					class="org.springframework.http.converter.ByteArrayHttpMessageConverter" />
+				<bean
+					class="org.springframework.http.converter.xml.SourceHttpMessageConverter" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="formHttpMessageConverter"
+		class="org.springframework.http.converter.FormHttpMessageConverter">
+		<property name="partConverters">
+			<list>
+				<ref bean="mappingJacksonHttpMessageConverter" />
+				<bean
+					class="org.springframework.http.converter.StringHttpMessageConverter" />
+				<bean
+					class="org.springframework.http.converter.ResourceHttpMessageConverter" />
+				<bean
+					class="org.springframework.http.converter.ByteArrayHttpMessageConverter" />
+				<bean
+					class="org.springframework.http.converter.xml.SourceHttpMessageConverter" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="mappingJacksonHttpMessageConverter"
+		class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">
+		<property name="objectMapper">
+			<bean class="org.codehaus.jackson.map.ObjectMapper">
+				<property name="serializationInclusion" value="NON_NULL" />
+			</bean>
+		</property>
+	</bean>
+
+    <bean id="configurationService" class="com.lloydstsb.ea.config.ConfigurationServiceFactory"
+        factory-method="getConfigurationService" />
+	 
+    <!--<bean id="sslContext" class="com.lbg.ib.api.sales.common.SSLContext" init-method="init" /> -->
+    
+    <bean id="userPortTypeFactory" class="com.lbg.ib.api.sales.soapapis.wsbridge.user.UserLocator" />
+	<!-- WS Bridge services used by DAOs to contact the Foundation Server -->
+    <bean id="userPortType" class="com.lbg.ib.api.sales.soapapis.wsbridge.user.UserPortType"
+          factory-bean="userPortTypeFactory" factory-method="getUser">
+		<constructor-arg>
+			<!-- Look up endpoint URL from JNDI context -->
+			<jee:jndi-lookup jndi-name="BAPIWS" expected-type="java.net.URL" />
+		</constructor-arg>
+	</bean>
+	
+	<!-- Communication Management WPS service -->
+    <bean id="communicationManagementsServiceLocator" class="com.lbg.ib.api.sales.soapapis.communicationmanager.conditions.ID_CommunicationManagerRouterExport1_ID_CommunicationManagerRouterHttpServiceLocator" />
+
+	
+	<bean id="communicationRouter"
+          class="com.lbg.ib.api.sales.soapapis.communicationmanager.conditions.ID_CommunicationManagerRouter"
+          factory-bean="communicationManagementsServiceLocator"
+          factory-method="getID_CommunicationManagerRouterExport1_ID_CommunicationManagerRouterHttpPort">
+        <constructor-arg>
+            <!-- Look up endpoint URL from JNDI context -->
+            <jee:jndi-lookup jndi-name="CommunicationManagementsSALSAWS" expected-type="java.net.URL" />
+        </constructor-arg>
+    </bean>
+
+	<bean id="customRestApiErrorHandler" class="com.lbg.ib.api.sales.common.rest.client.CustomRestApiErrorHandler"/>
+
+	<bean id="customRestTemplate" class="com.lbg.ib.api.sales.common.rest.client.SalsaRestTemplate">
+		<property name="errorHandler" ref="customRestApiErrorHandler"></property>
+		<property name="messageConverters">
+			<list>
+				<ref bean="mappingJacksonHttpMessageConverter"/>
+				<bean class="org.springframework.http.converter.StringHttpMessageConverter"/>
+				<ref bean="formHttpMessageConverter"/>
+				<bean class="org.springframework.http.converter.ResourceHttpMessageConverter"/>
+				<bean class="org.springframework.http.converter.ByteArrayHttpMessageConverter"/>
+				<bean class="org.springframework.http.converter.xml.SourceHttpMessageConverter"/>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="salsaRestApiErrorHandler" class="com.lbg.ib.api.sales.common.rest.client.SalsaRestApiErrorHandler"/>
+
+	<bean id="salsaRestTemplate" class="com.lbg.ib.api.sales.common.rest.client.SalsaRestTemplate">
+		<property name="errorHandler" ref="salsaRestApiErrorHandler"></property>
+		<property name="messageConverters">
+			<list>
+				<ref bean="mappingJacksonHttpMessageConverter"/>
+				<bean class="org.springframework.http.converter.StringHttpMessageConverter"/>
+				<ref bean="formHttpMessageConverter"/>
+				<bean class="org.springframework.http.converter.ResourceHttpMessageConverter"/>
+				<bean class="org.springframework.http.converter.ByteArrayHttpMessageConverter"/>
+				<bean class="org.springframework.http.converter.xml.SourceHttpMessageConverter"/>
+			</list>
+		</property>
+	</bean>
+    
+    
+    <bean id="communicationManagerServiceLocator" class="com.lloydstsb.lcsm.communicationmanagement.CommunicationDispatchServiceLocator" />
+    
+    <bean id="communicationManager"
+          class="com.lloydstsb.lcsm.communicationmanagement.CommunicationDispatch"
+          factory-bean="communicationManagerServiceLocator"
+          factory-method="getCommunicationDispatchSOAPPort">
+        <constructor-arg>
+            <!-- Look up endpoint URL from JNDI context -->
+            <jee:jndi-lookup jndi-name="CommunicationDispatchComms" expected-type="java.net.URL" />
+        </constructor-arg>
+    </bean>
+
+   <bean id="e592ServiceLocator" class="com.lloydsbanking.xml.E592_ChaCBSTrnsfrProd_ServiceLocator" />
+
+    <bean id="E592Service"
+          class="com.lbg.ib.api.sales.cbs.service.E592Service"
+          factory-bean="e592ServiceLocator"
+          factory-method="getE592_ChaCBSTrnsfrProd">
+        <constructor-arg>
+            <!-- Look up endpoint URL from JNDI context -->
+            <jee:jndi-lookup jndi-name="ConvertAccountCBS" expected-type="java.net.URL" />
+        </constructor-arg>
+    </bean>
+	
+	<bean id="e632ServiceLocator" class="com.lloydsbanking.xml.E632_ODIntDetails_ServiceLocator"/>
+
+	<bean id="e632Service"
+          class="com.lloydsbanking.xml.E632_ODIntDetails_PortType"
+          factory-bean="e632ServiceLocator"
+          factory-method="getE632_ODIntDetails">
+        <constructor-arg>
+            <!-- Look up endpoint URL from JNDI context -->
+            <jee:jndi-lookup jndi-name="E632" expected-type="java.net.URL" />
+        </constructor-arg>
+    </bean>
+
+	<bean id="q250ServiceLocator" class="com.lloydsbanking.xml.Q250_Enq_Triad_Results_ServiceLocator" />
+	<bean id="q250Service"
+		  class="com.lbg.ib.api.sales.party.service.CreditAssessmentQ250Service"
+		  factory-bean="q250ServiceLocator"
+		  factory-method="getQ250_Enq_Triad_Results">
+		<constructor-arg>
+			<!-- Look up endpoint URL from JNDI context -->
+			<jee:jndi-lookup jndi-name="CreditAssessment" expected-type="java.net.URL" />
+		</constructor-arg>
+	</bean>
+	
+	<bean id="serviceArrangementSetupServiceLocator" class="com.lbg.ib.api.sales.soapapis.servicearrangementsetupservice.ServiceArrangementSetupServiceLocator" />
+
+	<bean id="serviceArrangementSetup"
+		  class="com.lbg.ib.api.sales.soapapis.servicearrangementsetupservice.ServiceArrangementSetup"
+		  factory-bean="serviceArrangementSetupServiceLocator"
+		  factory-method="getServiceArrangementSetupSOAPPort">
+		<constructor-arg>
+			<!-- Look up endpoint URL from JNDI context -->
+			<jee:jndi-lookup jndi-name="LifeStyleBenfitsGR" expected-type="java.net.URL" />
+		</constructor-arg>
+	</bean>	
+
+	<bean id="pegaServiceLocator" class="com.lbg.ib.api.sales.soapapis.pega.objects.ServicesServiceLocator" />
+	<bean id="pegaService"
+		  class="com.lbg.ib.api.sales.switching.service.PEGAService"
+		  factory-bean="pegaServiceLocator"
+		  factory-method="getServicesPortSOAP">
+		<constructor-arg>
+			<!-- Look up endpoint URL from JNDI context -->
+			<jee:jndi-lookup jndi-name="PEGAService" expected-type="java.net.URL" />
+		</constructor-arg>
+	</bean>
+
+	<bean id="c542ServiceLocator" class="com.lloydstsb.www.C542_ChaExtPrdIDTx_ServiceLocator" />
+	<bean id="c542Service"
+		  class="com.lloydstsb.www.C542_ChaExtPrdIDTx_Service"
+		  factory-bean="c542ServiceLocator"
+		  factory-method="getC542_ChaExtPrdIDTx">
+		<constructor-arg>
+			<!-- Look up endpoint URL from JNDI context -->
+			<jee:jndi-lookup jndi-name="G542" expected-type="java.net.URL" />
+		</constructor-arg>
+	</bean>
+
+	<bean id="generateDocumentServiceLocator"
+		  class="com.lbg.ib.api.sales.soapapis.gendoc.Exp_IA_GenerateDocumentExport_SOAP_IA_GenerateDocumentHttpServiceLocator" />
+
+	<bean id="generateDocument"
+		  class="com.lbg.ib.api.sales.soapapis.gendoc.IA_GenerateDocument"
+		  factory-bean="generateDocumentServiceLocator"
+		  factory-method="getExp_IA_GenerateDocumentExport_SOAP_IA_GenerateDocumentHttpPort">
+		<constructor-arg>
+			<!-- Look up endpoint URL from JNDI context -->
+			<jee:jndi-lookup jndi-name="GenerateDocumentSALSA"
+							 expected-type="java.net.URL" />
+		</constructor-arg>
+	</bean>
+
+	<!-- Document Manager Service for the document meta content -->
+	<bean id="documentationManagerServiceLocator"
+		  class="com.lloydstsb.www.DocumentationManagerServiceLocator" />
+	<bean id="documentationManager"
+		  class="com.lloydstsb.www.DocumentationManager"
+		  factory-bean="documentationManagerServiceLocator"
+		  factory-method="getDocumentationManagerSOAPPort">
+		<constructor-arg>
+			<!-- Look up endpoint URL from JNDI context -->
+			<jee:jndi-lookup jndi-name="DocumentManagerService_SOA_WS"
+							 expected-type="java.net.URL" />
+		</constructor-arg>
+	</bean>
+
+	<!-- ASM C078 for getting app score -->
+	<bean id="c078EnqDecisionServiceLocator"
+		  class="com.lloydstsb.www.C078_Enq_Decision_Request_ServiceLocator" />
+	<bean id="c078AppScoreService"
+		  class="com.lloydstsb.www.C078_Enq_Decision_Request_Service"
+		  factory-bean="c078EnqDecisionServiceLocator"
+		  factory-method="getC078_Enq_Decision_Request">
+		<constructor-arg>
+			<!-- Look up endpoint URL from JNDI context -->
+			<jee:jndi-lookup jndi-name="C078"
+							 expected-type="java.net.URL" />
+		</constructor-arg>
+	</bean>
+
+	<bean id="terminateArrangementServiceLocator"
+		  class="com.lbg.ib.api.sales.soapapis.terminatearrangement.conditions.Exp_IA_TerminateArrangement_SOAP_IA_TerminateArrangementHttpServiceLocator" />
+
+	<bean id="terminateArrangementSerive"
+		  class="com.lbg.ib.api.sales.soapapis.terminatearrangement.ia_terminatearrangementmaster.IA_TerminateArrangement"
+		  factory-bean="terminateArrangementServiceLocator"
+		  factory-method="getExp_IA_TerminateArrangement_SOAP_IA_TerminateArrangementHttpPort">
+		<constructor-arg>
+			<!-- Look up endpoint URL from JNDI context -->
+			<jee:jndi-lookup jndi-name="TerminateArrangementPCA"
+							 expected-type="java.net.URL" />
+		</constructor-arg>
+	</bean>
+	
+	
+	
+	
+	
+	<bean id="e160ServiceLocator"
+		  class="com.lloydstsb.www.E160_DelCBSFormalOdr_ServiceLocator" />
+
+	<bean id="e160Service"
+		  class="com.lloydstsb.www.E160_DelCBSFormalOdr_PortType"
+		  factory-bean="e160ServiceLocator"
+		  factory-method="getE160_DelCBSFormalOdr">
+		<constructor-arg>
+			<!-- Look up endpoint URL from JNDI context -->
+			<jee:jndi-lookup jndi-name="E160"
+							 expected-type="java.net.URL" />
+		</constructor-arg>
+	</bean>
+	
+	
+	<bean id="e169ServiceLocator" class="com.lloydstsb.www.E169_AddCBSFrmOd_ServiceLocator" />
+
+    <bean id="e169Service" class="com.lloydstsb.www.E169_AddCBSFrmOd_PortType"
+        factory-bean="e169ServiceLocator" factory-method="getE169_AddCBSFrmOd">
+        <constructor-arg>
+            <!-- Look up endpoint URL from JNDI context -->
+            <jee:jndi-lookup jndi-name="E169" expected-type="java.net.URL" />
+        </constructor-arg>
+    </bean>
+
+	<bean id="e170ServiceLocator" class="com.lloydstsb.www.E170_ChaCBSFormalOd_ServiceLocator" />
+
+    <bean id="e170Service" class="com.lloydstsb.www.E170_ChaCBSFormalOd_PortType"
+        factory-bean="e170ServiceLocator" factory-method="getE170_ChaCBSFormalOd">
+        <constructor-arg>
+            <!-- Look up endpoint URL from JNDI context -->
+            <jee:jndi-lookup jndi-name="E170" expected-type="java.net.URL" />
+        </constructor-arg>
+    </bean>
+    
+    
+    <bean id="q122ServiceLocator" class="com.lloydsbanking.xml.Q122_FunOvrdrtDecisnReq_ServiceLocator" />
+
+    <bean id="q122Service" class="com.lloydsbanking.xml.Q122_FunOvrdrtDecisnReq_PortType"
+        factory-bean="q122ServiceLocator" factory-method="getQ122_FunOvrdrtDecisnReq">
+        <constructor-arg>
+            <!-- Look up endpoint URL from JNDI context -->
+            <jee:jndi-lookup jndi-name="Q122" expected-type="java.net.URL" />
+        </constructor-arg>
+    </bean>
+    
+    <jee:jndi-lookup id="E588" jndi-name="E588" expected-type="java.net.URL" />
+    
+    <bean id="e588ServiceLocator" class="com.lloydsbanking.xml.E588_AddCBSNewAc_ServiceLocator"/>
+    
+    
+    <!-- <bean id="messageMapperInstruction" class="com.lbg.ib.api.sales.gozo.tasks.MapMessage">
+    	<constructor-arg index="0"></constructor-arg>
+    </bean> -->
+    
+    <!-- <bean id="messageTransformer" class="com.lbg.ib.api.sales.gozo.tasks.MapMessage"/>
+    <bean id="headerMapper" class="com.lbg.ib.api.sales.gozo.tasks.MapHeaderData"/>
+    <bean id="serviceInvoker" class="com.lbg.ib.api.sales.gozo.tasks.SoapInvoker"/> -->
+    			
+    <bean id="instructionChainFactory" class="com.lbg.ib.api.sales.gozo.InstructionChainFactory" init-method="init">
+    	<property name="inbound">
+    		<list>
+    			<value>com.lbg.ib.api.sales.gozo.tasks.ValidateMessage</value>
+    			<value>com.lbg.ib.api.sales.gozo.tasks.MapMessage</value>
+    			<value>com.lbg.ib.api.sales.gozo.tasks.SoapInvoker</value>
+    		</list>
+    	</property>
+    	<property name="outbound">
+    		<list>
+    			<value>com.lbg.ib.api.sales.gozo.tasks.ValidateMessage</value>
+    			<value>com.lbg.ib.api.sales.gozo.tasks.MapMessage</value>
+    		</list>
+    	</property>
+    </bean>
+    
+    
+    <bean id="instructionChain" class="com.lbg.ib.api.sales.gozo.InstructionChain" factory-bean="instructionChainFactory" factory-method="getInstructionChain"></bean>
+</beans>
+

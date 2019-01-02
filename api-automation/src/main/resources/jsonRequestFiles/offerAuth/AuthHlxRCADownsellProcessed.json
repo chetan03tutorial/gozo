@@ -1,0 +1,87 @@
+{
+  "primaryInvolvedParty": {
+    "intendSwitch": "Yes",
+    "intendOverDraft": true,
+    "intendOdAmount": "",
+    "title": "Mr",
+    "firstName": "Adam",
+    "middleName": "Joshan",
+    "lastName": "Smith",
+    "email": "adam@smith.com",
+    "dob":"1935-01-01",
+    "gender": "001",
+    "maritalStatus": "001",
+    "currentAddress": {
+
+      "isPAFFormat": false,
+      "isBFPOAddress": null,
+      "unstructuredAddress": {
+        "addressLine1": "14 WEST HILL",
+        "addressLine2": "CHARMINSTER",
+        "addressLine3": "DORCHESTER",
+        "addressLine4": "DORSET",
+        "addressLine5": null,
+        "addressLine6": null,
+        "addressLine7": null,
+        "addressLine8": null,
+        "postcode": "E201BF"
+      },
+      "durationOfStay": "0701"
+    },
+
+    "residentialStatus": "002",
+    "numberOfDependents": "0",
+    "fundSource": "2",
+    "purpose": "SPORI",
+    "mobileNumber": {
+      "countryCode": "44",
+      "areaCode": null,
+      "number": "1234567890",
+      "extNumber": null
+    },
+    "workPhone": null,
+    "homePhone": null,
+
+    "marketPrefPhone": null,
+    "marketPrefEmail": null,
+    "marketPrefText": null,
+    "marketPrefPost": null,
+    "ukArrivalDate": null,
+    "visaExpiryDate": null,
+    "ilrStatus": null,
+    "income": "701",
+    "employmentStatus": "003",
+    "occupnType": "001",
+    "employer": {
+      "name": "Sapient",
+      "elapsedYears": 4,
+      "elapsedMonths": 6
+    },
+    "rentMortgCost": "0",
+    "maintnCost": "0",
+    "savingsAmount": "0",
+    "prevBankYear": null,
+    "prevBankMonth": null,
+    "birthCity": null,
+    "tinDetails": {
+      "birthCountry": null,
+      "nationalities": [
+        "GBR"
+      ],
+      "taxResidencies": [
+        {
+          "taxResidency": "GBR",
+          "tinNumber": ""
+        }
+      ]
+    }
+  },
+
+  "productArrangement":{
+    "name":"Reward Current Account",
+    "mnemonic":"P_REWARD",
+    "conditions":[
+
+    ]
+  }
+}

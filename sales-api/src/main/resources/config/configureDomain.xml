@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <section>
+    COOKIE_DOMAIN
+    <tag>
+      LTSBRetail
+      <value>.lloydsbank.co.uk</value>
+    </tag>
+    <tag>
+      LTSBCommercial
+      <value>.lloydsbank.co.uk</value>
+    </tag>
+    <tag>
+      BOSRetail
+      <value>.bankofscotland.co.uk</value>
+    </tag>
+    <tag>
+      BOSCommercial
+      <value>.bankofscotland.co.uk</value>
+    </tag>
+    <tag>
+      HalifaxRetail
+      <value>.halifax-online.co.uk</value>
+    </tag>
+    <tag>
+      VerdeRetail
+      <value>.tsb.co.uk</value>
+    </tag>
+    <tag>
+      VerdeCommercial
+      <value>.tsb.co.uk</value>
+    </tag>
+  </section>
+  <section>
+    COOKIE_SECURED_PROTOCOL
+    <tag>
+      STATUS
+      <value>true</value>
+    </tag>
+  </section>
+</root>

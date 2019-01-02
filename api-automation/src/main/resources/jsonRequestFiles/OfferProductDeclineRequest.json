@@ -1,0 +1,68 @@
+{
+   "primaryInvolvedParty":{
+      "intendSwitch":"No",
+      "intendOverDraft":false,
+      "title":"Mr",
+      "firstName":"s",
+      "middleName":"",
+      "lastName":"s",
+      "email":"adam@gmail.com",
+      "dob":"1990-1-1",
+      "gender":"001",
+      "maritalStatus":"002",
+      "tinDetails":{
+         "birthCountry":"GBR",
+         "nationalities":[
+            "GBR"
+         ],
+         "taxResidencies":[
+            {
+               "taxResidency":"GBR",
+               "tinNumber":""
+            }
+         ]
+      },
+      "ilrStatus":false,
+      "currentAddress":{
+         "isPAFFormat":false,
+         "isBFPOAddress":false,
+         "unstructuredAddress":{
+            "addressLine1":"1",
+            "addressLine2":"1",
+            "addressLine3":"1",
+            "addressLine4":"1",
+            "addressLine5":"1",
+            "addressLine6":"1",
+            "addressLine7":"1",
+            "addressLine8":"United Kingdom",
+            "postcode":"E1 0AJ"
+         },
+         "durationOfStay":"1103"
+      },
+      "residentialStatus":"001",
+      "marketPrefPhone":false,
+      "marketPrefEmail":false,
+      "marketPrefText":false,
+      "marketPrefPost":false,
+      "income":"1",
+      "fundSource":"2",
+      "purpose":"SPORI",
+      "employmentStatus":"006",
+      "savingsAmount":"0",
+      "rentMortgCost":"1",
+      "mobileNumber":{
+         "countryCode":44,
+         "number":"123456789"
+      },
+      "intendOdAmount":"1",
+      "numberOfDependents":"1",
+      "maintnCost":"1"
+   },
+   "productArrangement":{
+      "name":"Ultimate Reward Current Account",
+      "mnemonic":"P_ULTIMATE",
+      "conditions":[
+
+      ]
+   }
+}

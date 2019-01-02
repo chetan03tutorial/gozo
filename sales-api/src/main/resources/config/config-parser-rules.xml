@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE digester-rules PUBLIC
+   "-//Jakarta Apache //DTD digester-rules XML V1.0//EN" "digester-rules.dtd">
+
+<digester-rules>
+   <object-create-rule pattern="root" classname="com.lloydstsb.ea.config.parser.Root" />
+   <set-properties-rule pattern="root" >
+      <alias attr-name="domain" prop-name="domain" />
+   </set-properties-rule>
+
+   <pattern value="root/section">
+      <object-create-rule classname="com.lloydstsb.ea.config.parser.Section" />
+        
+      <call-method-rule methodname="setName" paramcount="0" />
+          
+          <pattern value="tag">
+         <object-create-rule classname="com.lloydstsb.ea.config.parser.Tag" />
+         <set-properties-rule>
+                      <alias attr-name="type" prop-name="type" />
+                    </set-properties-rule>
+                   <call-method-rule methodname="setName"  paramcount="0" />
+         
+         <call-method-rule pattern="value" methodname="setValue"  paramcount="0" />
+         <set-properties-rule pattern="value">
+                      <alias attr-name="type" prop-name="datatype" />
+                    </set-properties-rule>
+                    <set-next-rule methodname="addTag" />
+      </pattern>
+
+      <set-next-rule methodname="addSection" /> 
+   </pattern>
+</digester-rules>

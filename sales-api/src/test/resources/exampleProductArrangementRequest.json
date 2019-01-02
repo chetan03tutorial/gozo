@@ -1,0 +1,113 @@
+{
+  "primaryInvolvedParty": {
+    "intendSwitch":"Yes", 
+    "intendOverDraft":"true", 
+    "intendOdAmount":"200",
+    "title": "title",
+    "firstName": "firstName",
+    "middleName": "middleName",
+    "lastName": "lastName",
+    "dob": "1970-01-01",
+    "gender": "gender",
+    "currentAddress": {
+      "durationOfStay": "durationOfStay",
+      "isPAFFormat": true,
+      "isBFPOAddress": false,
+      "structuredAddress": {
+        "district": "district",
+        "town": "town",
+        "county": "county",
+        "organisationName": "orgName",
+        "subBuildingName": "subBuilding",
+        "buildingName": "building",
+        "buildingNumber": "houseNo",
+        "addressLines": ["L1","L2"],
+        "postcode": "postcode",
+        "deliveryPointSuffix": "suffix"
+      }
+    },
+    "previousAddress": {
+      "durationOfStay": "durationOfStay",
+      "isPAFFormat": true,
+      "isBFPOAddress": false,
+      "unstructuredAddress": {
+        "addressLine1": "addressLine1",
+        "addressLine2": "addressLine2",
+        "addressLine3": "addressLine3",
+        "addressLine4": "addressLine4",
+        "addressLine5": "addressLine5",
+        "addressLine6": "addressLine6",
+        "addressLine7": "addressLine7",
+        "addressLine8": "addressLine8",
+        "postcode": "postcode",
+        "deliveryPointSuffix": "deliveryPointSuffix"
+      }
+    },
+    "maritalStatus": "maritalStatus",
+    "residentialStatus": "residentialStatus",
+    "numberOfDependents": 1,
+    "fundSource": "fundSource",
+    "purpose": "purpose",
+    "mobileNumber": {
+      "countryCode": 1,
+      "areaCode": 2,
+      "number": 3,
+      "extNumber": 4
+    },
+    "workPhone": {
+      "countryCode": 1,
+      "areaCode": 2,
+      "number": 3,
+      "extNumber": 4
+    },
+    "homePhone": {
+      "countryCode": 1,
+      "areaCode": 2,
+      "number": 3,
+      "extNumber": 4
+    },
+    "email": "email",
+    "marketPrefPhone": "false",
+    "marketPrefEmail": "false",
+    "marketPrefText": "true",
+    "marketPrefPost": "true",
+    "birthCity":"leeds",
+    "tinDetails": {
+      "birthCountry":"United Kingdom",
+      "nationalities":["GBR","DZA","ALA","IND"],
+      "taxResidencies":[{"taxResidency":"ALA" },{"taxResidency":"GBR","tinNumber":"ABC"},{"taxResidency":"USA","tinNumber":"123","taxResidencyType":"FATCA"}]
+      },
+    "ukArrivalDate": "1970-01-01",
+    "visaExpiryDate": "1970-01-01",
+    "ilrStatus": true,
+    "income": 5,
+    "employmentStatus": "employmentStatus",
+    "occupnType": "occupnType",
+    "employer": {
+      "name":"employer",
+      "addressLine1":"addressLine1",
+      "addressLine2":"addressLine2",
+      "postcode":"postcode",
+      "elapsedYears":"10",
+      "elapsedMonths":"10"
+    },
+    "rentMortgCost": 10,
+    "maintnCost": 20,
+    "savingsAmount": 30,
+    "prevBankYear": 40,
+    "prevBankMonth": 50
+  },
+  "productArrangement": {
+    "name": "name",
+    "mnemonic": "mnemonic",
+    "conditions": [{
+      "name": "n",
+      "key": 1,
+      "value":"v"
+    }]
+  },
+  "relatedApplication": {
+    "applicationId":"relAppId",
+    "applicationStatus":"relAppStatus"
+  }
+}

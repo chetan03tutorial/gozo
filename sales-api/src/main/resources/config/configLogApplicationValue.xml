@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!DOCTYPE Root SYSTEM "./config.dtd">
+<root>	
+	<section>LOGGER_BLOCK1		
+		<tag>
+			CHANNEL
+			<value>IBL</value>
+		</tag>
+		<tag>
+			APPLICATIONID
+			<value>IB_R</value>
+		</tag>
+		<tag>
+			COMPONENT
+			<value>Web IB</value>
+		</tag>
+		<tag>
+			COMPONENT_TELEPHONY
+			<value>Telephony Banking</value>
+		</tag>
+		<tag>
+			COMPONENT_BRANCH
+			<value>Branch Banking</value>
+		</tag>
+		<tag>
+			APPLICATIONID_TELEPHONY
+			<value>Telephony_R</value>
+		</tag>
+		<tag>
+			APPLICATIONID_BRANCH
+			<value>Branch_R</value>
+		</tag>	
+<!--	MultiChannel COM1 Changes Starts -->
+		<tag>
+			COMPONENT_TELEPHONY
+			<value>Telephony Banking</value>
+		</tag>
+		<tag>
+			COMPONENT_BRANCH
+			<value>Branch Banking</value>
+		</tag>
+		<tag>
+			APPLICATIONID_TELEPHONY
+			<value>Telephony_R</value>
+		</tag>
+		<tag>
+			APPLICATIONID_BRANCH
+			<value>Branch_R</value>
+		</tag>	
+<!--	MultiChannel COM1 Changes Ends   -->
+	</section>
+</root>

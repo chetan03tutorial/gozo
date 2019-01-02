@@ -1,0 +1,6 @@
+[gerrit]
+host=galaxy-gerrit.service.test.group
+port=29418
+project=galaxy/sales_api/api-service
+defaultbranch=pca-reeng-api-service
+

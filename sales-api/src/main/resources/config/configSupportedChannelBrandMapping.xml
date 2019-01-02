@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Root SYSTEM "./config.dtd">
+<root>
+	<section>SUPPORTED_CHANNEL
+		<tag>LTSBRetail
+			<value>1</value>
+		</tag>           
+		<tag> LTSBCommercial
+			<value>0</value>
+		</tag>          		 
+
+		<tag> BOSRetail
+			<value>1</value>
+		</tag>           
+		<tag> BOSCommercial
+			<value>0</value>
+		</tag>           
+		<tag> HalifaxRetail
+			<value>1</value>
+		</tag>
+		<!-- Verde changes - UI layer - starts -->
+		<tag>VerdeRetail
+			<value>0</value>
+		</tag>           
+		<tag>VerdeCommercial
+			<value>0</value>
+		</tag>
+		<!-- Verde changes - UI layer - ends -->           
+	</section>	
+	<section>CHANNEL_SERVICE_MAPPING
+		<tag>LTSBRetail
+			<value>RETAIL</value>
+		</tag> 
+		<tag>LTSBRetailBranch
+			<value>RETAIL</value>
+		</tag>
+		<tag>LTSBRetailTelephony
+			<value>RETAIL</value>
+		</tag>          
+		<tag>LTSBCommercial
+			<value>COMMERCIAL</value>
+		</tag>
+		<tag>LTSBCommercialBranch
+			<value>COMMERCIAL</value>
+		</tag>
+		<tag>LTSBCommercialTelephony
+			<value>COMMERCIAL</value>
+		</tag>
+		<tag>BOSRetail
+			<value>RETAIL</value>
+		</tag>
+		<tag>BOSRetailBranch
+			<value>RETAIL</value>
+		</tag>
+		<tag>BOSRetailTelephony
+			<value>RETAIL</value>
+		</tag>
+		<tag>BOSCommercial
+			<value>COMMERCIAL</value>
+		</tag>
+		<tag>BOSCommercialBranch
+			<value>COMMERCIAL</value>
+		</tag>
+		<tag>BOSCommercialTelephony
+			<value>COMMERCIAL</value>
+		</tag>
+		<tag>HalifaxRetail
+			<value>RETAIL</value>
+		</tag>
+		<tag>HalifaxRetailBranch
+			<value>RETAIL</value>
+		</tag>
+		<tag>HalifaxRetailTelephony
+			<value>RETAIL</value>
+		</tag>
+		<!-- Verde changes - UI layer - starts -->
+		<tag>VerdeRetail
+			<value>RETAIL</value>
+		</tag>  
+		<tag>VerdeRetailBranch
+			<value>RETAIL</value>
+		</tag>
+		<tag>VerdeRetailTelephony
+			<value>RETAIL</value>
+		</tag>         
+		<tag>VerdeCommercial
+			<value>COMMERCIAL</value>
+		</tag>    
+		<tag>VerdeCommercialBranch
+			<value>COMMERCIAL</value>
+		</tag>
+		<tag>VerdeCommercialTelephony
+			<value>COMMERCIAL</value>
+		</tag>   
+		<!-- Verde changes - UI layer - ends -->          
+	</section>
+	<section>
+		CHANNEL_SERVICE_INDEPENDENT_MAPPING
+		<tag>
+			LTSBRetail
+			<value>LTSBRetail</value>
+		</tag>
+		<tag>
+			LTSBCommercial
+			<value>LTSBRetail</value>
+		</tag>
+		<tag>
+			LTSBRetailBranch
+			<value>LTSBRetailBranch</value>
+		</tag>
+		<tag>
+			LTSBCommercialBranch
+			<value>LTSBRetailBranch</value>
+		</tag>
+		<tag>
+			LTSBRetailTelephony
+			<value>LTSBRetailTelephony</value>
+		</tag>
+		<tag>
+			LTSBCommercialTelephony
+			<value>LTSBRetailTelephony</value>
+		</tag>
+
+		<tag>
+			BOSRetail
+			<value>BOSRetail</value>
+		</tag>
+		<tag>
+			BOSCommercial
+			<value>BOSRetail</value>
+		</tag>
+		<tag>
+			BOSRetailBranch
+			<value>BOSRetailBranch</value>
+		</tag>
+		<tag>
+			BOSCommercialBranch
+			<value>BOSRetailBranch</value>
+		</tag>
+		<tag>
+			BOSRetailTelephony
+			<value>BOSRetailTelephony</value>
+		</tag>
+		<tag>
+			BOSCommercialTelephony
+			<value>BOSRetailTelephony</value>
+		</tag>
+
+		<tag>
+			HalifaxRetail
+			<value>HalifaxRetail</value>
+		</tag>
+		<tag>
+			HalifaxRetailBranch
+			<value>HalifaxRetailBranch</value>
+		</tag>
+		<tag>
+			HalifaxRetailTelephony
+			<value>HalifaxRetailTelephony</value>
+		</tag>
+
+		<!-- Verde changes - UI layer - starts -->
+		<tag>
+			VerdeRetail
+			<value>VerdeRetail</value>
+		</tag>
+		<tag>
+			VerdeCommercial
+			<value>VerdeRetail</value>
+		</tag>
+		<tag>
+			VerdeRetailBranch
+			<value>VerdeRetailBranch</value>
+		</tag>
+		<tag>
+			VerdeCommercialBranch
+			<value>VerdeRetailBranch</value>
+		</tag>
+		<tag>
+			VerdeRetailTelephony
+			<value>VerdeRetailTelephony</value>
+		</tag>
+		<tag>
+			VerdeCommercialTelephony
+			<value>VerdeRetailTelephony</value>
+		</tag>
+		<!-- Verde changes - UI layer - ends -->
+	</section>
+
+	<section>CHANNEL_BRAND_MAPPING
+		<tag>LTSBRetail
+			<value>LLOYDS</value>
+		</tag>  
+		<tag>LTSBRetailBranch
+			<value>LLOYDS</value>
+		</tag>
+		<tag>LTSBRetailTelephony
+			<value>LLOYDS</value>
+		</tag>         
+		<tag>LTSBCommercial
+			<value>LLOYDS</value>
+		</tag>
+		<tag>LTSBCommercialBranch
+			<value>LLOYDS</value>
+		</tag>
+		<tag>LTSBCommercialTelephony
+			<value>LLOYDS</value>
+		</tag>  
+            <tag>BOSRetail
+			<value>BOS</value>
+		</tag>  
+		<tag>BOSRetailBranch
+			<value>BOS</value>
+		</tag>
+		<tag>BOSRetailTelephony
+			<value>BOS</value>
+		</tag> 
+             <tag>BOSCommercial
+			<value>BOS</value>
+		</tag> 
+		<tag>BOSCommercialBranch
+			<value>BOS</value>
+		</tag>
+		<tag>BOSCommercialTelephony
+			<value>BOS</value>
+		</tag>          
+            <tag>HalifaxRetail
+			<value>HALIFAX</value>
+		</tag>
+		<tag>HalifaxRetailBranch
+			<value>HALIFAX</value>
+		</tag>
+		<tag>HalifaxRetailTelephony
+			<value>HALIFAX</value>
+		</tag>
+		<!-- Verde changes - UI layer - starts -->
+		<tag>VerdeRetail
+			<value>VERDE</value>
+		</tag>  
+		<tag>VerdeRetailBranch
+			<value>VERDE</value>
+		</tag>
+		<tag>VerdeRetailTelephony
+			<value>VERDE</value>
+		</tag>         
+		<tag>VerdeCommercial
+			<value>VERDE</value>
+		</tag> 
+		<tag>VerdeCommercialBranch
+			<value>VERDE</value>
+		</tag>
+		<tag>VerdeCommercialTelephony
+			<value>VERDE</value>
+		</tag> 
+		<!-- Verde changes - UI layer - ends -->               
+	</section>
+	<!-- This value will be maintained by ERF and will be set according to the requirement. 
+		"All" - IB + Branch + Telephony on same WAS instance (only for test environments where there are no separate instances for branch and telephony), 
+		"Branch" (for production, only Branch Channel for supported channel maintained through configSupportedChannelBrandMapping.xml), 
+		"Telephony" (for production, only Telephony Channel for supported channel maintained through configSupportedChannelBrandMapping.xml), 
+		"Internet" (only IB in production or test environments)-->
+	<section>
+		CHANNEL_IDENTIFIER
+		<tag>
+			SUPPORTED_CHANNEL
+			<value>Internet</value>
+		</tag>
+		<tag>
+			MCA_DOMAIN
+			<!-- <value>TEST01GLOBAL</value> -->
+			<value>TEST01GLOBAL</value>
+		</tag>
+	</section>	
+</root>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archetypes>
+    <archetype name="web_default" parent="none"></archetype>
+    <archetype name="mobiledefault" parent="web_default">
+        <capability name="is_wireless_device" value="true" />
+        <capability name="is_tablet" value="false" />
+    </archetype>
+    <archetype name="blocked" parent="mobiledefault">       
+        <capability name="mobile_browser" value="Opera Mini" />
+    </archetype>
+</archetypes>

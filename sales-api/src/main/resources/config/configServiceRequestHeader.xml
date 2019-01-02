@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+      <section>
+            ServiceRequestHeaderData
+            <tag>
+                  MUST_RETURN
+                  <value>false</value>
+            </tag>
+      </section>
+      <section>
+            BRANCH_APPLICATIONID
+            <tag>
+                  DEFAULT
+                  <value>Digital Branch</value>
+            </tag>
+      </section>
+      <section>
+            TELEPHONY_APPLICATIONID
+            <tag>
+                  DEFAULT
+                  <value>DigitalTelephony</value>
+            </tag>
+      </section>
+      <section>
+            BRANCH_HOST_APPLICATIONID
+            <tag>
+                  DEFAULT
+                  <value>Digital Branch</value>
+            </tag>
+      </section>
+      <section>
+            TELEPHONY_HOST_APPLICATIONID
+            <tag>
+                  DEFAULT
+                  <value>DigitalTelephony</value>
+            </tag>
+      </section>
+      <section>
+            BRANCH_EXTERNAL_SYS_ID
+            <tag>
+                  DEFAULT
+                  <value>94</value>
+            </tag>
+            <tag>
+                  RECORD_SO_INSTRUCTION_B053
+                  <value>86</value>
+            </tag>
+            <tag>
+                  RECORD_SO_INSTRUCTION_B050
+                  <value>86</value>
+            </tag>
+            <tag>
+                  RECORD_SO_INSTRUCTION_B058
+                  <value>86</value>
+            </tag>
+            <tag>
+                  RECORD_SO_INSTRUCTION_B051
+                  <value>86</value>
+            </tag>
+            <tag>
+                  RECORD_SO_INSTRUCTION_B052
+                  <value>86</value>
+            </tag>
+            <tag>
+                  RECORD_SO_INSTRUCTION_B056
+                  <value>86</value>
+
+            </tag>
+      </section>
+      <section>
+            TELEPHONY_EXTERNAL_SYS_ID
+            <tag>
+                  DEFAULT
+                  <value>18</value>
+            </tag>
+      </section>
+</root>

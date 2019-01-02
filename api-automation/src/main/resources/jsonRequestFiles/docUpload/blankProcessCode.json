@@ -1,0 +1,44 @@
+{
+   "processCode":"",
+   "caseReferenceNo":"236385765",
+   "partyDetails":[
+      {
+         "title":"Mr",
+         "foreName":"Shiv",
+         "surName":"Thakur",
+         "emailId": "adfsdg@sdgdsg.com",
+        "mobileNumber": "1232433530",
+        "postCode": "e201bg",
+         "evidences":[
+            {
+               "evidenceTypeCode":"POI",
+               "documents":[
+                  {
+                     "uploadSequenceNo":1000,
+                     "evidenceTypeCode":"POI",
+                     "documentCode":"BST",
+                     "createdBy":"Customer",
+                     "fileName":"Koala.jpg",
+                     "fileSize":10,
+                     "contentType":"image/jpg",
+                     "fileComments":"HE IS VERY RICH",
+                     "status":"PL",
+                     "previewCount":10,
+                     "trgSysFileRefNum":"1",
+                     "tmpSysFileRefNum":"1",
+                     "createdDate":"02/02/2012",
+                     "updateDate":"04/04/2012"
+                  }
+                 
+               ]
+            }
+         ]
+      }
+   ],
+   "casePSF":[
+      {
+         "casePSFName":"sort_code_account_number",
+         "casePSFValue":"23451234691234"
+      }
+   ]
+}

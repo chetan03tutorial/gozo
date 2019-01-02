@@ -1,0 +1,30 @@
+{
+	"processCode": "AOOIDV-ON-LTB",
+	"caseReferenceNo": "4000814",
+	"partyDetails": [{
+		"title": "Mr",
+		"foreName": "Joe",
+		"surName": "Smith",
+		"casePartyID": 4445,
+		"evidences": [{
+			"evidenceTypeCode": "POI",
+			"documents": [{
+				"evidenceTypeCode": "POI",
+				"documentCode": "159",
+				"createdBy": "Colleague",
+				"fileName": "Desert.jpg",
+				"fileSize": 16017,
+				"contentType": "abc",
+				"fileComments": "",
+				"uploadSequenceNo": 5400,
+				"status": "PL"
+			}]
+		}],
+		"externalSystemId": 0
+		
+	}],
+	"casePSF": [{
+		"casePSFName": "sort_code_account_number",
+		"casePSFValue": "12345612345678"
+	}]
+}

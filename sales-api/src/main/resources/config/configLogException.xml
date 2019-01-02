@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE Root SYSTEM "./config.dtd">
+<root>
+	<section>ORIGINAL			
+		<tag>
+			ENABLED
+			<value>1</value>		
+		</tag>
+	</section>
+	<section>CATCH_THROW			
+		<tag>
+			ENABLED
+			<value>1</value>		
+		</tag>
+	</section>
+	<section>CATCH_RETURN			
+		<tag>
+			ENABLED
+			<value>1</value>		
+		</tag>
+	</section>
+	<section>CATCH_HANDLED			
+		<tag>
+			ENABLED
+			<value>1</value>		
+		</tag>
+	</section>
+	<section>FINAL			
+		<tag>
+			ENABLED
+			<value>1</value>		
+		</tag>
+	</section>	
+</root>

@@ -1,0 +1,201 @@
+<?xml version="1.0"?>
+<!DOCTYPE Root SYSTEM "./config.dtd">
+<root>
+    <section>
+        currentAccountReferalCodesMapping
+        <tag>
+            003
+            <value>Bureau</value>
+        </tag>
+
+
+        <tag>
+            301
+            <value>Bank</value>
+        </tag>
+
+        <tag>
+            302
+            <value>Bank</value>
+        </tag>
+
+        <tag>
+            303
+            <value>Bank</value>
+        </tag>
+
+        <tag>
+            304
+            <value>Bank</value>
+        </tag>
+
+        <tag>
+            306
+            <value>Bank</value>
+        </tag>
+
+        <tag>
+            308
+            <value>Bank</value>
+        </tag>
+
+        <tag>
+            310
+            <value>Bank</value>
+        </tag>
+
+        <tag>
+            311
+            <value>Bank</value>
+        </tag>
+
+        <tag>
+            312
+            <value>Bank</value>
+        </tag>
+
+        <tag>
+            313
+            <value>Bank</value>
+        </tag>
+
+        <tag>
+            315
+            <value>Bank</value>
+        </tag>
+
+        <tag>
+            321
+            <value>Bank</value>
+        </tag>
+
+        <tag>
+            361
+            <value>Bank</value>
+        </tag>
+
+        <tag>
+            362
+            <value>Bank</value>
+        </tag>
+
+        <tag>
+            363
+            <value>Bank</value>
+        </tag>
+
+        <tag>
+            364
+            <value>Bank</value>
+        </tag>
+
+        <tag>
+            367
+            <value>Bank</value>
+        </tag>
+
+        <tag>
+            368
+            <value>Bank</value>
+        </tag>
+
+        <tag>
+            369
+            <value>Bank</value>
+        </tag>
+
+        <tag>
+            370
+            <value>Bank</value>
+        </tag>
+
+        <tag>
+            373
+            <value>Bank</value>
+        </tag>
+
+        <tag>
+            381
+            <value>Bank</value>
+        </tag>
+
+        <tag>
+            382
+            <value>Bank</value>
+        </tag>
+
+        <tag>
+            386
+            <value>Bank</value>
+        </tag>
+
+        <tag>
+            388
+            <value>Bank</value>
+        </tag>
+
+        <tag>
+            389
+            <value>Bank</value>
+        </tag>
+
+        <tag>
+            391
+            <value>Bank</value>
+        </tag>
+
+        <tag>
+            396
+            <value>Bank</value>
+        </tag>
+
+        <tag>
+            307
+            <value>Bureau</value>
+        </tag>
+
+        <tag>
+            314
+            <value>Bureau</value>
+        </tag>
+
+        <tag>
+            322
+            <value>Bureau</value>
+        </tag>
+
+        <tag>
+            323
+            <value>Bureau</value>
+        </tag>
+
+        <tag>
+            341
+            <value>Bureau</value>
+        </tag>
+
+        <tag>
+            365
+            <value>Bureau</value>
+        </tag>
+
+        <tag>
+            366
+            <value>Bureau</value>
+        </tag>
+
+        <tag>
+            387
+            <value>Bureau</value>
+        </tag>
+
+
+        <tag>
+            316
+            <value>Duplicate</value>
+        </tag>
+
+
+
+    </section>
+</root>

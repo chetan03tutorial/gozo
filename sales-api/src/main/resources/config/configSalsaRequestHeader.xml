@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<section>
+		RestRequestHeaderDetails
+		<tag>
+			X-LBG-USER-ID
+			<value>CT145639</value>
+		</tag>
+		<tag>
+			X-LBG-USER-ID-TYPE
+			<value>013</value>
+		</tag>
+		<tag>
+			X-LBG-OUTLET-ID
+			<value>111178</value>
+		</tag>
+		<tag>
+			X-LBG-OUTLET-ID-TYPE
+			<value>SORT_CODE</value>
+		</tag>
+		<tag>
+			X-LBG-APPLICATION-ID
+			<value>19</value>
+		</tag>
+		<tag>
+			X-LBG-CONSENT-LEVEL
+			<value>0</value>
+		</tag>
+		<tag>
+			x-ibm-client-id
+			<value>b7d9c7d5-f6d7-4774-9c5e-32ad6854f6ca</value>
+		</tag>
+		<tag>
+			x-ibm-client-secret
+			<value>B1nT0tY7aF5sB7yA7rY1bJ3pE6aO0eX7wJ5cP3nX4kA0bX3vT4</value>
+		</tag>
+		<tag>
+			enableAccNumberSortCodeValidation
+			<value>true</value>
+		</tag>
+		
+	</section>
+</root>

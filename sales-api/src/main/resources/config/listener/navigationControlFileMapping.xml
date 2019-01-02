@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<navcontrol_fileset>
+	<navcontrol_servicetype name="RETAIL">
+		<filepath>config/listener/NavigationControlConfiguration.xml</filepath>
+	</navcontrol_servicetype>
+	<navcontrol_servicetype name="COMMERCIAL">
+		<filepath>config/listener/NavigationControlConfigurationCommercial.xml</filepath>
+	</navcontrol_servicetype>
+</navcontrol_fileset>

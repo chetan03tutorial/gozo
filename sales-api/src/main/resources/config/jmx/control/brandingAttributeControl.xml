@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<MBeanAssociation>
+	<ManagedComponent>
+		BrandingConfigMBean
+		<Attribute>
+			<AttributeName>extractMechanism</AttributeName>
+			<AttributeControl>ManagedUpdate</AttributeControl>
+		</Attribute>
+		<Attribute>
+			<AttributeName>channelScope</AttributeName>
+			<AttributeControl>ManagedUpdate</AttributeControl>
+		</Attribute>
+		<Attribute>
+			<AttributeName>channelValidation</AttributeName>
+			<AttributeControl>ManagedUpdate</AttributeControl>
+		</Attribute>
+		<Attribute>
+			<AttributeName>supportedChannelLTSBRetail</AttributeName>
+			<AttributeControl>ManagedUpdate</AttributeControl>
+		</Attribute>
+		<Attribute>
+			<AttributeName>supportedChannelLTSBCommercial</AttributeName>
+			<AttributeControl>ManagedUpdate</AttributeControl>
+		</Attribute>
+		<!-- Verde changes start -->
+		<Attribute>
+			<AttributeName>supportedChannelVERDERetail</AttributeName>			
+			<AttributeControl>ManagedUpdate</AttributeControl>
+		</Attribute>
+		<Attribute>
+			<AttributeName>supportedChannelVERDECommercial</AttributeName>			
+			<AttributeControl>ManagedUpdate</AttributeControl>
+		</Attribute>
+		<!-- Verde changes end -->
+				<Attribute>
+			<AttributeName>supportedChannelBOSRetail</AttributeName>
+			<AttributeControl>ManagedUpdate</AttributeControl>
+		</Attribute>
+				<Attribute>
+			<AttributeName>supportedChannelBOSCommercial</AttributeName>
+			<AttributeControl>ManagedUpdate</AttributeControl>
+		</Attribute>
+				<Attribute>
+			<AttributeName>supportedChannelHALIFAXRetail</AttributeName>
+			<AttributeControl>ManagedUpdate</AttributeControl>
+		</Attribute>
+	</ManagedComponent>
+</MBeanAssociation>

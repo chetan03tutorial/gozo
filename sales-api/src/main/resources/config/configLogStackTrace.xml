@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE Root SYSTEM "./config.dtd">
+<root>
+	<section>STACK_TRACE			
+		<tag>
+			DELIMITER
+			<value>#</value>		
+		</tag>
+		<tag>
+			STACKTRACE_SIZE
+			<value>10000</value>	
+		</tag>	
+	</section>
+</root>

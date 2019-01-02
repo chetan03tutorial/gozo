@@ -1,0 +1,23 @@
+{
+   "involvedPartyRole":{
+      "userName":"Sunny1234",
+      "password":"Sunny123"
+   },
+   "conditions":[
+      {
+         "name":"DEBIT_CARD_REQUIRED_FLAG",
+         "value":"Y"
+      }
+   ],
+   "customerDocuments" :[
+                               {
+                                               "documentPurpose":"identity verification",
+                                               "documentType":"PASSPORT",
+                                               "documentReferenceText":"DUMMY TEXT",
+                                               "documentReferenceIndex":"1",
+                                               "documentCountryOfIssue":"INDIA",
+                                               "documentAdditionalInfo":"VALID"
+                               }
+               ]
+
+}

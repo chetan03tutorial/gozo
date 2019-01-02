@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <section>BapiInformationData
+        <tag>BAPI_CHANID
+            <value>IBL</value>
+        </tag>
+        <tag>BAPIT_CHANSECMODE
+            <value>PWD</value>
+        </tag>
+        <tag>BAPI_SESSIONID
+            <value>1</value>
+        </tag>
+        <tag>BAPI_IPADDRESSCALLER
+            <value>0</value>
+        </tag>
+        <tag>BAPI_USERAGENT
+            <value>0</value>
+        </tag>
+            <tag>BAPI_ACCEPTLANGUAGE
+            <value>0</value>
+        </tag>
+            <tag>BAPI_INDEXIDCLIENT
+            <value>GX</value>
+        </tag>
+        
+    </section>
+</root>
+

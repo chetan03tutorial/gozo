@@ -1,0 +1,13 @@
+{
+	"sei": "E588_AddCBSNewAc_PortType",
+	"locator": "E588_AddCBSNewAc_ServiceLocator",
+	"name": "E588",
+	"action": "E588",
+	"dpPortMethod": "getE588_AddCBSNewAcWSDDPortName",
+	"headers": [
+		"ServiceRequestHeader",
+		"SecurityHeader",
+		"ContactPointHeader",
+		"CbsAppGroupHeader"
+	]
+}

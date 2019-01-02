@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="getJUnitReports" basedir="." default="init">
+    <property name="reports" location="reports"/>
+    <target name="init">
+        <junitreport todir=".">
+            <fileset dir=".">
+                <include name="TEST-*.xml"/>
+            </fileset>
+        </junitreport>
+    </target>
+</project>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<stubbedConfiguration>
+	<managedConfiguration>
+		<configurationId></configurationId>
+		<ConfigurationState></ConfigurationState>
+	</managedConfiguration>
+	<managedConfigurationServerState>
+		<configurationId></configurationId>
+		<serverId></serverId>
+		<serverState></serverState>
+		<note></note>
+	</managedConfigurationServerState>
+	<managedConfigurationValues>
+		<configurationId></configurationId>
+		<serverId></serverId>
+		<mbeanId></mbeanId>
+		<attributeId></attributeId>
+		<attributeValue></attributeValue>
+		<timestamp></timestamp>
+		<user></user>
+		<note></note>
+	</managedConfigurationValues>	
+</stubbedConfiguration>
+

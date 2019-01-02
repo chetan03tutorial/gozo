@@ -1,0 +1,13 @@
+{
+  "arrangementType": "CA",
+  "dob": "1991-07-05",
+  "existingCustomer": false,
+  "productOptions": [
+    {
+      "values": [
+        "EVERYDAY"
+      ],
+      "type": "ACCOUNT_TYPE"
+    }
+  ]
+}

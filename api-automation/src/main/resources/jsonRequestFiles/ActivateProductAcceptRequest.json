@@ -1,0 +1,26 @@
+{
+   "accountSwitchingDetails":{
+      "sortCode":"121212",
+      "accountNumber":"12312312",
+      "accountName":"abc",
+      "hasDebitCard":true,
+      "cardNumber":"1234123412341234",
+      "cardExpiryDate":"12/22",
+      "canBeOverDrawn":true,
+      "payOdAmount":"200",
+      "textAlert":false,
+      "mobileNumber":null,
+      "switchingDate":"2016-05-17",
+      "consent":true
+   },
+   "involvedPartyRole":{
+      "userName":"Sunny1234",
+      "password":"Sunny123"
+   },
+   "conditions":[
+      {
+         "name":"DEBIT_CARD_REQUIRED_FLAG",
+         "value":"Y"
+      }
+   ]
+}

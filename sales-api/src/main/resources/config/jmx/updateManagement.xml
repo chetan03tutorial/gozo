@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MBean SYSTEM "MbeanDescriptor.dtd">
+<MBean type="UpdateManagerMBean"
+ version="5.0"
+ platform="dynamicproxy"
+ description="Logging MBean.">  
+	 	 	 
+	 <operation name="loadXMLConfiguration" role="operation"  type="" targetObjectType="objectReference" impact="ACTION" proxyInvokeType="multicall">
+		<signature>
+	   		<parameter name="aMbeanId" description="MBean Identifier returned" type="java.lang.Object"/>	   		
+		</signature>
+	 </operation> 
+  
+   <operation name="loadXMLConfiguration" role="operation"  type="" targetObjectType="objectReference" impact="ACTION" proxyInvokeType="multicall">
+		<signature>
+	   		<parameter name="aMbeanId" description="MBean Identifier returned" type="java.lang.Object"/>	   		
+	   		<parameter name="isMBeanInitialisationComplete" description="MBean counter initialiser" type="java.lang.Object"/>
+		</signature>
+	 </operation> 
+  
+  
+     <operation name="loadXMLConfiguration" role="operation"  type="" targetObjectType="objectReference" impact="ACTION" proxyInvokeType="multicall">
+		<signature>
+	   		<parameter name="aMbeanId" description="MBean Identifier returned" type="java.lang.Object"/>	   		
+	   		<parameter name="isMBeanInitialisationComplete" description="MBean counter initialiser" type="java.lang.Object"/>
+	   		<parameter name="aConfigurationId" description="MBean Identifier returned" type="java.lang.Object"/>	   		
+	   		<parameter name="aServerId" description="MBean counter initialiser" type="java.lang.Object"/>
+		</signature>
+	 </operation> 
+ 
+  
+  	<notification name="updateManagerListener" severity="3">
+		<notificationType>JMX.mbean.registered</notificationType>
+	</notification>
+</MBean> 
+  

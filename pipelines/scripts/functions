@@ -1,0 +1,20 @@
+#!/bin/bash
+####################
+# JUST a SAMPLE. Write your own.
+# Sourcing bashrc is good, unless you have a good reason not to.
+#################
+source ~/.bashrc
+
+export HTTP_PROXY=http://10.113.140.187:3128
+export HTTPS_PROXY=http://10.113.140.187:3128
+export http_proxy=http://10.113.140.187:3128
+export https_proxy=http://10.113.140.187:3128
+export no_proxy=localhost,127.0.0.1,sandbox.local,lbg.eu-gb.mybluemix.net,lbg.eu-gb.bluemix.net,10.113.140.170,10.113.140.179,10.113.140.187,10.113.140.168,jenkins.sandbox.extranet.group,nexus.sandbox.extranet.group,gerrit.sandbox.extranet.group,sonar.sandbox.extranet.group
+
+export SASS_BINARY_PATH=${SASS_BINARY_PATH:=~/linux-x64-46_binding.node}
+export JAVA_HOME=/apps/tools/jdk1.7.0_79
+export ANT_HOME=/apps/tools/ant
+export "PATH=${JAVA_HOME}/bin:~/tools/:/usr/local/bin:/bin:${PATH}:${ANT_HOME}/bin"
+
+echo $(hostname)
+echo $(pwd)

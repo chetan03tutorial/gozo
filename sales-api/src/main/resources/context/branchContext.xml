@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+        xmlns:http-conf="http://cxf.apache.org/transports/http/configuration"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd 
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+		http://cxf.apache.org/transports/http/configuration http://cxf.apache.org/schemas/configuration/http-conf.xsd">
+
+    <context:component-scan base-package="com.lbg.ib.api.sales.*, com.lbg.ib.api.shared.*, com.lbg.ib.api.sso.*"/>
+    <import resource="beans-filter.xml" />
+
+    <import resource="branch-beans-dao.xml"/>
+    <aop:aspectj-autoproxy/>
+
+    <http-conf:conduit id="httpConduit"
+			name="{http://service.rs}MyService.http-conduit">
+        <http-conf:client ConnectionTimeout="3000000" ReceiveTimeout="30000000" />
+    </http-conf:conduit>
+
+    <bean class="org.apache.cxf.jaxrs.spring.JAXRSServerFactoryBeanDefinitionParser$SpringJAXRSServerFactoryBean"
+          init-method="init">
+        <property name="serviceBeans">
+            <list>
+                <bean class="com.lbg.ib.api.sales.product.resources.ProductFeaturesResource"/>
+                <bean class="com.lbg.ib.api.sales.product.resources.ProductArrangementResource"/>
+                <bean class="com.lbg.ib.api.sales.address.resources.AddressResource"/>
+                <bean class="com.lbg.ib.api.sales.product.resources.ProductActivationResource"/>
+                <bean class="com.lbg.ib.api.sales.content.resources.ContentResource"/>
+                <bean class="com.lbg.ib.api.sales.content.resources.ContentManagerResource"/>
+                <bean class="com.lbg.ib.api.sales.mandate.resources.ValidateUserIdResource"/>
+                <bean class="com.lbg.ib.api.sales.party.resources.TinDetailsResource"/>
+                <bean class="com.lbg.ib.api.sales.communication.resources.CommunicationPartyResource"/>
+                <bean class="com.lbg.ib.api.sales.common.session.resource.CustomerSessionManagementResource" />
+                
+                <bean class="com.lbg.ib.api.sso.resource.ValidateSAMLTokenResource"/>
+                <bean class="com.lbg.ib.api.sso.logoff.LogoutResource"/>
+                <bean class="com.lbg.ib.api.sales.user.resources.UserResource"/>
+                <bean class="com.lbg.ib.api.sales.questionnaire.resource.QuestionnaireResource"/>
+	            <bean class="com.lbg.ib.api.sales.product.resources.DetermineEligibilityResource"/>
+				<bean class="com.lbg.ib.api.sales.visualmi.resources.VisualMIResource"/>
+				<bean class="com.lbg.ib.api.sales.bankwizard.resources.ValidateAccountResource" />
+				<bean class="com.lbg.ib.api.sales.product.resources.RetrieveProductArrangementResource"/>
+				<bean class="com.lbg.ib.api.sales.product.resources.PcaDetermineEligibilityResource"/>
+				<bean class="com.lbg.ib.api.sales.product.resources.ProductContentResource"/>
+                <bean class="com.lbg.ib.api.sales.mca.resources.BranchContextResource" />
+                <bean class="com.lbg.ib.api.sales.application.ApplicationResource" />
+                <bean class="com.lbg.ib.api.sales.common.session.dto.LoggingResource"/>
+                <bean class="com.lbg.ib.api.sales.paperless.resources.PaperlessResource"/>
+                <bean class="com.lbg.ib.api.sales.common.session.resource.PackageAccountSessionInfoResource" />
+                <bean class="com.lbg.ib.api.sales.communication.resources.CommunicationResource" />
+                <!-- <bean
+					class="com.lbg.ib.docupload.service.impl.GetDocumentDetailsServiceImpl" /> -->
+				<bean class="com.lbg.ib.api.sales.docupload.service.impl.CaseDetailsServiceImpl" />
+				<!-- <bean class="com.lbg.ib.api.sales.sortcoderollout.resources.SortCodeResource" /> -->
+				<!-- <bean class="com.lbg.ib.api.sales.docupload.authentication.service.impl.AuthenticateCustomerServiceImpl" /> -->
+				<!-- <bean class="com.lbg.ib.docupload.service.impl.CaseResourceImpl" /> -->
+				<!-- <bean class="com.lbg.ib.docupload.service.impl.ProcessResourceImpl" /> -->
+                <bean class="com.lbg.ib.api.sales.party.resources.RetrievePartyDetailsResource" />
+                <bean class="com.lbg.ib.api.sales.product.resources.UpgradeEligibilityResource" />
+                <bean class="com.lbg.ib.api.sales.conversion.resource.ConversionResource"/>
+                <bean class="com.lbg.ib.api.sales.idassertion.resource.IdentityAssertionResource"/>
+                <bean class="com.lbg.ib.api.sales.common.session.resource.UpgradeEligibilitySessionInfoResource"/>
+                <bean class="com.lbg.ib.api.sales.party.resources.SearchPartyResource" />
+                <bean class="com.lbg.ib.api.sales.common.resource.BankHolidayResource" />
+                <bean class="com.lbg.ib.api.sales.switching.resources.AccountSwitchingResource" />
+				<bean class="com.lbg.ib.api.sales.overdraft.resource.PcciOverdraftResource" />
+                <bean class="com.lbg.ib.api.sales.product.resources.WorkingDaysResource"/>
+                <bean class="com.lbg.ib.api.sales.docgen.resource.DocGenAndSaveResource"/>
+                <bean class="com.lbg.ib.api.sales.asm.resource.C078Resource"/>
+                <bean class="com.lbg.ib.api.sales.asm.resource.PldAppealResource"/>
+                <bean class="com.lbg.ib.api.sales.product.resources.TerminateArrangementResource"/>
+                <bean class="com.lbg.ib.api.sales.overdraft.resource.OverdraftResource"/>
+                <bean class="com.lbg.ib.api.sales.overdraft.resource.UpfrontOverdraftResource"/>
+                <bean class="com.lbg.ib.api.sales.shared.TraceRequestEnabler"/>
+                <bean class="com.lbg.ib.api.sales.product.resources.ModifyProductArrangementResource"/>
+                <bean class="com.lbg.ib.api.sales.overdraft.resource.SelectedAccountSessionInfoResource"/>
+            </list>
+        </property>
+        <property name="providers">
+            <list>
+                <bean class="org.codehaus.jackson.jaxrs.JacksonJsonProvider"/>
+                <ref bean="exceptionToMessageMapper"/>
+                <ref bean="invalidFormatExceptionToMessageMapper"/>
+                <ref bean="serviceExceptionToMessageMapper"/>
+                <ref bean="debugLoggerFilter"/>
+                <ref bean="serviceErrorHandler"/>
+            </list>
+        </property>
+        <property name="extensionMappings">
+            <map>
+                <entry key="json" value="application/json"/>
+                <entry key="octet-stream" value="application/octet-stream" />
+                <entry key="x-www-form-urlencoded" value="application/x-www-form-urlencoded" />
+            </map>
+        </property>
+    </bean>
+     <bean id="jacksonObjectMapper" class="org.codehaus.jackson.map.ObjectMapper">
+	    <property name="serializationInclusion" value="NON_NULL"/>
+	</bean> 
+	
+    <bean id="jsonProvider" class="org.codehaus.jackson.jaxrs.JacksonJaxbJsonProvider">
+      <property name="mapper" ref="jacksonObjectMapper" />
+    </bean>
+</beans>
+
+

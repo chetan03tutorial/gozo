@@ -1,0 +1,961 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bookmarks>
+
+    <bookmark restfulUrl="/lost_stolen_card/"
+        facesUrl="/accountmaint/desktop/lostandstolencards/cardcancellationandreorder.jsp"
+        methodBinding="#{pc_CardCancellationandReorder.doCardCancellationandReorder}"
+        encryptParameters="true">
+    </bookmark>
+    
+    <bookmark restfulUrl="/card_replacement/"
+        facesUrl="/accountmaint/desktop/lostandstolencards/cardreplacement.jsp"
+        methodBinding="#{pc_CardReplacement.doCardReplacement}"
+        encryptParameters="true">
+    </bookmark>
+	<bookmark restfulUrl="/setup_directdebit/"
+		facesUrl="/payments/desktop/directdebittocreditcard/directdebitenterdetails.jsp"
+		methodBinding="#{pc_EnterDDDetails.doPreRenderFromBookmark}"
+		encryptParameters="true">
+	</bookmark>
+
+	<bookmark oldUrl="/loggedonwithmsgs.ibc" restfulUrl="/account_overview_personal/"
+		facesUrl="/viewaccount/accountoverviewpersonalbase.jsp" methodBinding="#{pc_ViewAccountOverview.doViewAccountOverview}"
+		encryptParameters="true">
+	</bookmark>
+   <!-- Changes for bookmarking of S4U start here -->
+	<bookmark restfulUrl="/find_customer/"
+		facesUrl="/customermaint/desktop/findcustomer/findcustomer.jsp"
+		methodBinding="#{pc_FindCustomer.doLaunch}" encryptParameters="true">
+	</bookmark>
+	<!-- Changes for bookmarking of S4U ends here -->
+	<bookmark restfulUrl="/mobile/account_overview/"
+		facesUrl="/accountenquiry/mobile/viewaccountoverview/viewaccountoverview.jsp"
+		methodBinding="#{pc_ViewAccountOverview.doViewAccountOverview}"
+		encryptParameters="true">
+	</bookmark>
+
+	<bookmark restfulUrl="/update_text_alerts_numbers/"
+		facesUrl="/maintaintextalerts/changemobilephonedetails.jsp"
+		methodBinding="#{pc_MaintainTextAlertsBusiness.doChangeMobilePhoneDetails}"
+		encryptParameters="true">
+	</bookmark>
+
+
+	<bookmark oldUrl="/statement.ibc?Account=ArrangementId"
+		restfulUrl="/mobile/account_details/"
+		facesUrl="/accountenquiry/mobile/viewaccountoverview/viewaccountoverviewdetails.jsp"
+		paramConverterClass="com.lloydstsb.ib.common.converter.ArrangementIdConverter"
+		methodBinding="#{mb_ViewAccountOverviewDetails.doViewAccountOverviewDetails}"
+		encryptParameters="true">
+		<parameter name="ArrangementId"
+			value="#{mb_ViewAccountOverviewDetails.arrangementId}" />
+		<parameter value="#{mb_ViewAccountOverviewDetails.businessInContext}"
+			name="BusinessInContext" />
+	</bookmark>
+
+	<bookmark oldUrl="/account.ibc?Account=ArrangementId"
+		restfulUrl="/mobile/account_details/"
+		facesUrl="/accountenquiry/mobile/viewaccountoverview/viewaccountoverviewdetails.jsp"
+		paramConverterClass="com.lloydstsb.ib.common.converter.ArrangementIdConverter"
+		methodBinding="#{mb_ViewAccountOverviewDetails.doViewAccountOverviewDetails}"
+		encryptParameters="true">
+		<parameter name="ArrangementId"
+			value="#{mb_ViewAccountOverviewDetails.arrangementId}" />
+
+
+	</bookmark>
+
+	<bookmark restfulUrl="/create_service_request/"
+		facesUrl="/createservicingrequest/servicerequest.jsp" methodBinding="#{pc_SeviceRequest.doDisplayServiceRequest}"
+		encryptParameters="true">
+		<parameter value="#{pc_SeviceRequest.nominatedAccount}"
+			name="ArrangementId" />
+		<parameter name="CancelActionMehtod" value="#{pc_SeviceRequest.cancelMethodLink}" />
+		<parameter name="CancelActionListener" value="#{pc_SeviceRequest.cancelListenerLink}" />
+		<parameter name="UserRole" value="#{pc_SeviceRequest.userRole}" />
+        <parameter name="BusinessInContext" value="#{pc_SeviceRequest.businessInContext}" />
+    </bookmark>
+
+    <bookmark restfulUrl="/mobile/make_transfer/"
+        facesUrl="/payments/mobile/maketransfer/maketransfer.jsp"
+        methodBinding="#{mb_MakeTransfer.doRetrieveEligibleAccount}"
+        encryptParameters="true">
+        <parameter value="#{mb_MakeTransfer.nominatedAccount}" name="NominatedAccount" />
+        <parameter value="#{mb_MakeTransfer.cancelActionLink}" name="CancelActionLink" />
+    </bookmark>
+
+    <bookmark restfulUrl="/mobile/make_payment/"
+        facesUrl="/payments/mobile/makepayment/makepayment.jsp" methodBinding="#{mb_makepayment.doDisplayPaymentPage}"
+        encryptParameters="true">
+        <parameter value="#{mb_makepayment.arrangementId}" name="ArrangementId" />
+        <parameter value="#{mb_makepayment.refLocation}" name="RefLocation" />
+	</bookmark>
+
+	<bookmark restfulUrl="/change_MI/"
+		facesUrl="/changememorableinformation/changememorableinformation.jsp"
+		methodBinding="#{pc_changememorableinformation.doDisplayChangeMI}"
+		encryptParameters="true">
+		<parameter value="#{pc_changememorableinformation.changeMemorableCancel}"
+			name="cancelActionMethod" />
+	</bookmark>
+	<bookmark restfulUrl="/change_password/" facesUrl="/changepassword/changePassword.jsp"
+		methodBinding="#{pc_ChangePassword.doDisplayChangePassword}"
+		encryptParameters="true">
+		<parameter value="#{pc_ChangePassword.changePasswordCancel}"
+			name="cancelActionMethod" />
+		<parameter value="#{pc_ChangePassword.triggerPoint}" name="TriggerPoint" />
+	</bookmark>
+
+	<bookmark restfulUrl="/change_preferences/"
+		facesUrl="/changepersonaldetails/changepreferences.jsp" methodBinding="#{pc_ChangePreferences.doDisplayPreferences}"
+		encryptParameters="true">
+	</bookmark>
+	<bookmark restfulUrl="/change_telephone_number/"
+		facesUrl="/changepersonaldetails/changetelephonenumber.jsp"
+		methodBinding="#{pc_ChangeTelephoneNumber.doDisplayChangeContactDetails}"
+		encryptParameters="true">
+	</bookmark>
+
+	<bookmark restfulUrl="/change_name/" facesUrl="/changepersonaldetails/changename.jsp"
+		methodBinding="#{pc_ChangeName.doDisplayChangeName}"
+		encryptParameters="true">
+	</bookmark>
+
+	<bookmark restfulUrl="/change_address/"
+		facesUrl="/changepersonaldetails/changeaddress.jsp" methodBinding="#{pc_ChangeAddress.doDisplayChangeAddressPage}"
+		encryptParameters="true">
+	</bookmark>
+
+	<bookmark restfulUrl="/change_emailaddress/"
+		facesUrl="/changepersonaldetails/changeemailaddress.jsp"
+		methodBinding="#{pc_ChangeEmailAddress.doDisplayChangeEmailAddress}"
+		encryptParameters="true">
+	</bookmark>
+
+	<bookmark oldUrl="/personaldetails.ibc" restfulUrl="/your_personal_details/"
+		facesUrl="/changepersonaldetails/changepersonaldetails.jsp"
+		methodBinding="#{pc_ChangePersonalDetails.doGetPersonalDetails}"
+		encryptParameters="true">
+	</bookmark>
+	<bookmark restfulUrl="/your_business_details/"
+		facesUrl="/changepersonaldetails/changepersonaldetailsbusiness.jsp"
+		methodBinding="#{pc_ChangePersonalDetailsBusiness.doGetPersonalDetails}"
+		encryptParameters="true">
+	</bookmark>
+	<bookmark restfulUrl="/enter_company_manually/"
+		facesUrl="/makepayment/entercompanymanuallytemplate.jsp"
+		paramConverterClass="com.lloydstsb.ib.common.converter.ArrangementIdConverter"
+		methodBinding="#{pc_companymanually.doDisplayPage}" encryptParameters="true">
+		<parameter value="#{pc_companymanually.anArrId}" name="ArrangementId" />
+	</bookmark>
+
+	<bookmark oldUrl="/statement.ibc?Account=ArrangementId"
+		restfulUrl="/account_details/" facesUrl="/viewproductdetails/ViewProductDetails.jsp"
+		paramConverterClass="com.lloydstsb.ib.common.converter.ArrangementIdConverter"
+		methodBinding="#{pc_ViewProductDetails.doViewProductDetails}"
+		encryptParameters="true">
+		<parameter name="ArrangementId" value="#{pc_ViewProductDetails.arrangementId}"
+			paramValidatorClass="com.lloydstsb.ib.common.validator.ArrangementIdValidator" />
+		<parameter value="#{pc_ViewProductDetails.businessInContext}"
+			name="BusinessInContext" />
+		<parameter name="TabIndex" value="#{pc_ViewProductDetails.indexVar}" />
+	</bookmark>
+
+	<!-- Added SelectedSubTab for Multichannel Platinum Services. -->
+	<bookmark oldUrl="/account.ibc?Account=ArrangementId"
+		restfulUrl="/account_details/" facesUrl="/viewproductdetails/ViewProductDetails.jsp"
+		paramConverterClass="com.lloydstsb.ib.common.converter.ArrangementIdConverter"
+		methodBinding="#{pc_ViewProductDetails.doViewProductDetails}"
+		encryptParameters="true">
+		<parameter name="ArrangementId" value="#{pc_ViewProductDetails.arrangementId}"
+			paramValidatorClass="com.lloydstsb.ib.common.validator.ArrangementIdValidator" />
+		<parameter name="TabIndex" value="#{pc_ViewProductDetails.indexVar}" />
+		<parameter name="SelectedSubTab" value="#{pc_ViewProductDetails.selectedSubTab}" />
+		<parameter name="RufusPortfolioCode"
+			value="#{pc_ViewProductDetails.rufusPortfolioCode}" />
+	</bookmark>
+	<bookmark oldUrl="/addccholder.ibc?Account=ArrangementId"
+		restfulUrl="/Adding_Card_Holder/"
+		facesUrl="/requestadditionalcreditcardholder/requestAdditionalCreditCardHolder.jsp"
+		methodBinding="#{pc_RequestAdditionalCreditCardHolder.doRequestAdditionalCardHolderForm}"
+		encryptParameters="true">
+		<parameter value="#{pc_RequestAdditionalCreditCardHolder.arrangementID}"
+			name="ArrangementId" />
+	</bookmark>
+	<!-- Changes for bookmarking of STPCC start here -->
+	<bookmark oldUrl="/ccaproduct.ibc" restfulUrl="/credit_cards/"
+		facesUrl="/creditcard/desktop/creditcards.jsp" methodBinding="#{pc_creditcards.doCreditCards}"
+		encryptParameters="true">
+	</bookmark>
+	<!-- Changes for bookmarking of STPCC end here -->
+
+	<bookmark restfulUrl="/view_exchange_rates/"
+		facesUrl="/viewexchangerates/viewexchangerates.jsp" methodBinding="#{pc_ViewExchangeRates.doViewExchangeRates}"
+		encryptParameters="true">
+	</bookmark>
+	<bookmark oldUrl="/onlinesaver1.ibc" restfulUrl="/savings_and_investment/"
+		facesUrl="/savingsandinvestment/savingsAndInvestments.jsp"
+		methodBinding="#{pc_SavingsAndInvestments.doPreRender}"
+		encryptParameters="true">
+	</bookmark>
+	<bookmark oldUrl="/tmolsplash.ibc" restfulUrl="/travel_money/"
+		facesUrl="/travelmoney/ordertravelmoney.jsp" methodBinding="#{pc_OrderTravelMoney.preRender}"
+		encryptParameters="true">
+		<parameter value="#{pc_OrderTravelMoney.arrangementId}"
+			name="ArrangementId" />
+	</bookmark>
+	<bookmark restfulUrl="/balance_transfer_offers/"
+		facesUrl="/balancetransfer/balancetransferoffers.jsp" methodBinding="#{pc_BalanceTransferInfoExisting.doNavigationControl}"
+		encryptParameters="true">
+		<parameter value="#{pc_BalanceTransferInfoExisting.arrangementId}"
+			name="ArrangementId" paramValidatorClass="com.lloydstsb.ib.common.validator.ArrangementIdValidator" />
+	</bookmark>
+	<bookmark oldUrl="/balancetransfer.ibc?Account=ArrangementId"
+		restfulUrl="/balance_transfer_existing/" facesUrl="/balancetransfer/balancetransferinformationexisting.jsp"
+		methodBinding="#{pc_BalanceTransferInfoExisting.doNavigationControl}"
+		encryptParameters="true">
+		<parameter value="#{pc_BalanceTransferInfoExisting.arrangementId}"
+			name="ArrangementId" paramValidatorClass="com.lloydstsb.ib.common.validator.ArrangementIdValidator" />
+	</bookmark>
+	<bookmark oldUrl="/ccaadddetailscontinue.ibc" restfulUrl="/balance_transfer_new/"
+		facesUrl="/balancetransfer/balancetransferinformationnewcard.jsp"
+		methodBinding="#{pc_BalanceTransferInfoExisting.doNavigationControl}"
+		encryptParameters="true">
+		<parameter value="#{pc_BalanceTransferInfoExisting.arrangementId}"
+			name="ArrangementId" paramValidatorClass="com.lloydstsb.ib.common.validator.ArrangementIdValidator" />
+	</bookmark>
+	<bookmark oldUrl="/statementstopsplash.ibc?Account=ArrangementId"
+		paramConverterClass="com.lloydstsb.ib.common.converter.ArrangementIdConverter"
+		restfulUrl="/manage_paper_statement/" facesUrl="/managepaperstatement/managepaperstatement.jsp"
+		methodBinding="#{pc_ManagePaperStatement.doManagePaperStatement}"
+		encryptParameters="true">
+		<parameter value="#{pc_ManagePaperStatement.referalLocation}"
+			name="ReferalLocation" />
+		<parameter value="#{pc_ManagePaperStatement.arrngmntId}"
+			name="ArrangementId" />
+
+	</bookmark>
+	
+	<!-- Bookmarking the manage paperless Uj for Multichannel - Platinum Services -->
+
+	<bookmark restfulUrl="/manage_paperless_preference/"
+			facesUrl="/managepaperlesspreference/managepaperlesspreference.jsp"
+			methodBinding="#{pc_ManagePaperlessPreference.doManagePaperStatement}"
+			encryptParameters="true">
+			<parameter value="#{pc_ManagePaperlessPreference.referalLocation}"
+				name="ReferalLocation" />
+			<parameter value="#{pc_ManagePaperlessPreference.arrngmntId}"
+				name="ArrangementId" />
+	</bookmark>
+	
+
+	<!-- Marmalede changes starts here -->
+	<bookmark oldUrl="/avainterstitial.ibc?Account=ArrangementId"
+		restfulUrl="/All_AVA/" facesUrl="/ava/allava.jsp" methodBinding="#{pc_ava_upgrade.doNavigateToAllAVA}"
+		encryptParameters="true">
+		<parameter value="#{pc_ava_upgrade.anArrId}" name="ArrangementId"
+			paramValidatorClass="com.lloydstsb.ib.common.validator.ArrangementIdValidator" />
+	</bookmark>
+	<!-- Marmalede changes end here -->
+	<bookmark oldUrl="/overdraftsplash.ibc" restfulUrl="/planned_overdraft_details/"
+		facesUrl="/overdraft/plannedoverdraftdetails.jsp" methodBinding="#{pc_Planned_OverDraftPage.singleManageOverdraft}"
+		encryptParameters="true">
+	</bookmark>
+
+
+	<bookmark restfulUrl="/share_dealing/" facesUrl="/sharedealing/sharedealing.jsp"
+		methodBinding="#{pc_ApplyOnline.doShareDealing}" encryptParameters="true">
+	</bookmark>
+	<bookmark oldUrl="/taservicing.ibc" restfulUrl="/manage_text_alerts/"
+		facesUrl="/maintaintextalerts/managetextalerts.jsp" methodBinding="#{pc_MaintainTextAlertsBase.doDisplayManageTextAlerts}"
+		encryptParameters="true">
+		<parameter value="#{pc_MaintainTextAlertsBase.businessInContext}"
+			name="BusinessInContext" />
+	</bookmark>
+	<bookmark restfulUrl="/manage_text_alerts_business/"
+		facesUrl="/maintaintextalerts/maintaintextalertsbusiness.jsp"
+		methodBinding="#{pc_MaintainTextAlertsBase.doDisplayManageTextAlerts}"
+		encryptParameters="true">
+		<parameter value="#{pc_MaintainTextAlertsBase.businessInContext}"
+			name="BusinessInContext" />
+
+	</bookmark>
+	<bookmark oldUrl="/urltareg2set.ibc" restfulUrl="/text_alerts/"
+		facesUrl="/setuptextalerts/textalerts.jsp" methodBinding="#{pc_TextAlerts.doSetup}"
+		encryptParameters="true">
+	</bookmark>
+	<bookmark restfulUrl="/text_alerts_business/" facesUrl="/setuptextalerts/textalertsbusiness.jsp"
+		methodBinding="#{pc_TextAlertsBusiness.doSetupBusiness}"
+		encryptParameters="true">
+	</bookmark>
+	<bookmark oldUrl="/notifycharges.ibc" restfulUrl="/text_alert_charges/"
+		facesUrl="/setuptextalerts/textalertscharges.jsp" encryptParameters="true">
+		<parameter value="#{pc_TextAlertCharges.referalLocation}"
+			name="ReferalLocation" />
+	</bookmark>
+	<bookmark restfulUrl="/make_payment/" facesUrl="/makepayment/makepayment.jsp"
+		methodBinding="#{pc_makepayment.doDisplayPaymentPage}"
+		encryptParameters="true">
+		<parameter value="#{pc_makepayment.arrangementId}" name="ArrangementId"
+			paramValidatorClass="com.lloydstsb.ib.common.validator.ArrangementIdValidator" />
+		<parameter value="#{pc_makepayment.refLocation}" name="RefLocation" />
+		<parameter value="#{pc_makepayment.beneficiaryId}" name="BeneficiaryId" />
+	</bookmark>
+	<bookmark restfulUrl="/setup_standingorder/"
+		facesUrl="/setupstandingorder/setupstandingorder.jsp" methodBinding="#{pc_SetUpStandingOrder.doSetUpStandingOrder}"
+		encryptParameters="true">
+		<parameter value="#{pc_SetUpStandingOrder.nominatedAccount}"
+			name="NominatedAccount" />
+		<parameter value="#{pc_SetUpStandingOrder.cancelAction}"
+			name="cancelActionMethod" />
+		<parameter value="#{pc_SetUpStandingOrder.switchMode}" name="SwitchMode" />
+		<parameter value="#{pc_SetUpStandingOrder.selectedTabIndex}"
+			name="TabID" />
+		<parameter value="#{pc_SetUpStandingOrder.businessInContext}"
+			name="BusinessInContext" />
+	</bookmark>
+	<!-- Commenting, not a bookmarkable page. <bookmark restfulUrl="/set_up_new_payee/" 
+		facesUrl="/makepayment/setupnewpayeeforpaymenttemplate.jsp" paramConverterClass="com.lloydstsb.ib.common.converter.ArrangementIdConverter" 
+		methodBinding="#{pc_setuppayeeforpayment.doSetupNewPayee}" encryptParameters="true"> 
+		<parameter value="#{pc_setuppayeeforpayment.arrangementId}" name="ArrangementId" 
+		/> <parameter value="#{pc_setuppayeeforpayment.anindexVar}" name="AnindexVar" 
+		/> </bookmark> -->
+
+	<!-- Start of code addition for QC # 4038- P58.00 is bookamrkable -->
+
+	<bookmark restfulUrl="/set_up_new_payee/" facesUrl="/createnewbeneficiary/setuppayee.jsp"
+		paramConverterClass="com.lloydstsb.ib.common.converter.ArrangementIdConverter"
+		methodBinding="#{pc_setuppayee.doSetupPayeeArrangement}"
+		encryptParameters="true">
+		<parameter value="#{pc_setuppayee.arrangementId}" name="ArrangementId"
+			paramValidatorClass="com.lloydstsb.ib.common.validator.ArrangementIdValidator" />
+		<parameter value="#{pc_setuppayee.anindexVar}" name="AnindexVar" />
+		<parameter value="#{pc_setuppayee.pageToBeRendered}" name="PageToBeRendered" />
+	</bookmark>
+
+	<bookmark restfulUrl="/set_up_new_payee_for_payment/"
+		facesUrl="/createnewbeneficiary/setuppayeeforpayment.jsp"
+		paramConverterClass="com.lloydstsb.ib.common.converter.ArrangementIdConverter"
+		methodBinding="#{pc_setuppayeeforpayment.doSetupPayeeArrangementForPayment}"
+		encryptParameters="true">
+		<parameter value="#{pc_setuppayeeforpayment.anIndexVar}"
+			name="AnindexVar" />
+		<parameter value="#{pc_setuppayeeforpayment.pageToBeRendered}"
+			name="PageToBeRendered" />
+	</bookmark>
+
+	<!-- End of code addition for QC # 4038- P58.00 is bookamrkable -->
+
+	<bookmark restfulUrl="/pay_ebillonline/" facesUrl="/payebillonline/paybill.jsp"
+		methodBinding="#{pc_PayeBill.doDisplayPayEBillPage}"
+		encryptParameters="true">
+		<parameter value="#{pc_PayeBill.arrangementId}" name="ArrangementId" />
+	</bookmark>
+	<bookmark restfulUrl="/order_paper_statement/"
+		facesUrl="/requestduplicatestatement/orderpaperstatement.jsp"
+		methodBinding="#{pc_OrderPaperStatement.doOrderPaperStatement}"
+		encryptParameters="true">
+		<parameter value="#{pc_OrderPaperStatement.arrangementID}"
+			name="ArrangementId" paramValidatorClass="com.lloydstsb.ib.common.validator.ArrangementIdValidator" />
+		<parameter value="#{pc_OrderPaperStatement.cancelActionMethod}"
+			name="CancelActionMethod" />
+		<parameter value="#{pc_OrderPaperStatement.cancelActionListenerMethod}"
+			name="CancelActionListenerMethod" />
+	</bookmark>
+
+	<bookmark oldUrl="/manageccpin.ibc?Account=ArrngmntId"
+		paramConverterClass="com.lloydstsb.ib.common.converter.ArrangementIdConverter"
+		restfulUrl="/manage_pin_details/" facesUrl="/viewproductdetails/managepindetails.jsp"
+		methodBinding="#{pc_ManagePinDetails.doViewManagePinDetails}"
+		encryptParameters="true">
+		<parameter value="#{pc_ManagePinDetails.accountName}" name="AccountName" />
+		<parameter value="#{pc_ManagePinDetails.arrngmntId}" name="ArrngmntId" />
+		<parameter value="#{pc_ManagePinDetails.creditCrdGrade}"
+			name="CreditCrdGrade" />
+	</bookmark>
+	
+	<!-- Multichannel BP4 changes -->
+	<!-- Parameters "CancelActionMehtod" and "CancelActionListener"" are added 
+		for cancel link navigation -->
+	<bookmark oldUrl="/stcsplash.ibc" restfulUrl="/apply_for_save_the_change/"
+		facesUrl="/applyforsavethechange/detailsaboutsavethechange.jsp"
+		methodBinding="#{pc_detailsaboutsavethechange.doDisplayDetailsAboutSaveTheChange}"
+		encryptParameters="true">
+		<parameter name="CancelActionMehtod"
+			value="#{pc_detailsaboutsavethechange.cancelActionMethod}" />
+		<parameter name="CancelActionListener"
+			value="#{pc_detailsaboutsavethechange.cancelActionListenerMethod}" />
+	</bookmark>
+
+    <!-- Parameters "CancelActionMehtod" and "CancelActionListener"" are added 
+		for cancel link navigation -->
+	<bookmark oldUrl="/stccontinue.ibc" restfulUrl="/maintain_save_the_change/"
+		facesUrl="/applyforsavethechange/maintainsavethechange.jsp"
+		methodBinding="#{pc_detailsaboutsavethechange.doDisplayDetailsAboutSaveTheChange}"
+		encryptParameters="true">
+		<parameter name="CancelActionMehtod"
+			value="#{pc_detailsaboutsavethechange.cancelActionMethod}" />
+		<parameter name="CancelActionListener"
+			value="#{pc_detailsaboutsavethechange.cancelActionListenerMethod}" />
+	</bookmark>
+
+	<bookmark restfulUrl="/borrowing_options/" facesUrl="/borrowing/borrowing.jsp"
+		methodBinding="#{pc_Borrowing.preRender}" encryptParameters="true">
+	</bookmark>
+
+	<bookmark restfulUrl="/borrowing_help/" facesUrl="/borrowing/borrowinghelp.jsp"
+		methodBinding="#{pc_Borrowing.doBorrowingHelp}" encryptParameters="true">
+	</bookmark>
+
+	<bookmark oldUrl="/loansplash.ibc" restfulUrl="/personal_loan/"
+		facesUrl="/loan/loancalculator.jsp" methodBinding="#{pc_LoanCalculatorMPB.preRender}"
+		encryptParameters="true">
+		<parameter value="#{pc_LoanCalculatorMPB.instructionMnemonicUrl}"
+			name="InstructionMnemonicUrl" />
+	</bookmark>
+
+	<bookmark restfulUrl="/personal_refinance_loan/" facesUrl="/loan/loanrefinancecalculator.jsp"
+		methodBinding="#{pc_LoanCalculatorMPB.preRender}" encryptParameters="true">
+		<parameter value="#{pc_LoanCalculatorMPB.instructionMnemonicUrl}"
+			name="InstructionMnemonicUrl" />
+	</bookmark>
+
+	<bookmark restfulUrl="/primary_account/" facesUrl="/currentaccount/opencurrentaccount.jsp"
+		methodBinding="#{pc_current_account.preRender}" encryptParameters="true">
+	</bookmark>
+
+	<bookmark restfulUrl="/secondary_account/"
+		facesUrl="/currentaccount/opensecondcurrentaccount.jsp" methodBinding="#{pc_current_account.preRender}"
+		encryptParameters="true">
+	</bookmark>
+
+	<!-- Changes for bookmarking of overdraft from old IB -->
+	<!-- <bookmark oldUrl="/overdraftsplash.ibc?Account=NominatedAccountParam" 
+		restfulUrl="/manage_overdraft/" facesUrl="/canceloverdraft/manageoverdraft.jsp" 
+		methodBinding="#{pc_Planned_OverDraftPage.doManageOverdraft}" encryptParameters="true"> 
+		<parameter value="#{pc_Planned_OverDraftPage.nominatedAccountParam}" name="NominatedAccountParam" 
+		/> </bookmark> -->
+	<bookmark restfulUrl="/manage_overdraft/" facesUrl="/canceloverdraft/manageoverdraft.jsp"
+		methodBinding="#{pc_ManageOverdraftMPB.doDisplayOverdraftInfo}"
+		encryptParameters="true">
+		<parameter value="#{pc_ManageOverdraftMPB.anArrId}" name="ArrangementId" />
+	</bookmark>
+	<bookmark restfulUrl="/create_isa/"
+		facesUrl="/createregularpaymenttoisa/RegularPaymentToYourISA.jsp"
+		paramConverterClass="com.lloydstsb.ib.common.converter.ArrangementIdConverter"
+		methodBinding="#{pc_regularPaymenttoISA.doDisplayRegularPaymentToISAScreen}"
+		encryptParameters="true">
+		<parameter value="#{pc_regularPaymenttoISA.arngmentId}"
+			name="ArrangementId" />
+		<parameter value="#{pc_regularPaymenttoISA.refLocation}"
+			name="RefLocation" />
+	</bookmark>
+
+	<bookmark oldUrl="/isaexttransfer.ibc?Account=Arrangement"
+		paramConverterClass="com.lloydstsb.ib.common.converter.ArrangementIdConverter"
+		restfulUrl="/apply_for_external_isa/" facesUrl="/applyforexternalisa/applyforexternalisatransfer.jsp"
+		methodBinding="#{pc_enterExternalISA.doApplyExternalISATransfer}"
+		encryptParameters="true">
+		<parameter name="Arrangement" value="#{pc_enterExternalISA.arrangementId}" />
+		<parameter name="CancelActionMehtod" value="#{pc_enterExternalISA.cancelMethodLink}" />
+		<parameter name="CancelActionListener" value="#{pc_enterExternalISA.cancelListenerLink}" />
+	</bookmark>
+
+	<bookmark restfulUrl="/billmanager_information/"
+		facesUrl="/registerforebillsonline/billmanagerinformation.jsp"
+		methodBinding="#{pc_BillManagerInformation.doVerifyUserRegistration}"
+		encryptParameters="true">
+
+	</bookmark>
+
+
+
+	<bookmark restfulUrl="/savings_product/" facesUrl="/savings/savingsProduct.jsp"
+		methodBinding="#{pc_SavingsProductTemplate.doPreRender}"
+		encryptParameters="false">
+		<parameter value="#{pc_SavingsProductTemplate.instructionUrlReqParam}"
+			name="InsMnemonic" />
+	</bookmark>
+
+	<bookmark restfulUrl="/isa_savings/" facesUrl="/isa/isasavings.jsp"
+		methodBinding="#{pc_isa.doPreRender}" encryptParameters="false">
+		<parameter value="#{pc_isa.instructionUrlReqParam}" name="InsMnemonic" />
+	</bookmark>
+    <!-- MA-IO Chages starts -->
+    <bookmark restfulUrl="/applyisa_savings/" facesUrl="/isa/applyforisasavings.jsp"
+        methodBinding="#{pc_applyISASavingsMPB.doPreRenderForMAIO}"
+        encryptParameters="false">
+        <parameter value="#{pc_applyISASavingsMPB.instructionUrlReqParam}"
+            name="InsMnemonic" />
+    </bookmark>
+    <!-- MA -IO changes ends -->
+	<!-- Changes for bookmarking of STPCC start here -->
+	<bookmark restfulUrl="/compare_creditcards/"
+		facesUrl="/creditcard/desktop/comparecreditcards.jsp" methodBinding="#{pc_Compare.doFindOutMore}"
+		encryptParameters="false">
+		<parameter value="#{pc_Compare.instructionUrlReqParam}"
+			name="CardType" />
+	</bookmark>
+	<!-- Changes for bookmarking of STPCC end here -->
+
+
+	<bookmark restfulUrl="/compare_ava_products/" facesUrl="/ava/compareselectedava.jsp"
+		methodBinding="#{pc_AllAVA.doCompareAVA}" encryptParameters="true">
+		<parameter value="#{pc_AllAVA.instructionUrlReqParam}" name="AVAType" />
+		<parameter value="#{pc_AllAVA.anArrgmtId}" name="ArrangementID"
+			paramValidatorClass="com.lloydstsb.ib.common.validator.ArrangementIdValidator" />
+	</bookmark>
+
+	<bookmark restfulUrl="/Bulk_Payment_Account_Overview/"
+		facesUrl="/applyorincreasebulkpaymentlimits/bulkpaymentaccountoverview.jsp"
+		methodBinding="#{pc_BulkPaymentAccountOverview.doRetrieveEligibleAccounts}"
+		encryptParameters="true">
+		<parameter value="#{pc_BulkPaymentAccountOverview.referringLocation}"
+			name="ReferringLocation" />
+		<parameter value="#{pc_BulkPaymentAccountOverview.businessInContext}"
+			name="BusinessInContext" />
+	</bookmark>
+	<bookmark restfulUrl="/ava_upgrade/" facesUrl="/ava/avaupgradeaccount.jsp"
+		methodBinding="#{pc_ava_upgrade.doAVAUpgradeFromSelectionForBookMarking}"
+		encryptParameters="true">
+		<parameter value="#{pc_ava_upgrade.anArrgmtId}" name="ArrangementId"
+			paramValidatorClass="com.lloydstsb.ib.common.validator.ArrangementIdValidator" />
+		<parameter value="#{pc_ava_upgrade.toAccountInstrcMnenomic}"
+			name="ToAccountMnemonic" />
+	</bookmark>
+
+	<bookmark restfulUrl="/maintain_bulkpayment_beneficiary_list/"
+		facesUrl="/maintainbulkpaymentbeneficiarylist/managebulkpaymentbeneficary.jsp"
+		paramConverterClass="com.lloydstsb.ib.common.converter.ArrangementIdConverter"
+		methodBinding="#{pc_ManageBulkPayBen.doDisplayBeneficiary}"
+		encryptParameters="true">
+		<parameter value="#{pc_ManageBulkPayBen.arrangementId}"
+			name="ArrangementId" />
+	</bookmark>
+
+	<bookmark restfulUrl="/select_business_role/" facesUrl="/viewaccount/businessview.jsp"
+		methodBinding="#{pc_SelectBusiness.doDisplayBusinessView}"
+		encryptParameters="false">
+
+	</bookmark>
+	<bookmark restfulUrl="/account_overview_business/"
+		facesUrl="/viewaccount/accountoverviewbusinessbase.jsp" methodBinding="#{pc_ViewAccountOverview.doViewAccountOverviewFromBookmark}"
+		encryptParameters="true">
+		<parameter value="#{pc_ViewAccountOverview.businessInContext}"
+			name="BusinessInContext" />
+	</bookmark>
+
+
+	<bookmark restfulUrl="/view_business_overview/" facesUrl="/viewaccount/businessoverview.jsp"
+		methodBinding="#{pc_BusinessOverview.doDisplayBusinessOverViewPage}"
+		encryptParameters="true">
+	</bookmark>
+
+	<bookmark restfulUrl="/business_loan/"
+		facesUrl="/applybusinessloan/applyforbusinessloan.jsp" methodBinding="#{pc_ApplyForBusinessLoanMPB.doApplyBusinessLoan}"
+		encryptParameters="true">
+
+	</bookmark>
+
+	<bookmark restfulUrl="/business_overdraft/"
+		facesUrl="/applyforbusinessoverdraft/applyforbusinessoverdraft.jsp"
+		methodBinding="#{pc_ApplyForBusinessOverdraft.doApplyBusinessOverdraft}"
+		encryptParameters="true">
+
+	</bookmark>
+
+	<bookmark restfulUrl="/add_card_reader/"
+		facesUrl="/submitadditionalcardreaderrequest/orderadditionalcardreader.jsp"
+		methodBinding="#{pc_OrderAdditionalCardReader.doRequestCardReader}"
+		encryptParameters="true">
+
+	</bookmark>
+
+
+
+	<bookmark restfulUrl="/business_savings/"
+		facesUrl="/applybusinesssavings/applyforbusinesssavingsproduct.jsp"
+		methodBinding="#{pc_doApplyForSavings.doApplyForSavings}"
+		encryptParameters="true">
+
+		<parameter value="#{pc_doApplyForSavings.instructionUrlReqParam}"
+			name="InstructionURL" />
+
+	</bookmark>
+
+	<bookmark restfulUrl="/select_account/"
+		facesUrl="/makeamendbulkpayment/bulkpaymentselectaccount.jsp"
+		methodBinding="#{pc_createamendbulkpayment.doDisplaySelectAccount}"
+		encryptParameters="true">
+	</bookmark>
+	<bookmark restfulUrl="/make_amend_bulkpayment/"
+		facesUrl="/makeamendbulkpayment/createamendbulkpayment.jsp"
+		methodBinding="#{pc_createamendbulkpayment.doDisplayBookmarked}"
+		encryptParameters="true">
+		<parameter value="#{pc_createamendbulkpayment.arrangementId}"
+			name="arrangementId" paramValidatorClass="com.lloydstsb.ib.common.validator.ArrangementIdValidator" />
+		<parameter value="#{pc_createamendbulkpayment.businessInContext}"
+			name="BusinessInContext" />
+	</bookmark>
+
+
+	<bookmark restfulUrl="/make_transfer/" facesUrl="/maketransfer/maketransfer.jsp"
+		methodBinding="#{pc_MakeTransfer.doRetrieveEligibleAccount}"
+		encryptParameters="true">
+		<parameter value="#{pc_MakeTransfer.nominatedAccountBookmark}"
+			name="NominatedAccount" paramValidatorClass="com.lloydstsb.ib.common.validator.MakeTransferValidator" />
+		<parameter value="#{pc_MakeTransfer.cancelActionLink}" name="CancelActionLink" />
+		<parameter value="#{pc_MakeTransfer.businessInContext}"
+			name="BusinessInContext" />
+		<parameter value="#{pc_MakeTransfer.beneficiaryId}" name="BeneficiaryId" />
+	</bookmark>
+
+	<bookmark restfulUrl="/mm_dashboard/" facesUrl="/dashboard/dashboard.jsp"
+		methodBinding="#{pc_Dashboard.doBookmarkDashboard}" encryptParameters="true">
+	</bookmark>
+
+	<bookmark restfulUrl="/mm_bookmark/" facesUrl="/moneymanager/moneymanager.jsp"
+		methodBinding="#{pc_MoneyManagerTab.doBookmarkOMM}" encryptParameters="true">
+		<parameter value="#{pc_MoneyManagerTab.indexVar}" name="TabIndex">
+		</parameter>
+	</bookmark>
+
+	<bookmark restfulUrl="/mm_creategoal/" facesUrl="/savinggoals/goalinterstitial.jsp"
+		methodBinding="#{pc_CreateGoal.doLoadGoalsContext}" encryptParameters="true">
+	</bookmark>
+
+
+	<bookmark restfulUrl="/lumpsum_top_up/"
+		facesUrl="/payments/desktop/lumpsumpayments/personaldetails.jsp"
+		methodBinding="#{pc_PersonalDetails.doDisplayPersonalDetails}"
+		encryptParameters="true">
+		<parameter value="#{pc_PersonalDetails.arrangementId}" name="ArrangementId">
+		</parameter>
+		<parameter name="RufusPortfolioCode"
+			value="#{pc_ViewProductDetails.rufusPortfolioCode}" />
+		<parameter value="#{pc_PersonalDetails.cancelActionLink}"
+			name="CancelActionLink">
+		</parameter>
+	</bookmark>
+	<bookmark restfulUrl="/fixed_savings/" facesUrl="/termdeposit/applyfortermdeposit.jsp"
+		methodBinding="#{pc_ApplyForTermDeposit.doPreRender}"
+		encryptParameters="false">
+		<parameter value="#{pc_ApplyForTermDeposit.instructionUrlReqParam}"
+			name="InstructionURL" />
+	</bookmark>
+	<bookmark restfulUrl="/mobile/your_personal_details/"
+		facesUrl="/changepersonaldetails/mobile/changepersonaldetails.jsp"
+		methodBinding="#{mb_PersonalDetails.doGetPersonalDetails}"
+		encryptParameters="true">
+	</bookmark>
+	<bookmark restfulUrl="/mobile/savings_product/" facesUrl="/savings/mobile/savingsProduct.jsp"
+		methodBinding="#{mb_savingsProduct.doPreRender}">
+	</bookmark>
+	<!--Changes Done for MPA -->
+	<bookmark restfulUrl="/manage_mpa/"
+		facesUrl="/mpa/desktop/configurempa/managepaymentapproval.jsp"
+		methodBinding="#{pc_ManagePaymentApproval.doDisplayManagePaymentApprovalPage}"
+		encryptParameters="true">
+	</bookmark>
+	<bookmark restfulUrl="/payment_approval/"
+		facesUrl="/mpa/desktop/paymentapproval/mpapaymentlist.jsp"
+		methodBinding="#{pc_ViewMPAPaymentList.doDisplayPaymentApprovalHistoryForBookmark}"
+		encryptParameters="true">
+		<parameter value="#{pc_ViewMPAPaymentList.selectedBusinessId}"
+			name="SelectedBusinessId" />
+	</bookmark>
+	<!--End-Changes Done for MPA -->
+	<bookmark restfulUrl="/activate_creditcard/"
+		facesUrl="/accountmaint/desktop/activatecreditcard/activatecreditcard.jsp"
+		methodBinding="#{pc_ActivateCreditCard.doGetCardToActivate}"
+
+
+
+		encryptParameters="true">
+	</bookmark>
+
+	<bookmark restfulUrl="/e_privacy/" facesUrl="/eprivacy/cookiepolicy.jsp"
+		methodBinding="#{pc_HeaderDetailsMPB.doNavigateToCookiePage}"
+		encryptParameters="true">
+	</bookmark>
+
+	<!-- Changes for bookmarking of STPCC start here -->
+	<bookmark restfulUrl="/apply_credit_card/" facesUrl="/creditcard/desktop/personaldetails.jsp"
+		methodBinding="#{pc_ApplyForCreditCard.doApplyForCreditCardLeads}"
+		encryptParameters="false">
+		<parameter value="#{pc_ApplyForCreditCard.instructionUrlReqParam}"
+			name="CardType" />
+		<parameter value="#{pc_ApplyForCreditCard.source}" name="Source" />
+		<parameter value="#{pc_ApplyForCreditCard.network}" name="Network" />
+	</bookmark>
+
+	<bookmark restfulUrl="/guaranteed_offer/" facesUrl="/creditcard/desktop/guaranteedoffer.jsp"
+		methodBinding="#{pc_ApplyForCreditCard.doApplyForCreditCardLeads}"
+		encryptParameters="false">
+		<parameter value="#{pc_ApplyForCreditCard.instructionUrlReqParam}"
+			name="CardType" />
+	</bookmark>
+	<!-- Changes for bookmarking of STPCC end here -->
+
+	<bookmark restfulUrl="/change_employment_details/"
+		facesUrl="/changepersonaldetails/changeemploymentdetails.jsp"
+		methodBinding="#{pc_ChangeEmpDetails.doNavigateToKYC}"
+		encryptParameters="true">
+	</bookmark>
+
+
+	<bookmark restfulUrl="/loan_approved/" facesUrl="/loan/loanconfirmationapproved.jsp"
+		methodBinding="#{pc_LoanConfirmationApprovedMPB.preRender}"
+		encryptParameters="true">
+		<parameter value="#{pc_LoanConfirmationApprovedMPB.creditScoreNumber}"
+			name="CreditScoreNumber" />
+	</bookmark>
+
+	<bookmark restfulUrl="/direct_investments_sales/" facesUrl="/common/desktop/samlclickpage.jsp"
+		methodBinding="#{pc_AccountOverviewPersonal.doDeepLinkToHSDL}">
+	</bookmark>
+
+	<bookmark restfulUrl="/sr_hub/"
+		facesUrl="/accountmaint/desktop/spendingrewards/spendingrewardsdetails.jsp"
+		methodBinding="#{pc_Offers.doBookmarkSR}" encryptParameters="true">
+		<parameter value="#{pc_Offers.selectedId}" name="TabIndex">
+		</parameter>
+	</bookmark>
+
+
+	<bookmark restfulUrl="/debit_card_funding/"
+		facesUrl="/accountmaint/desktop/debitcardfunding/enteramount.jsp"
+		methodBinding="#{pc_EnterAmount.doDcfEnterAmount}" encryptParameters="true">
+		<parameter value="#{pc_EnterAmount.nominatedAccount}" name="ArrangementId" />
+		<parameter name="CancelActionMehtod" value="#{pc_EnterAmount.cancelMethodLink}" />
+		<parameter name="CancelActionListener" value="#{pc_EnterAmount.cancelListenerLink}" />
+	</bookmark>
+
+	<bookmark restfulUrl="/compare_fixed_rate_isas/" facesUrl="/savings/comparefixedrateisas.jsp"
+		methodBinding="#{pc_CompareFixedRateIsaMPB.doPreRender}"
+		encryptParameters="true">
+	</bookmark>
+	<!-- Spending Rewards Mobile changes -->
+	<bookmark restfulUrl="/mobile/spending_rewards_earnings/"
+		facesUrl="/accountmaint/mobile/spendingrewards/spendingrewardsearnings.jsp"
+		methodBinding="#{mb_SpendingRewardsEarnings.doDisplayEarningsBookmark}"
+		encryptParameters="true">
+	</bookmark>
+
+	<bookmark restfulUrl="/mobile/spending_rewards_hub/"
+		facesUrl="/accountmaint/mobile/spendingrewards/spendingrewardsoffers.jsp"
+		methodBinding="#{mb_SpendingRewardsOffers.doDisplayOfferFromBookmark}"
+		encryptParameters="true">
+		<parameter value="#{mb_SpendingRewardsOffers.selectedId}"
+			name="SelectedID"></parameter>
+	</bookmark>
+	<bookmark restfulUrl="/mobile/spending_rewards_preferences/"
+		facesUrl="/accountmaint/mobile/spendingrewards/spendingRewardsPreferences.jsp"
+		methodBinding="#{mb_spendingRewardsPreferences.doDisplayPreferencesFromBookmark}"
+		encryptParameters="true">
+	</bookmark>
+	<!-- SR NGA changes ends-->
+	<!-- Mobile Changes ends -->
+	<!-- Added for NGB -->
+	<bookmark restfulUrl="/product_listing/" facesUrl="/viewaccount/productlisting.jsp"
+		methodBinding="#{pc_ProductListing.doProductListing}"
+		encryptParameters="true">
+		<parameter value="#{pc_ProductListing.selectedProduct}"
+			name="productType">
+		</parameter>
+	</bookmark>
+
+	<bookmark restfulUrl="/change_user_id/"
+		facesUrl="/customermaint/desktop/changeuserid/changeusername.jsp"
+		methodBinding="#{pc_ChangeUserName.doDisplayChangeUsername}"
+		encryptParameters="true">
+	</bookmark>
+	<bookmark restfulUrl="/mobile/saleshub/"
+		facesUrl="/accountenquiry/mobile/viewaccountoverview/saleshub.jsp"
+		methodBinding="#{mb_ViewAccountOverview.doViewSalesHub}"
+		encryptParameters="true">
+	</bookmark>
+
+	<!-- Paperless Corres chnages START -->
+	<bookmark restfulUrl="/manage_paperless_pref/"
+		facesUrl="/managepaperlesspreference/managepaperlesspreference.jsp"
+		methodBinding="#{pc_ManagePaperlessPreference.doManagePaperStatement}"
+		encryptParameters="true">
+			<parameter value="#{pc_ManagePaperlessPreference.referalLocation}"
+				name="ReferalLocation" />
+		<parameter value="#{pc_ManagePaperlessPreference.arrngmntId}"
+			name="ArrangementId" />
+
+	</bookmark>
+	<!-- paperless corr chnages end -->
+
+	<!-- Bookmarked Reactivate Fallow ISA page for Multichannel Platinum Services. -->
+	<bookmark restfulUrl="/reactivate_fallow_isa/"
+		facesUrl="/reactivatefallowisaaccount/reactivateisa.jsp"
+		methodBinding="#{pc_ReactivateFallowISAAccountMPB.doDisplayReactivateAccountPage}"
+		encryptParameters="true">
+		<parameter name="arrangementId"
+			value="#{pc_ReactivateFallowISAAccountMPB.arrangementId}" />
+		<parameter name="CancelActionMehtod"
+			value="#{pc_ReactivateFallowISAAccountMPB.cancelActionMethod}" />
+		<parameter name="CancelActionListener"
+			value="#{pc_ReactivateFallowISAAccountMPB.cancelActionListenerMethod}" />
+	</bookmark>
+	<!--Multichannel platinun services change Ends -->
+
+	<!-- P2P Book Mark Pages Starts-->
+	<bookmark restfulUrl="/PayAContact_Introduction/" facesUrl="/p2p/registration/payacontactintroduction.jsp"
+	          methodBinding="#{pc_P2PIntroductionMPB.doDisplayP2PIntroduction}"
+	          encryptParameters="true">
+	</bookmark>
+	<bookmark restfulUrl="/PayAContact_Settings/" facesUrl="/p2p/registration/payacontactsettings.jsp"
+	          methodBinding="#{pc_P2PSettingsMPB.doDisplayP2PSettingsWithRefresh}"
+	          encryptParameters="true">
+	</bookmark>
+	<bookmark restfulUrl="/PayAContact_SelectMobileNumber/" facesUrl="/p2p/registration/selectmobilenumber.jsp"
+	          methodBinding="#{pc_SelectP2PProxyMPB.doDisplaySelectMobileNumber}"
+	          encryptParameters="true">
+	</bookmark>
+	<bookmark restfulUrl="/PayAContact_NoValidMobileNumberAvailable/"
+			  facesUrl="/p2p/registration/novalidukmobilenumberavailable.jsp"
+			  methodBinding="#{pc_NoValidPhoneNumbersMPB.doDisplayNoValidMobileNumberAvailable}"
+			  encryptParameters="true">
+	</bookmark>
+	<bookmark restfulUrl="/PayAContact/" facesUrl="/payments/desktop/p2ppayment/payacontact.jsp"
+	          methodBinding="#{pc_PayP2PContactMPB.doDisplayPayAContact}"
+	          encryptParameters="true">
+		<parameter value="#{pc_makepayment.arrangementId}" name="ArrangementId"
+		           paramValidatorClass="com.lloydstsb.ib.common.validator.ArrangementIdValidator" />
+	</bookmark>
+	<!-- P2P Book Mark Pages Ends-->
+    <!-- Travel flag changes start-->
+    <bookmark restfulUrl="/travelflag_settings/"
+        facesUrl="/customermaint/desktop/travelflag/travelflagsettings.jsp"
+        methodBinding="#{pc_TravelFlagSettings.doSetTravelFlagSettings}"
+        encryptParameters="true">
+    </bookmark>
+<!-- Travel flag changes end-->
+	<!-- Added For Mobile Block Page -->
+	<bookmark restfulUrl="/mobile/sales_check_block/" facesUrl="/common/mobile/mobileblocksales.jsp"
+		methodBinding="#{mb_MobileBlockSalesMPB.doDisplayMobileBlockSalesPage}">
+	</bookmark>
+
+    <!-- CRIA BRANCH chnages starts -->
+    <bookmark restfulUrl="/commercial_registration/"
+        facesUrl="/registration/selectRegistrationType.jsp" methodBinding="#{pc_selectRegistration.doInitiateRegistration}"
+        encryptParameters="true">
+        <parameter value="#{pc_selectRegistration.arrangementId}"
+            name="ArrangementId" />
+    </bookmark>
+    <!-- CRIA BRANCH chnages ends -->
+	<!-- BookMarking for MMR Phase 1 starts. -->
+
+	<bookmark restfulUrl="/switch_mortgage/"
+		facesUrl="/accountmaint/desktop/switchmortgage/switchmortgage.jsp"
+		methodBinding="#{pc_SwitchMortgage.doNavigateToSwitchMortgage}"
+		encryptParameters="true">
+	</bookmark>
+	<!-- BookMarking for MMR Phase 1 ends. -->
+	
+	<!-- Changes for bookmarking of Joint Account Page start here -->
+	<bookmark  restfulUrl="/make_account_joint/" facesUrl="/accountmaint/desktop/jointaccount/makeaccountjoint.jsp"
+		methodBinding="#{pc_makeaccountjoint.doMakeJoint}" encryptParameters="true">
+	</bookmark>
+	<!-- Changes for bookmarking of Joint Account page ends here -->
+	
+    <!-- OSR: Compare Savings Products Page -->
+    <bookmark restfulUrl="/compare_savings_products/"
+        facesUrl="/savingsredesignation/comparesavingsproduct.jsp"
+        encryptParameters="true">
+    </bookmark>
+    
+    <bookmark restfulUrl="/choose_from_products/"
+        facesUrl="/savingsredesignation/choosefromproduct.jsp"
+        methodBinding="#{pc_ChooseFromProductMPB.doDisplayChooseFromProduct}"
+        encryptParameters="true">
+        <parameter value="#{pc_ChooseFromProductMPB.productType}"
+            name="productType" />
+    </bookmark>
+    <!-- OSR: Compare Savings Products Page -->
+    <!--  NGB - IP change starts here -->
+    <bookmark restfulUrl="/international_payment/" 
+        facesUrl="/maintaininternationalpayment/ngbInternationalPayment.jsp" 
+        methodBinding="#{pc_internationalPayment.doDisplayInternationalPaymentsNGB}"
+        encryptParameters="true">
+    </bookmark> 
+    <!--  NGB - IP change ends here -->
+    
+    <!-- SO & DD changes start -->
+    <bookmark restfulUrl="/mobile/Standing_order/"
+        facesUrl="/payments/mobile/standingorderdirectdebit/maintainStandingOrderDirectDebit.jsp"
+        methodBinding="#{mb_maintainStandingOrderDirectDebit.doDisplayStandingOrder}"
+        encryptParameters="true">
+
+        
+        <parameter
+            value="#{mb_maintainStandingOrderDirectDebit.bookmarkableArrangementId}"
+            name="BookmarkableArrId" />
+
+    </bookmark>
+    <bookmark restfulUrl="/mobile/Direct_debit/"
+        facesUrl="/payments/mobile/standingorderdirectdebit/maintainStandingOrderDirectDebit.jsp"
+        methodBinding="#{mb_maintainStandingOrderDirectDebit.doDisplayDirectDebit}"
+        encryptParameters="true">
+
+        
+        <parameter
+            value="#{mb_maintainStandingOrderDirectDebit.bookmarkableArrangementId}"
+            name="BookmarkableArrId" />
+
+    </bookmark>
+    <bookmark restfulUrl="/mobile/DirectDebit_StandingOrder/"
+        facesUrl="/payments/mobile/standingorderdirectdebit/maintainStandingOrderDirectDebit.jsp"
+        methodBinding="#{mb_maintainStandingOrderDirectDebit.doDisplaySODDbookmark}"
+        encryptParameters="true">
+
+        
+        <parameter
+            value="#{mb_maintainStandingOrderDirectDebit.bookmarkableArrangementId}"
+            name="BookmarkableArrId" />
+
+    </bookmark>
+    
+    <!-- SO & DD changes end -->
+    
+    <!-- Club move CR changes -->
+      <bookmark restfulUrl="/apply_club/" 
+        facesUrl="/ava/lifestylebenefits.jsp" 
+        methodBinding="#{pc_ava_upgrade.doNavigateToAllAVA}" encryptParameters="true">
+        </bookmark> 
+    <!-- Club move CR changes ends -->
+    
+    <!-- Changes for bookmarking of change email address (mobile) page starts here -->
+
+    <bookmark restfulUrl="/mobile/change_emailaddress/"
+        facesUrl="/changepersonaldetails/mobile/changeemailaddress.jsp"
+        methodBinding="#{mb_ChangeEmailAddress.doDisplayChangeEmailAddress}"
+        encryptParameters="true">
+    </bookmark>
+    <!-- Changes for bookmarking of change email address (mobile) page ends here -->
+    
+    <!-- Changes for multichannel phase 2 GForms start here -->
+    <bookmark restfulUrl="/gforms/" facesUrl="/common/gforms/gformshub.jsp"
+        methodBinding="#{pc_GFormsSearch.doNavigateToGForms}"
+        encryptParameters="true">
+        <parameter name="productCategory" value="#{pc_GFormsSearch.productCategory}"></parameter>
+        <parameter name="arrangementID" value="#{pc_GFormsSearch.arrangementID}"></parameter>
+    </bookmark>
+    <!-- Changes for multichannel phase 2 Gforms ends here -->
+    <!-- External ISA Transfer cr -->
+      <bookmark restfulUrl="/external_isa/" 
+        facesUrl="/applyforexternalisa/applyforexternalisatransfer.jsp" 
+        methodBinding="#{pc_enterExternalISA.doDisplayISAExternalTransfer}" encryptParameters="true">
+        </bookmark> 
+    <!-- External ISA Transfer cr -->
+    <!-- Changes for bookmarking RAPID starts -->
+    <bookmark restfulUrl="/car_finance_hub/"
+        facesUrl="/applycarloan/desktop/carfinancehub.jsp"
+        methodBinding="#{pc_carFinanceHub.doDisplayCarFinanceHub}" encryptParameters="true">
+    </bookmark>
+    <!-- Changes for bookmarking RAPID ends -->
+</bookmarks>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Root SYSTEM "./config.dtd">
+<root>
+	<section>SessionCacheServiceFactory
+		<tag>CACHE_SERVICE_IMPLEMENTATION
+			<value>com.lloydstsb.ib.ea.cache.services.session.SessionCacheServiceImpl</value>
+		</tag>
+	</section>
+	<section>ApplicationCacheServiceFactory
+		<tag>CACHE_SERVICE_IMPLEMENTATION
+			<value>com.lloydstsb.ib.ea.cache.services.application.SingletonCacheServiceImpl</value>
+		</tag>
+	</section>	
+</root>
+

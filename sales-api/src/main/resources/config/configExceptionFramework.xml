@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<section>
+		MESSAGE_PATHS
+		<tag>
+			MESSAGE_PATH_LOCATION
+			<value>common/customerMessages/properties</value>
+		</tag>
+		<tag>
+			ERROR_MSG_PATH_LOCATION
+			<value>common/customerMessages/error/properties</value>
+		</tag>
+		<tag>
+			WARN_MSG_PATH_LOCATION
+			<value>common/customerMessages/information/properties</value>
+		</tag>
+		<tag>
+			INFORMATION_MSG_PATH_LOCATION
+			<value>common/customerMessages/information/properties</value>
+		</tag>
+		<tag>
+			WARNING_MSG_PATH_LOCATION
+			<value>common/customerMessages/warning/properties</value>
+		</tag>
+		<tag>
+			VALIDATION_MSG_PATH_LOCATION
+			<value>common/customerMessages/validation/properties</value>
+		</tag>
+		<tag>
+			DEFAULT_MSG_PATH_LOCATION
+			<value>common/customerMessages/properties</value>
+		</tag>
+		<tag>
+			DEFAULT_CMS_MSG_ID
+			<value>cmsmsg1001</value>
+		</tag>
+	</section>
+	<section>
+		LINK_PATH
+		<tag>
+			LINK_PATH_LOCATION
+			<value>common/properties</value>
+		</tag>
+	</section>
+</root>

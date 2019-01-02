@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <section>
+        SWITCHES
+        <!-- This section will contain switches which are common for all channels. 
+            When component will lookup switch then it will first check if switch is available 
+            in common, if not, then check for logged in channel. -->
+        <tag>
+            COMMON
+            <value>COMMON_SWITCH</value>
+        </tag>
+        <tag>
+            RETAIL
+            <value>Retail_Switch</value>
+        </tag>
+    </section>
+
+    <!-- This section will contain switches for Retail. -->
+    <section>
+        Retail_Switch
+
+        <!-- Visual MI changes -->
+        <tag>
+            SW_EnTLfFldTgs
+            <value>SW_EnTLfFldTgs</value>
+        </tag>
+        <tag>
+            SW_EnSIRAFrdChk
+            <value>SW_EnSIRAFrdChk</value>
+        </tag>
+    </section>
+
+    <!-- This section will contain switches common across all channels. -->
+    <section>
+        COMMON_SWITCH
+        <!-- Prevent Access to Online Investments in Mobile- Changes Starts -->
+        <tag>
+            SW_PrvAcsOIMob
+            <value>SW_PrvAcsOIMob</value>
+        </tag>
+        <!-- Changes for Strategic WURFL Mobile -->
+        <tag>
+            SW_StrWURFLImp
+            <value>SW_StrWURFLImp</value>
+        </tag>
+        <!-- Changes for Strategic WURFL Mobile -->
+
+    </section>
+
+    <section>
+        TIMER_SETTING
+        <tag>
+            POLLING_TIME
+            <value>900000</value>
+        </tag>
+        <tag>
+            INITIAL_DELAY
+            <value>10000</value>
+        </tag>
+        <tag>
+            SUCCESS_THRESHOLD
+            <value>1</value>
+        </tag>
+        <tag>
+            FAILURE_THRESHOLD
+            <value>1</value>
+        </tag>
+    </section>
+    <section>
+        end_points
+        <tag>
+            url_user_management
+            <value>InternetBankingUserManagementWS</value>
+        </tag>
+        <tag>
+            url_resource_management
+            <value>ResourceManagementWS</value>
+        </tag>
+    </section>
+    <section>
+        INFRASTRUCTURE_ENDPOINTS
+        <tag>
+            INFRASTRUCTURE_ELECTRONIC_SWITCHES_ENDPOINT
+            <value>InfrastructureManagementWS</value>
+        </tag>
+    </section>
+    <section>
+        DAO_IMPLEMENTATIONS
+        <tag>
+            DAO_USERMANAGEMENT_CLASS
+            <value>
+                com.lbg.ib.api.sales.switches.dao.impl.SwitchManagementDAOImpl
+            </value>
+        </tag>
+    </section>
+    <section>
+        ELECTRONIC_DELIVERY_DEVICES_REQUEST_HEADER_DATA
+        <tag>
+            USERMANAGEMENT_PARTY_ID
+            <value>AAGATEWAY</value>
+        </tag>
+        <tag>
+            HOST
+            <value>I</value>
+        </tag>
+        <tag>
+            OCIS_ID
+            <value>0</value>
+        </tag>
+        <tag>
+            SESSION_ID
+            <value>0</value>
+        </tag>
+        <tag>
+            USER_ID
+            <value>AAGATEWAY</value>
+        </tag>
+    </section>
+    <section>
+        HEALTH_CHECK
+        <tag>
+            HEALTHCHECK_STATUS_NO_BODY
+            <value>2</value>
+        </tag>
+        <tag>
+           HEALTHCHECK_SWITCH_UPDATE_NOT_REQUIRED
+           <value>true</value>
+        </tag>
+    </section>
+    
+</root>
+

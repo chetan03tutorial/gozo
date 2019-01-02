@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<!DOCTYPE Root SYSTEM "./config.dtd">
+<root>
+    <section>PATH
+        <tag>
+            RESTFUL_SERVICES_PATH                                    
+            <value>/sales-pca-api/v2</value>
+        </tag>
+    </section>
+    <section>LOGIN_SERVICE
+        <tag>
+            METHOD                                     
+            <value>POST</value>               
+        </tag>
+        <tag>
+            URL
+            <value>/session</value>
+        </tag>
+    </section>
+    <section>LIGHT_LOGIN_SERVICE
+        <tag>
+            METHOD                                     
+            <value>GET</value>                
+        </tag>
+        <tag>
+            URL
+            <value>/session/token</value>
+        </tag>
+    </section>
+        <section>
+        REST_VALIDATOR
+        <tag>
+            JSON_ERROR
+            <value>{"code":"9213429","message":"9213429: Sorry, a
+                technical error has occurred. Please return to home page and
+                try again.","category":"FORCED_LOGOUT"}</value>
+        </tag>
+    </section>
+    
+    <section>NGA_VALIDATOR
+        <tag>
+            JSON_ERROR                                     
+            <value>{"code":"9213429","message":"9213429: Sorry, a technical error has occurred. Please return to login and try again.","category":"FORCED_LOGOUT"}</value>                
+        </tag>
+        <tag>
+            APP_NAME
+            <value>NGA</value>
+        </tag>
+    </section>
+    <section>
+        TNGA_VALIDATOR
+        <tag>
+            JSON_ERROR
+            <value>{"code":"9213429","message":"9213429: Sorry, a
+                technical error has occurred. Please return to login and
+                try again.","category":"FORCED_LOGOUT"}</value>
+        </tag>
+        <tag>
+            APP_NAME
+            <value>TNGA</value>
+        </tag>
+    </section>
+    <section>
+        CNGA_VALIDATOR
+        <tag>
+            JSON_ERROR
+            <value>{"code":"9213429","message":"9213429: Sorry, a
+                technical error has occurred. Please return to login and
+                try again.","category":"FORCED_LOGOUT"}</value>
+        </tag>
+        <tag>
+            APP_NAME
+            <value>CNGA</value>
+        </tag>
+    </section>
+    <section>MEMORABLE_CHARACTERS
+        <tag>
+            METHOD
+            <value>GET</value>
+        </tag>
+        <tag>
+            URL
+            <value>/session/memorablecharacters</value>
+        </tag>
+    </section>
+    <!-- BNGA -->
+    <section>EVENT_AUTHENICATION
+        <tag>
+            METHOD
+            <value>GET</value>
+        </tag>
+        <tag>
+            URL
+            <value>/contentdata</value>
+        </tag>
+    </section>
+    <section>SECURITY_FILTER
+        <tag>
+            EXPLICIT_SESSION_CREATION_FOR_PATHS
+            <value>/</value>
+        </tag>
+    </section>
+</root>

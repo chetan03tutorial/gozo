@@ -1,0 +1,17 @@
+<project name="setup-was" default="setup">
+    <taskdef resource="net/sf/antcontrib/antcontrib.properties" />
+
+    <property name="propFile" value="input.props" />
+    <property file="${propFile}" />
+    <property name="concatenatePortDetails" value="false" />
+    <property name="script.dir" value="jacl" />
+
+    <target name="setup">
+        <echo message="Using property file at ${propFile}"/>
+        <echo message="Property profile.dir is ${profile.dir}"/>
+
+    </target>
+
+
+</project>
+

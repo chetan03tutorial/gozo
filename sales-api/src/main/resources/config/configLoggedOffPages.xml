@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Root SYSTEM "./config.dtd">
+<root>
+    <section>
+        LOGGED_OFF_PAGES_URI
+        <tag>
+            /unauth/pages/ErrorPageLoggedOut.jsp
+            <value>/unauth/pages/ErrorPageLoggedOut.jsp</value>
+        </tag>  
+        <tag>
+            /unauth/pages/errorpageauthenticationfailed.jsp
+            <value>/unauth/pages/errorpageauthenticationfailed.jsp</value>
+        </tag>  
+        <tag>
+            /unauth/pages/customersecuritylogoff.jsp
+            <value>/unauth/pages/customersecuritylogoff.jsp</value>
+        </tag>
+        <tag>
+            /unauth/pages/errorPageCustomerSecurityFailure.jsp
+            <value>/unauth/pages/errorPageCustomerSecurityFailure.jsp</value>
+        </tag>
+    </section>
+</root>

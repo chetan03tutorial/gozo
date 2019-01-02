@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<root>
+	<section>BRANDING
+		<tag>APPENDER_ID
+			<value>BR_1</value>
+		</tag>
+		<tag>EXTRACT_MECHANISM
+			<value>config</value>
+		</tag>
+	</section>
+	<section>BR_1
+		<tag>CHANNEL_SCOPE
+			<value>application</value>
+		</tag>
+		<tag>CHANNEL_VALIDATION
+			<value>enabled</value>
+		</tag>
+		<tag>MAP_SUPPORTED_CHANNEL_LTSB_RETAIL
+			<value>NO</value>
+		</tag>
+		<tag>MAP_SUPPORTED_CHANNEL_LTSB_COMMERCIAL
+			<value>NO</value>
+		</tag>
+		<tag>MAP_SUPPORTED_CHANNEL_BOS_RETAIL
+			<value>NO</value>
+		</tag>
+		<tag>MAP_SUPPORTED_CHANNEL_BOS_COMMERCIAL
+			<value>NO</value>
+		</tag>
+		<tag>MAP_SUPPORTED_CHANNEL_HALIFAX_RETAIL
+			<value>NO</value>
+		</tag>
+		<!-- Verde Changes - UI layer - starts -->
+		<tag>MAP_SUPPORTED_CHANNEL_VERDE_RETAIL
+			<value>NO</value>
+		</tag>
+		<tag>MAP_SUPPORTED_CHANNEL_VERDE_COMMERCIAL
+			<value>NO</value>
+		</tag>
+		<!-- Verde Changes - UI layer - ends -->
+	</section>
+</root>

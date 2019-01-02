@@ -1,0 +1,841 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+
+    <section>
+        QUERY_TIME_OUT
+        <tag>
+            value
+            <value>10</value>
+        </tag>
+    </section>
+
+    <section>
+        DatabaseRefreshInformation
+        <tag>
+            AM_PM
+            <value>0</value>
+        </tag>
+        <tag>
+            REFRESH_TIME_HOUR
+            <value>3</value>
+        </tag>
+    </section>
+
+    <section>
+        ReferenceDataClassifications
+        <tag>
+            XMLRefDataClassification.name
+            <value>XMLRefDataClassification</value>
+        </tag>
+        <tag>
+            DatabaseRefClassification.name
+            <value>DatabaseRefClassification</value>
+        </tag>
+        <tag>
+            InstructionClassification.name
+            <value>InstructionClassification</value>
+        </tag>
+        <tag>
+            InstructionURLClassification.name
+            <value>InstructionURLClassification</value>
+        </tag>
+        <tag>
+            DetectedArchetypeClassification.name
+            <value>DetectedArchetypeClassification</value>
+        </tag>
+        <tag>
+            DeviceSniffingClassification.name
+            <value>DeviceSniffingClassification</value>
+        </tag>
+        <tag>
+            ArchetypeGroupMapClassification.name
+            <value>ArchetypeGroupMapClassification</value>
+        </tag>
+         <tag>
+            MonitoringClassificationLoader.name
+            <value>MonitoringClassificationLoader</value>
+        </tag>
+        <tag>
+            BankHolidayListClassification.name
+            <value>BankHolidayListClassification</value>
+        </tag>
+        <tag>
+            LastLoadedEventsClassification.name
+            <value>LastLoadedEventsClassification</value>
+        </tag>
+        <tag>
+            ConfigDataValueClassification.name
+            <value>ConfigDataValueClassification</value>
+        </tag>
+        <tag>
+            SalesOriginatorClassification.name
+            <value>SalesOriginatorClassification</value>
+        </tag>
+    </section>
+
+    <section>
+        XMLRefDataClassification
+        <tag>
+            ClassName
+            <value>
+                com.lloydstsb.ea.referencedata.ReferenceDataClassification
+            </value>
+        </tag>
+        <tag>
+            Key
+            <value>XMLGenericReferenceData</value>
+        </tag>
+        <tag>
+            LoaderName
+            <value>XMLRefDataClassificationLoader</value>
+        </tag>
+        <tag>
+            isDataChannelDependent
+            <value>false</value>
+        </tag>
+    </section>
+
+    <section>
+        XMLRefDataClassificationLoader
+        <tag>
+            ClassName
+            <value>
+                com.lloydstsb.ea.referencedata.XMLFileClassificationLoader
+            </value>
+        </tag>
+        <tag>
+            FileName
+            <value>config/ReferenceData.xml</value>
+        </tag>
+    </section>
+
+    <section>
+        DetectedArchetypeClassification
+        <tag>
+            ClassName
+            <value>
+                com.lloydstsb.ea.referencedata.DetectedArchetypeClassification
+            </value>
+        </tag>
+        <tag>
+            Key
+            <value>DetectedArchetypeClassification</value>
+        </tag>
+        <tag>
+            GroupName
+            <value>DetectedArchetypeGroup</value>
+        </tag>
+        <tag>
+            LoaderName
+            <value>DetectedArchetypeLoader</value>
+        </tag>
+        <tag>
+            isDataChannelDependent
+            <value>false</value>
+        </tag>
+    </section>
+    <section>
+        DetectedArchetypeGroup
+        <tag>
+            ARCHETYPE_CODE_LOOKUP
+            <value>ARCHETYPE_CODE_LOOKUP</value>
+        </tag>
+    </section>
+    <section>
+        DetectedArchetypeLoader
+        <tag>
+            ClassName
+            <value>
+                com.lloydstsb.ea.referencedata.DetectedArchetypeLoader
+            </value>
+        </tag>
+        <tag>
+            DataRoot
+            <value>Database</value>
+        </tag>
+        <tag>
+            DataSourceJNDI
+            <value>ibData</value>
+        </tag>
+        <tag>
+            SQL_QUERY
+            <value>
+                select t2.DAT_NAME, t4.CAP_NAME, t3.OPERATOR_NAME,
+                t1.CAP_VALUE, t2.APS_CODE from DETECTED_ARCHETYPES t2,
+                ARCHETYPE_CAPABILITY t4, OPERATORS t3,
+                ARCHE_CAP_INSTANCES t1 where
+                t2.ID =t1.DA_ID and
+                t4.ID=t1.AC_ID and t3.ID=t1.OPE_ID
+            </value>
+        </tag>
+    </section>
+
+    <section>
+        ArchetypeGroupMapClassification
+        <tag>
+            ClassName
+            <value>
+                com.lloydstsb.ea.referencedata.ArchetypeGroupMapClassification
+            </value>
+        </tag>
+        <tag>
+            Key
+            <value>ArchetypeGroupMapClassification</value>
+        </tag>
+        <tag>
+            GroupName
+            <value>ArchetypeMapGroup</value>
+        </tag>
+        <tag>
+            LoaderName
+            <value>ArchetypeGroupMapLoader</value>
+        </tag>
+        <tag>
+            isDataChannelDependent
+            <value>false</value>
+        </tag>
+    </section>
+    <section>
+        ArchetypeMapGroup
+        <tag>
+            ARCHETYPE_GROUPMAP_CODE_LOOKUP
+            <value>ARCHETYPE_GROUPMAP_CODE_LOOKUP</value>
+        </tag>
+    </section>
+    <section>
+        ArchetypeGroupMapLoader
+        <tag>
+            ClassName
+            <value>
+                com.lloydstsb.ea.referencedata.ArchetypeGroupMapLoader
+            </value>
+        </tag>
+        <tag>
+            DataRoot
+            <value>Database</value>
+        </tag>
+        <tag>
+            DataSourceJNDI
+            <value>ibData</value>
+        </tag>
+        <tag>
+            SQL_QUERY
+            <value>
+                select t1.ID, t2.DAT_NAME, t3.DAG_NAME from
+                DETECTED_ARCHETYPES t2, DETECTED_ARCHE_GROUPS t3,
+                ARCHETYPE_GROUPMAPS t1 where t2.ID = t1.DA_ID and
+                t3.ID=t1.DAG_ID
+            </value>
+        </tag>
+    </section>
+
+     <section>
+        DatabaseRefClassification
+        <tag>
+            ClassName
+            <value>
+                com.lloydstsb.ea.referencedata.ReferenceDataClassification
+            </value>
+        </tag>
+        <tag>
+            Key
+            <value>GenericReferenceData</value>
+        </tag>
+        <tag>
+            LoaderName
+            <value>DatabaseClassificationLoader</value>
+        </tag>
+        <tag>
+            isDataChannelDependent
+            <value>true</value>
+        </tag>
+    </section> 
+
+    <section>
+        DatabaseClassificationLoader
+        <tag>
+            ClassName
+            <value>
+                com.lloydstsb.ea.referencedata.DatabaseClassificationLoader
+            </value>
+        </tag>
+        <tag>
+            DataRoot
+            <value>Database</value>
+        </tag>
+        <tag>
+            DataSourceJNDI
+            <value>ibData</value>
+        </tag>
+        <tag>
+            SQL_QUERY
+            <value>
+                SELECT GROUP_CODE, GROUP_CODE_DESCRIPTION,
+                LOOKUP_INDICATOR,
+                LOOKUP_TYPE, LOOKUP_ID, LOOKUP_CODE,
+                LOOKUP_TEXT, LOOKUP_VALUE_SD,
+                LOOKUP_VALUE_MD,
+                LOOKUP_VALUE_LD, LOOKUP_VALUE_LOCALE, ACTIVE,
+                DISPLAY_SEQUENCE FROM VW_IB_LOOKUPS WHERE CHANNEL LIKE ?
+            </value>
+        </tag>
+    </section>
+
+    <!-- ********************** Instruction Classification ********************** -->
+
+    <section>
+        InstructionClassification
+        <tag>
+            ClassName
+            <value>
+                com.lloydstsb.ea.referencedata.InstructionClassification
+            </value>
+        </tag>
+        <tag>
+            Key
+            <value>InstructionClassification</value>
+        </tag>
+        <tag>
+            GroupName
+            <value>InstructionGroup</value>
+        </tag>
+        <tag>
+            LoaderName
+            <value>InstructionClassificationLoader</value>
+        </tag>
+        <tag>
+            isDataChannelDependent
+            <value>true</value>
+        </tag>
+    </section>
+
+    <section>
+        InstructionGroup
+        <tag>
+            INSTRUCTION_LOOKUP
+            <value>INSTRUCTION_LOOKUP</value>
+        </tag>
+    </section>
+
+    <section>
+        InstructionClassificationLoader
+        <tag>
+            ClassName
+            <value>
+                com.lloydstsb.ea.referencedata.InstructionClassificationLoader
+            </value>
+        </tag>
+        <tag>
+            DataRoot
+            <value>Database</value>
+        </tag>
+        <tag>
+            DataSourceJNDI
+            <value>ibData</value>
+        </tag>
+        <tag>
+            SQL_QUERY
+            <value>
+                SELECT INS_MNEMONIC, HOST, EXT_SYS_ID, EPH_TEXT FROM
+                INSTRUCTION_LOOKUP_VW WHERE CHANNEL LIKE ?
+            </value>
+        </tag>
+    </section>
+
+    <!-- ********************** Instruction URL Classification **********************  -->
+
+    <section>
+        InstructionURLClassification
+        <tag>
+            ClassName
+            <value>
+                com.lloydstsb.ea.referencedata.InstructionURLClassification
+            </value>
+        </tag>
+        <tag>
+            Key
+            <value>InstructionURLClassification</value>
+        </tag>
+        <tag>
+            GroupName
+            <value>InstructionURLGroup</value>
+        </tag>
+        <tag>
+            LoaderName
+            <value>InstructionURLClassificationLoader</value>
+        </tag>
+        <tag>
+            isDataChannelDependent
+            <value>true</value>
+        </tag>
+    </section>
+
+    <section>
+        InstructionURLGroup
+        <tag>
+            INSTRUCTION_URL_LOOKUP
+            <value>INSTRUCTION_URL_LOOKUP</value>
+        </tag>
+    </section>
+
+    <section>
+        InstructionURLClassificationLoader
+        <tag>
+            ClassName
+            <value>
+                com.lloydstsb.ea.referencedata.InstructionURLClassificationLoader
+            </value>
+        </tag>
+        <tag>
+            DataRoot
+            <value>Database</value>
+        </tag>
+        <tag>
+            DataSourceJNDI
+            <value>ibData</value>
+        </tag>
+        <tag>
+            SQL_QUERY
+            <value>
+                SELECT A.URL_DESC, A.MNEMONIC, A.PRIORITY, A.NARRATIVE,
+                A.ID,
+                B.MNEMONIC PARENT_MNEMONIC FROM INSTRUCTIONS A,
+                INSTRUCTIONS B WHERE
+                A.INS_ID = B.ID(+) AND A.CHN_CODE
+                LIKE ?
+
+            </value>
+        </tag>
+    </section>  
+
+    <!-- ********************** BankHolidayListClassification ********************** -->
+
+    <section>
+        BankHolidayListClassification
+        <tag>
+            ClassName
+            <value>
+                com.lloydstsb.ea.referencedata.BankHolidayListClassification
+            </value>
+        </tag>
+        <tag>
+            Key
+            <value>BankHolidayListClassification</value>
+        </tag>
+        <tag>
+            GroupName
+            <value>BankHolidayListClassificationGroup</value>
+        </tag>
+        <tag>
+            LoaderName
+            <value>BankHolidayListClassificationLoader</value>
+        </tag>
+        <tag>
+            isDataChannelDependent
+            <value>false</value>
+        </tag>
+    </section>
+
+    <section>
+        BankHolidayListClassificationGroup
+        <tag>
+            BANK_HOLIDAY_LIST_CLASSIFICATION_GROUP
+            <value>BANK_HOLIDAY_LIST_CLASSIFICATION_GROUP</value>
+        </tag>
+    </section>
+    <section>
+        BankHolidayListClassificationLoader
+        <tag>
+            ClassName
+            <value>
+                com.lloydstsb.ea.referencedata.BankHolidayListClassificationLoader
+            </value>
+        </tag>
+        <tag>
+            DataRoot
+            <value>Database</value>
+        </tag>
+        <tag>
+            DataSourceJNDI
+            <value>mmdb</value>
+        </tag>
+
+        <tag>
+            SQL_QUERY
+            <value>SELECT HOL_DT FROM BANK_HOLIDAYS WHERE HOL_DT BETWEEN SYSDATE AND SYSDATE+60</value>
+        </tag>
+    </section>
+
+    <!-- ********************** LastLoadedEventsClassification ********************** -->
+
+    <section>
+        LastLoadedEventsClassification
+        <tag>
+            ClassName
+            <value>
+                com.lloydstsb.ea.referencedata.LastLoadedEventsClassification
+            </value>
+        </tag>
+        <tag>
+            Key
+            <value>LastLoadedEventsClassification</value>
+        </tag>
+        <tag>
+            GroupName
+            <value>LastLoadedEventsClassificationGroup</value>
+        </tag>
+        <tag>
+            LoaderName
+            <value>LastLoadedEventsClassificationLoader</value>
+        </tag>
+        <tag>
+            isDataChannelDependent
+            <value>false</value>
+        </tag>
+    </section>
+
+    <section>
+        LastLoadedEventsClassificationGroup
+        <tag>
+            LAST_LOADED_EVENTS_CLASSIFICATION_GROUP
+            <value>LAST_LOADED_EVENTS_CLASSIFICATION_GROUP</value>
+        </tag>
+    </section>
+
+    <section>
+        LastLoadedEventsClassificationLoader
+        <tag>
+            ClassName
+            <value>
+                com.lloydstsb.ea.referencedata.LastLoadedEventsClassificationLoader
+            </value>
+        </tag>
+        <tag>
+            DataRoot
+            <value>Database</value>
+        </tag>
+        <tag>
+            DataSourceJNDI
+            <value>mmdb</value>
+        </tag>
+        <tag>
+            SQL_QUERY
+            <value>
+                SELECT EVT_EXT_SYS_ID_GRID,EVT_ID_GRID,
+                EVT_EXT_SYS_ID_PDW,EVT_ID_PDW FROM LAST_LOADED_EVENTS
+                WHERE
+                LAST_LOADED_ID =(Select max(LAST_LOADED_ID) FROM
+                LAST_LOADED_EVENTS)
+            </value>
+        </tag>
+    </section>
+
+    <!-- ********************** Monitoring Classification ********************** -->
+
+     <section>
+        MonitoringClassificationLoader
+        <tag>
+            ClassName
+            <value>
+                com.lloydstsb.ea.referencedata.MonitoringClassification
+            </value>
+        </tag>
+        <tag>
+            Key
+            <value>MonitoringClassification</value>
+        </tag>
+        <tag>
+            GroupName
+            <value>MonitoringGroup</value>
+        </tag>
+        <tag>
+            LoaderName
+            <value>MonitoringClassificationLoaderName</value>
+        </tag>
+        <tag>
+            isDataChannelDependent
+            <value>true</value>
+        </tag>
+    </section>
+
+    <section>
+        MonitoringGroup
+        <tag>
+            IP
+            <value>IP</value>
+        </tag>
+        <tag>
+            USER_AGENT
+            <value>USER_AGENT</value>
+        </tag>
+        <tag>
+            REFERER_GREY
+            <value>REFERER_GREY</value>
+        </tag>
+        <tag>
+            REFERER_WHITE
+            <value>REFERER_WHITE</value>
+        </tag>
+        <tag>
+            REFERER_BLACK
+            <value>REFERER_BLACK</value>
+        </tag>
+        <tag>
+            GENERIC_VALIDATOR
+            <value>GENERIC_VALIDATOR</value>
+        </tag>
+        <tag>
+            FORM_DATA_PATTERN
+            <value>FORM_DATA_PATTERN</value>
+        </tag>
+        <tag>
+            COOKIE_CHECK_NAME
+            <value>COOKIE_CHECK_NAME</value>
+        </tag>
+        <tag>
+            COOKIE_CHECK_VALUE
+            <value>COOKIE_CHECK_VALUE</value>
+        </tag>
+        <tag>
+            USER_AGENT_BLOCKED
+            <value>USER_AGENT_BLOCKED</value>
+        </tag>
+        <tag>
+            INDRA_CHECK
+            <value>INDRA_CHECK</value>
+        </tag>
+        <tag>
+            THROTTLE_VALIDATOR
+            <value>THROTTLE_VALIDATOR</value>
+        </tag>
+        <tag>
+            BRAPP_VALIDATOR
+            <value>BRAPP_VALIDATOR</value>
+        </tag>
+        <tag>
+            MOBILE_REQ_VALIDATOR
+            <value>MOBILE_REQ_VALIDATOR</value>
+        </tag>
+
+
+    </section>
+    <section>
+        MonitoringClassificationLoaderName
+        <tag>
+            ClassName
+            <value>
+                com.lloydstsb.ea.referencedata.MonitoringClassificationLoader
+            </value>
+        </tag>
+        <tag>
+            DataRoot
+            <value>Database</value>
+        </tag>
+        <tag>
+            DataSourceJNDI
+            <value>ibData</value>
+        </tag>
+        <tag>
+            SQL_QUERY
+            <value>
+                SELECT ID, FM_TYPE AS TYPE, SUB_TYPE, FM_VALUE AS VALUE,
+                EVENT, ACTION, SEVERITY, COND_ID, MIS_TAGS, TEXT,
+                DETECTION_STATUS,
+                MALWARE_TYPE, MALWARE_VARIANT,
+                COMPROMISED_DATA_TYPE,
+                COMPROMISED_DATA_ITEM, WEIGHT
+                FROM FRAUD_MONITORING WHERE APS_CODE =
+                'APP' and (EXPIRY_DATE IS NULL OR EXPIRY_DATE > CURRENT_TIMESTAMP)
+                and CHN_CODE LIKE ?
+            </value>
+        </tag>
+    </section>
+
+
+    <!-- ********************** Sales Originator Id ********************** -->
+
+    <section>
+        SalesOriginatorClassification
+        <tag>
+            ClassName
+            <value>
+                com.lloydstsb.ea.referencedata.SalesOriginatorClassification
+            </value>
+        </tag>
+        <tag>
+            Key
+            <value>SalesOriginatorClassification</value>
+        </tag>
+        <tag>
+            GroupName
+            <value>SalesOriginatorGroup</value>
+        </tag>
+        <tag>
+            LoaderName
+            <value>SalesOriginatorClassificationLoader</value>
+        </tag>
+        <tag>
+            isDataChannelDependent
+            <value>true</value>
+        </tag>
+    </section>
+    <section>
+        SalesOriginatorGroup
+        <tag>
+            SALES_ORIGINATORS
+            <value>SALES_ORIGINATORS</value>
+        </tag>
+    </section>
+    <section>
+        SalesOriginatorClassificationLoader
+        <tag>
+            ClassName
+            <value>
+                com.lloydstsb.ea.referencedata.SalesOriginatorClassificationLoader
+            </value>
+        </tag>
+        <tag>
+            DataRoot
+            <value>Database</value>
+        </tag>
+        <tag>
+            DataSourceJNDI
+            <value>ibData</value>
+        </tag>
+        <tag>
+            SQL_QUERY
+            <value>
+                SELECT NAME, INS_ID, PROMO_PARTY_ID, CAMPAIGN_CODE,
+                PROMO_CHANNEL_CD, CONTENT_PATH, GUARANTEED_IND,
+                PRODUCT_PROPOSITION_ID,PRODUCT_ID, ID, SALESORG_ID PARENT_ID FROM
+                sales_originators WHERE CHN_CODE LIKE ?
+            </value>
+        </tag>
+    </section>
+
+    <section>
+        ConfigDataValueClassification
+        <tag>
+            ClassName
+            <value>
+                com.lloydstsb.ea.referencedata.ConfigDataValueClassification
+            </value>
+        </tag>
+        <tag>
+            Key
+            <value>ConfigDataValueClassification</value>
+        </tag>
+        <tag>
+            GroupName
+            <value>ConfigDataValueGroup</value>
+        </tag>
+        <tag>
+            LoaderName
+            <value>ConfigDataValuesLoader</value>
+        </tag>
+        <tag>
+            isDataChannelDependent
+            <value>true</value>
+        </tag>
+        <tag>
+            Order
+            <value>9</value>
+        </tag>
+    </section>
+    <section>
+        ConfigDataValueGroup
+        <tag>
+            CONFIG_DATA_VALUES_GROUP
+            <value>CONFIG_DATA_VALUES_GROUP</value>
+        </tag>
+    </section>
+    <section>
+        ConfigDataValuesLoader
+        <tag>
+            ClassName
+            <value>
+                com.lloydstsb.ea.referencedata.ConfigDataValuesLoader
+            </value>
+        </tag>
+        <tag>
+            DataRoot
+            <value>Database</value>
+        </tag>
+        <tag>
+            DataSourceJNDI
+            <value>ibData</value>
+        </tag>
+        <tag>
+            SQL_QUERY
+            <value>
+                SELECT REF_KEY, REF_VALUE FROM CONFIG_DATA_LOOKUP_VALUES
+                WHERE
+                CHANNEL_ID LIKE ?
+            </value>
+        </tag>
+    </section>
+
+
+    <section>
+        DeviceSniffingClassification
+        <tag>
+            ClassName
+            <value>
+                com.lbg.ib.api.sales.referencedata.DeviceSniffingClassification
+            </value>
+        </tag>
+        <tag>
+            Key
+            <value>DeviceSniffingClassification</value>
+        </tag>
+        <tag>
+            GroupName
+            <value>DeviceSniffingGroup</value>
+        </tag>
+        <tag>
+            LoaderName
+            <value>DeviceSniffingLoader</value>
+        </tag>
+        <tag>
+            isDataChannelDependent
+            <value>true</value>
+        </tag>
+    </section>
+    <section>
+        DeviceSniffingGroup
+        <tag>
+            DEVICE_SNIFFING_GROUP
+            <value>DEVICE_SNIFFING_GROUP</value>
+        </tag>
+    </section>
+    <section>
+        DeviceSniffingLoader
+        <tag>
+            ClassName
+            <value>
+                com.lbg.ib.api.sales.referencedata.DeviceSniffingLoader
+            </value>
+        </tag>
+        <tag>
+            DataRoot
+            <value>Database</value>
+        </tag>
+        <tag>
+            DataSourceJNDI
+            <value>ibData</value>
+        </tag>
+        <tag>
+            SQL_QUERY
+            <value>
+                select a.ID, a.ACTION, a.CHN_CODE, a.DAG_ID, a.PROD_DESC,
+                a.PROD_URL,
+                a.STA_CODE, b.DAG_NAME
+                from device_sniffs a,
+                detected_arche_groups b where a.DAG_ID = b.ID And a.CHN_CODE
+                LIKE ?
+
+            </value>
+        </tag>
+    </section>
+    
+</root>

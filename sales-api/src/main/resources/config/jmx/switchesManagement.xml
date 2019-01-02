@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MBean SYSTEM "MbeanDescriptor.dtd">
+<MBean type="SwitchesConfigMBean"
+ version="5.0"
+ platform="dynamicproxy"
+ description="Switches MBean.">
+
+   	 <operation name="setControlAttributes" role="operation"  type="" targetObjectType="objectReference" impact="ACTION" proxyInvokeType="multicall">
+		<signature>
+	   		<parameter name="someAttributes" description="The list of attributes for this EA component" type="java.lang.Object"/>
+		</signature>
+	 </operation> 
+	 
+ 	<operation name="updateXMLConfig" role="operation"  type="" targetObjectType="objectReference" impact="ACTION" proxyInvokeType="multicall">
+		<signature>
+	   		<parameter name="anXMLConfig" description="the new XML" type="java.lang.Object"/>
+	   		<parameter name="anUpdateType" description="Managed or Direct Update." type="java.lang.Object"/>
+		</signature>
+	 </operation>
+  
+  	<operation name="getInitialPollDelay" role="operation"  type="java.lang.String" targetObjectType="objectReference" impact="INFO" proxyInvokeType="multicall">
+		<signature>
+	   		<parameter name="" description="" type=""/>
+		</signature>
+	 </operation>
+	 
+	 <operation name="getPollPeriod" role="operation"  type="java.lang.String" targetObjectType="objectReference" impact="ACTION" proxyInvokeType="multicall">
+		<signature>
+	   		<parameter name="" description="" type=""/>
+		</signature>
+	 </operation>
+	 
+	 <operation name="getSuccessThreshold" role="operation"  type="java.lang.String" targetObjectType="objectReference" impact="ACTION" proxyInvokeType="multicall">
+		<signature>
+	   		<parameter name="" description="" type=""/>
+		</signature>
+	 </operation>
+	 
+	 <operation name="getFailThreshold" role="operation"  type="java.lang.String" targetObjectType="objectReference" impact="ACTION" proxyInvokeType="multicall">
+		<signature>
+	   		<parameter name="" description="" type=""/>
+		</signature>
+	 </operation>
+	 
+	 <operation name="getSwitchValue" role="operation"  type="java.lang.String" targetObjectType="objectReference" impact="ACTION" proxyInvokeType="multicall">
+		<signature>
+	   		<parameter name="aSwitchName" description="The name of the switch to be queried" type="java.lang.Object"/>
+		</signature>
+	 </operation>
+  
+	<operation name="setInitialPollDelay" role="operation"  type="" targetObjectType="objectReference" impact="ACTION" proxyInvokeType="multicall">
+		<signature>
+	  		<parameter name="anInitialPollDelay" description="The initial poll delay" type="java.lang.Object"/>
+	  		<parameter name="anUpdateType" description="Managed or Direct Update." type="java.lang.Object"/>
+		</signature>
+	</operation> 
+	 
+	<operation name="setPollPeriod" role="operation"  type="" targetObjectType="objectReference" impact="ACTION" proxyInvokeType="multicall">
+		<signature>
+	   		<parameter name="aPollTime" description="The poll time" type="java.lang.Object"/>
+	   		<parameter name="anUpdateType" description="Managed or Direct Update." type="java.lang.Object"/>
+		</signature>
+	 </operation> 
+	 
+	<operation name="setSuccessThreshold" role="operation"  type="" targetObjectType="objectReference" impact="ACTION" proxyInvokeType="multicall">
+		<signature>
+	   		<parameter name="aThreshold" description="The threshold" type="java.lang.Object"/>
+	   		<parameter name="anUpdateType" description="Managed or Direct Update." type="java.lang.Object"/>
+		</signature>
+	 </operation> 
+	 
+	<operation name="setFailureThreshold" role="operation"  type="" targetObjectType="objectReference" impact="ACTION" proxyInvokeType="multicall">
+		<signature>
+	   		<parameter name="aThreshold" description="The list of attributes for this EA component" type="java.lang.Object"/>
+			<parameter name="anUpdateType" description="Managed or Direct Update." type="java.lang.Object"/>
+		</signature>
+	</operation> 
+	 
+	<operation name="setSwitchValue" role="operation"  type="" targetObjectType="objectReference" impact="ACTION" proxyInvokeType="multicall">
+		<signature>
+	   		<parameter name="aSwitchName" description="The switch name" type="java.lang.Object"/>
+			<parameter name="aSwitchValue" description="The new switch value" type="java.lang.Object"/>
+			<parameter name="anUpdateType" description="Managed or Direct Update." type="java.lang.Object"/>
+		</signature>
+	 </operation> 
+  
+  	<notification name="applicationJMXBroadcaster" severity="3">
+		<notificationType>JMX.mbean.registered</notificationType>
+	</notification>
+
+</MBean>

@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sessionviewstate>
+<numberofujstocache>1</numberofujstocache>
+<removefacesviews>false</removefacesviews>
+<exclusionlist>
+<userjourney>viewaccount</userjourney>
+<userjourney>travelmoney</userjourney>
+</exclusionlist>
+<userjourneypfos>
+<userjourney name="changepassword">
+<pfo>SessionPageFlowChangePassword</pfo>
+</userjourney>
+<userjourney name="changememorableinformation">
+<pfo>SessionPageFlowChangeMemorableInformation</pfo>
+</userjourney>
+<userjourney name="changepersonaldetails">
+<pfo>SessionPageFlowChangeDetails</pfo>
+</userjourney>
+<userjourney name="setuptextalerts">
+<pfo>SessionPageFlowTextAlerts</pfo>
+</userjourney>
+<userjourney name="maintaintextalerts">
+<pfo>SessionPageFlowMaintainTextAlerts</pfo>
+</userjourney>
+<userjourney name="viewaccount">
+<pfo>SessionPageFlowAccountOverview</pfo>
+<pfo>SessionQuickTransfer</pfo>
+</userjourney>
+<userjourney name="canceloverdraft">
+<pfo>SessionPageFlowCancelOverdraft</pfo>
+</userjourney>
+<userjourney name="maketransfer">
+<excludedjourney>
+reactivatefallowisaaccount
+</excludedjourney>
+<excludedjourney>
+mpa/desktop/paymentapproval
+</excludedjourney>
+<excludedjourney>
+reactivatefallowisaaccount
+</excludedjourney>
+<pfo>SessionMakeTransfer</pfo>
+</userjourney>
+<userjourney name="modules">
+<pfo>SessionMakeTransfer</pfo>
+<pfo>SessionQuickTransfer</pfo>
+</userjourney>
+<userjourney name="updatedeletependingpayments">
+<excludedjourney>
+mpa/desktop/paymentapproval
+</excludedjourney>
+<pfo>SessionPageFlowMaintainPayments</pfo>
+</userjourney>
+<userjourney name="maintainstandingorders">
+<excludedjourney>
+mpa/desktop/paymentapproval
+</excludedjourney>
+<pfo>SessionPageFlowMaintainStandingOrders</pfo>
+</userjourney>
+<userjourney name="managepaperstatement">
+<pfo>SessionPageFlowManagePaperStatement</pfo>
+</userjourney>
+<userjourney name="managepaperlesspreference">
+<pfo>SessionPageFlowManagePaperlessPreference</pfo>
+</userjourney>
+<userjourney name="requestduplicatestatement">
+<pfo>SessionPageFlowRequestDuplicateStatement</pfo>
+</userjourney>
+<userjourney name="requestadditionalcreditcardholder">
+<pfo>SessionPageFlowRequestAdditionalCreditCardHolder</pfo>
+</userjourney>
+<userjourney name="deletepayee">
+<pfo>SessionPageFlowDeletePayee</pfo>
+</userjourney>
+<userjourney name="isa">
+<excludedjourney>maketransfer</excludedjourney>
+<pfo>SessionPageFlowISA</pfo>
+<pfo>SessionMakeTransfer</pfo>
+</userjourney>
+<userjourney name="savings">
+<excludedjourney>maketransfer</excludedjourney>
+<pfo>SessionPageFlowSavings</pfo>
+<pfo>SessionMakeTransfer</pfo>
+</userjourney>
+<userjourney name="balancetransfer">
+<excludedjourney>eiaauthentication</excludedjourney>
+<pfo>SessionPageFlowBalanceTransfer</pfo>
+</userjourney>
+<userjourney name="creditcardlimitincrease">
+<pfo>SessionPageFlowCreditCardLimitIncrease</pfo>
+</userjourney>
+<userjourney name="delayedtransactions">
+<pfo>SessionPageFlowDelayedTransactions</pfo>
+</userjourney>
+<!-- STPCC Changes Starts Here -->
+<userjourney name="creditcard/desktop">
+<excludedjourney>balancetransfer</excludedjourney>
+<excludedjourney>manageonlineappointment/desktop</excludedjourney>
+<pfo>SessionPageFlowCreditCard</pfo>
+</userjourney>
+<!-- STPCC Changes Ends Here -->
+<userjourney name="viewproductdetails">
+<pfo>SessionPageFlowViewProductDetails</pfo>
+<pfo>SessionPageFlowManagePayment</pfo>
+<pfo>SessionPageFlowBulkPayment</pfo>
+<pfo>SessionPageFlowForecasts</pfo>
+<pfo>SessionPageFlowAccountSummary</pfo>
+<pfo>SessionPageFlowInternationalPaymentIllustration</pfo>
+<excludedjourney>modules</excludedjourney>
+</userjourney>
+<userjourney name="travelmoney">
+<pfo>SessionPageFlowTravelMoney</pfo>
+</userjourney>
+<userjourney name="overdraft">
+<pfo>SessionPageFlowApplyOverdraft</pfo>
+</userjourney>
+<userjourney name="loan">
+<pfo>SessionPageFlowPersonalLoan</pfo>
+<excludedjourney>manageonlineappointment/desktop</excludedjourney>
+</userjourney>
+<userjourney name="ava">
+<pfo>SessionPageFlowAVA</pfo>
+</userjourney>
+<userjourney name="currentaccount">
+<pfo>SessionPageFlowCurrentAccount</pfo>
+</userjourney>
+<userjourney name="setupregularpayment">
+<pfo>SessionPageFlowCreateRegularPaymentToInvestments</pfo>
+</userjourney>
+<userjourney name="createregularpaymenttoisa">
+<pfo>SessionPageFlowCreateISARegularPayment</pfo>
+</userjourney>
+<userjourney name="maintainsavethechange">
+<pfo>SessionPageFlowSaveTheChange</pfo>
+</userjourney>
+<userjourney name="applyforsavethechange">
+<pfo>SessionPageFlowSaveTheChange</pfo>
+</userjourney>
+<userjourney name="managebulkpayments">
+<pfo>SessionPageFlowManageBulkPayments</pfo>
+</userjourney>
+<userjourney name="applyforexternalisatransfer">
+<pfo>SessionPageFlowExternalIsaTransfer</pfo>
+</userjourney>
+<userjourney name="applyforexternalisa">
+<pfo>SessionPageFlowExternalIsaTransfer</pfo>
+</userjourney>
+<userjourney name="changepersonaldetails">
+<pfo>SessionPageFlowChangeDetails</pfo>
+<pfo>SessionPageFlowCommon</pfo>
+<excludedjourney>p2p/registration</excludedjourney>
+
+</userjourney>
+<userjourney name="forecasts">
+<pfo>SessionPageFlowForecasts</pfo>
+</userjourney>
+<userjourney name="selectbusiness">
+<pfo>SessionPageFlowSelectBusiness</pfo>
+</userjourney>
+<userjourney name="maintaindirectdebit">
+<pfo>SessionPageFlowMaintainDirectDebit</pfo>
+</userjourney>
+<userjourney name="maintainbulkpaymentbeneficiarylist">
+<excludedjourney>makeamendbulkpayment</excludedjourney>
+<pfo>
+SessionPageFlowMaintainBulkPaymentBeneficiariesList
+</pfo>
+</userjourney>
+<userjourney name="makeamendbulkpayment">
+<excludedjourney>
+mpa/desktop/paymentapproval
+</excludedjourney>
+<pfo>SessionPageFlowMakeAmendBulkPayment</pfo>
+</userjourney>
+<userjourney name="submitforgottenuseridapplication">
+<pfo>SessionPageFlowForgottenUserID</pfo>
+</userjourney>
+<userjourney name="setupstandingorder">
+<excludedjourney>eiaauthentication</excludedjourney>
+<excludedjourney>
+mpa/desktop/paymentapproval
+</excludedjourney>
+<pfo>SessionPageFlowCreateStandingOrder</pfo>
+</userjourney>
+<userjourney name="maintaintransfers">
+<pfo>SessionPageFlowMaintainTransfer</pfo>
+</userjourney>
+<userjourney name="applyorincreasebulkpaymentslimit">
+<pfo>SessionPageFlowApplyOrIncreaseBulkPaymentLimit</pfo>
+</userjourney>
+<userjourney name="applybusinessloan">
+<pfo>SessionPageFlowBusinessLoan</pfo>
+</userjourney>
+<userjourney name="applyforbusinessoverdraft">
+<pfo>SessionPageFlowBusinessOverdraft</pfo>
+</userjourney>
+<userjourney name="applybusinesssavings">
+<excludedjourney>maketransfer</excludedjourney>
+<pfo>SessionPageFlowBusinessSaving</pfo>
+<pfo>SessionMakeTransfer</pfo>
+</userjourney>
+<userjourney name="termdeposit">
+<pfo>SessionPageFlowTermDeposit</pfo>
+</userjourney>
+<userjourney name="viewaccountsummary">
+<pfo>SessionPageFlowAccountSummary</pfo>
+</userjourney>
+<userjourney name="createnewbeneficiary">
+<excludedjourney>makepayment</excludedjourney>
+<excludedjourney>eiaauthentication</excludedjourney>
+<pfo>SessionPageFlowMakePayment</pfo>
+</userjourney>
+<userjourney name="makepayment">
+<excludedjourney>createnewbeneficiary</excludedjourney>
+<excludedjourney>
+mpa/desktop/paymentapproval
+</excludedjourney>
+<excludedjourney>eiaauthentication</excludedjourney>
+<excludedjourney>payments/desktop/p2ppayment</excludedjourney>
+<excludedjourney>viewproductdetails</excludedjourney>
+
+<pfo>SessionPageFlowMakePayment</pfo>
+</userjourney>
+<userjourney name="eiaauthentication">
+<pfo>SessionPageFlowChangePersonalDetails</pfo>
+</userjourney>
+<userjourney name="useradmin/mobile/phoneauthorisation">
+<pfo>SessionPageFlowChangePersonalDetails</pfo>
+</userjourney>
+<userjourney name="spendinganalysis">
+<excludedjourney>managetransactions</excludedjourney>
+<excludedjourney>dashboard</excludedjourney>
+<excludedjourney>calendar</excludedjourney>
+<pfo>SessionPageFlowSpendingAnalysis</pfo>
+</userjourney>
+<userjourney name="managetransactions">
+<excludedjourney>moneymanager</excludedjourney>
+<excludedjourney>spendinganalysis</excludedjourney>
+<excludedjourney>dashboard</excludedjourney>
+<excludedjourney>calendar</excludedjourney>
+<pfo>SessionPageFlowSpendingAnalysis</pfo>
+</userjourney>
+<userjourney name="moneymanager">
+<excludedjourney>managetransactions</excludedjourney>
+<excludedjourney>dashboard</excludedjourney>
+<excludedjourney>calendar</excludedjourney>
+<excludedjourney>spendinganalysis</excludedjourney>
+<excludedjourney>modules</excludedjourney>
+<excludedjourney>spendingalert</excludedjourney>
+<excludedjourney>savinggoals</excludedjourney>
+<excludedjourney>setupstandingorder</excludedjourney>
+<pfo>SessionPageFlowSpendingAnalysis</pfo>
+</userjourney>
+<userjourney name="createpersonalinternationalarrangement">
+<excludedjourney>eiaauthentication</excludedjourney>
+<pfo>SessionPageFlowInternationalPayment</pfo>
+</userjourney>
+<userjourney name="makeinternationalpayment">
+<excludedjourney>
+mpa/desktop/paymentapproval
+</excludedjourney>
+<pfo>SessionPageFlowMakeInternationalPayment</pfo>
+</userjourney>
+<userjourney name="createservicingrequest">
+<pfo>SessionPageFlowServiceRequest</pfo>
+</userjourney>
+<userjourney name="landingpage">
+<pfo>SessionPageFlowLandingPage</pfo>
+</userjourney>
+<userjourney name="payments/desktop/amendregularpayment">
+<pfo>SessionPageFlowAmendRegularPayment</pfo>
+</userjourney>
+<userjourney name="payments/desktop/setupregularpayment">
+<pfo>SessionPageFlowCreateRegularPaymentToInvestments</pfo>
+</userjourney>
+<userjourney name="payments/desktop/lumpsumpayments">
+<pfo>SessionPageFlowLumpSumPaymentToInvestments</pfo>
+</userjourney>
+<userjourney name="payments/desktop/switchinvestmentfunds">
+<pfo>SessionPageFlowSwitchFundsToInvestments</pfo>
+</userjourney>
+<userjourney name="payments/desktop/switchinvestmentfunds">
+<pfo>SessionPageFlowSwitchFundsToInvestments</pfo>
+</userjourney>
+<userjourney name="accountmaint/desktop/debitcardfunding">
+<pfo>SessionPageFlowDebitCardFunding</pfo>
+</userjourney>
+
+<userjourney name="payments/desktop/directdebittocreditcard">
+<pfo>SessionPageFlowDirectDebitToCC</pfo>
+</userjourney>
+
+<userjourney name="mpa/desktop/configurempa">
+<pfo>SessionPageFlowRegisterForMPA</pfo>
+</userjourney>
+<userjourney name="mpa/desktop/paymentapproval">
+<excludedjourney>makepayment</excludedjourney>
+<excludedjourney>
+updatedeletependingpayments
+</excludedjourney>
+<excludedjourney>maintainstandingorders</excludedjourney>
+<excludedjourney>maketransfer</excludedjourney>
+<excludedjourney>makeinternationalpayment</excludedjourney>
+<excludedjourney>setupstandingorder</excludedjourney>
+<excludedjourney>makeamendbulkpayment</excludedjourney>
+<pfo>SessionPageFlowMPAPayment</pfo>
+</userjourney>
+<userjourney name="accountmaint/desktop/closesavingsaccount">
+<pfo>SessionPageFlowCloseSavings</pfo>
+</userjourney>
+
+<userjourney name="accountmaint/desktop/spendingrewards">
+<pfo>SessionPageFlowSpendingRewardsHub</pfo>
+<excludedjourney>accountmaint/desktop/changeinstatementoffersettings
+</excludedjourney>
+</userjourney>
+<userjourney name="p2p/registration">
+<pfo>SessionPageFlowP2PRegristration</pfo>
+<pfo>SessionPageFlowChangePersonalDetails</pfo>
+<pfo>SessionPageFlowMakePayment</pfo>
+<pfo>SessionPageFlowCommon</pfo>
+<pfo>SessionPageFlowBalanceTransfer</pfo>
+<excludedjourney>changepersonaldetails</excludedjourney>
+<excludedjourney>eiaauthentication</excludedjourney>
+<excludedjourney>makepayment</excludedjourney>
+</userjourney>
+<userjourney name="payments/desktop/p2ppayment">
+<pfo>SessionPageFlowPayP2PContact</pfo>
+<pfo>SessionPageFlowCommon</pfo>
+<excludedjourney>eiaauthentication</excludedjourney>
+<excludedjourney>makepayment</excludedjourney>
+<excludedjourney>createnewbeneficiary</excludedjourney>
+</userjourney>
+
+<userjourney name="inbox">
+<pfo>SessionPageFlowInbox</pfo>
+<excludedjourney>managepaperlesspreference</excludedjourney>
+<excludedjourney>maketransfer</excludedjourney>
+<excludedjourney>changepersonaldetails</excludedjourney>
+<excludedjourney>eprivacy</excludedjourney>
+<excludedjourney>accountenquiry/mobile/viewaccountoverview
+</excludedjourney>
+</userjourney>
+<userjourney name="manageonlineappointment/desktop">
+<pfo>SessionPageFlowOnlineAppointmentBooking</pfo>
+</userjourney>
+<userjourney name="creditcardsloyalty">
+<pfo>SessionPageFlowCreditCardsLoyalty</pfo>
+</userjourney>
+<userjourney name="accountenquiry/desktop/viewpendingtransactions">
+<pfo>SessionPageFlowViewPendingTransaction</pfo>
+</userjourney>
+<userjourney name="accountmaint/desktop/maturityinstructions">
+<pfo>SessionPageFlowFTDMaturityInstruction</pfo>
+</userjourney>
+
+<userjourney name="accountenquiry/desktop/viewpendingtransactions">
+<pfo>SessionPageFlowViewPendingTransaction</pfo>
+</userjourney>
+
+<userjourney name="accountmaint/desktop/maturityinstructions">
+<pfo>SessionPageFlowFTDMaturityInstruction</pfo>
+</userjourney>
+<!-- changes for MMR phase1 starts. -->
+<userjourney name="accountmaint/desktop/switchmortgage">
+<pfo>SessionPageFlowSwitchMortgage</pfo>
+</userjourney>
+<!-- changes for Kirk starts. -->
+<userjourney name="accountenquiry/desktop/viewtrueviewbalance">
+<pfo>SessionPageFlowTrueViewBalance</pfo>
+</userjourney>
+<!-- changes for MMR phase1 ends. -->
+<!-- P2P Changes Begins -->
+<userjourney name="p2p/registration">
+<pfo>SessionPageFlowP2PRegristration</pfo>
+<pfo>SessionPageFlowChangePersonalDetails</pfo>
+<pfo>SessionPageFlowMakePayment</pfo>
+<pfo>SessionPageFlowCommon</pfo>
+<pfo>SessionPageFlowBalanceTransfer</pfo>
+<excludedjourney>changepersonaldetails</excludedjourney>
+<excludedjourney>eiaauthentication</excludedjourney>
+<excludedjourney>makepayment</excludedjourney>
+</userjourney>
+<userjourney name="payments/desktop/p2ppayment">
+<pfo>SessionPageFlowPayP2PContact</pfo>
+<pfo>SessionPageFlowCommon</pfo>
+<excludedjourney>eiaauthentication</excludedjourney>
+<excludedjourney>makepayment</excludedjourney>
+<excludedjourney>createnewbeneficiary</excludedjourney>
+</userjourney>
+<!-- P2P Changes Ends -->
+<userjourney name="accountmaint/desktop/lostandstolencards">
+<pfo>SessionPageFlowLostandStolenCards</pfo>
+</userjourney>
+<userjourney name="payments/mobile/standingorderdirectdebit">
+<pfo>SessionPageFlowMaintainDirectDebit</pfo>
+<pfo>SessionPageFlowMaintainStandingOrders</pfo>
+<excludedjourney>maintaindirectdebit/mobile/DD</excludedjourney>
+<excludedjourney>maintainstandingorders/mobile</excludedjourney>
+<excludedjourney>setupstandingorder/mobile</excludedjourney>
+<excludedjourney>common/mobile</excludedjourney>
+<excludedjourney>useradmin/mobile/phoneauthorisation
+</excludedjourney>
+</userjourney>
+<userjourney name="customermaint/desktop/travelflag">
+<pfo>SessionPageFlowTravelFlag</pfo>
+</userjourney>
+<userjourney name="applycarloan/desktop">
+<pfo>SessionPageFlowApplyForCarLoan</pfo>
+</userjourney>
+</userjourneypfos>
+</sessionviewstate>

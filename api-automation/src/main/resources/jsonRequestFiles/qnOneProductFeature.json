@@ -1,0 +1,30 @@
+{
+  "arrangementId" : "123456",
+  "arrangementType": "CA",
+  "applicationType": "10001",
+  "channelCode": "001",
+  "subChannelCode": "004",
+  "communicationKey": "100044",
+  "communicationValue": "IN",
+  "customerIdentifier": "830797854",
+  "customerType": "1001",
+  "partyRole": "0001",
+  "product": {
+    "productIdentifier": "3002",
+    "productName": "Ultimate Reward Current Account",
+    "productOptions": [
+       
+          {
+            "optionType": "HECP",
+            "optionValue": "Y"
+          }
+          
+    ],
+    "productRelatedOption": [
+      {
+        "relatedOptionsIdentifier": "UQ8",
+        "relatedOptionsValue": "N"
+      }
+    ]
+  }
+}

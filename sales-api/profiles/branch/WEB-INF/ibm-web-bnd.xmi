@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<webappbnd:WebAppBinding xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:webappbnd="webappbnd.xmi" xmi:id="WebAppBinding_1268369658555" virtualHostName="default_host">
+  <webapp href="WEB-INF/web.xml#WebApp_ID"/>
+   <resRefBindings xmi:id="ResourceRefBinding_1250005230266" jndiName="jdbc/managementData">
+    <bindingResourceRef href="WEB-INF/web.xml#ResourceRef_1250005230266"/>
+  </resRefBindings>
+  <resRefBindings xmi:id="ResourceRefBinding_111" jndiName="jdbc/mmdb">
+    <bindingResourceRef href="WEB-INF/web.xml#ResourceRef_111"/>
+  </resRefBindings>
+  <resRefBindings xmi:id="ResourceRefBinding_1250005230337" jndiName="wm/ibManagementTimerWorkManager">
+    <bindingResourceRef href="WEB-INF/web.xml#ResourceRef_1250005230337"/>
+  </resRefBindings>
+  
+     <resRefBindings xmi:id="ResourceRefBinding_1249958355413" jndiName="wm/ibSchedulerServiceWorkManager">
+    <bindingResourceRef href="WEB-INF/web.xml#ResourceRef_1249958355413"/>
+  </resRefBindings>
+  <resRefBindings xmi:id="ResourceRefBinding_1231348814375" jndiName="jdbc/ibData">
+    <bindingResourceRef href="WEB-INF/web.xml#ResourceRef_1231348814375"/>
+  </resRefBindings>
+   
+  <resRefBindings xmi:id="ResourceRefBinding_1240251066824" jndiName="wm/ibApplicationTimerWorkManager">
+    <bindingResourceRef href="WEB-INF/web.xml#ResourceRef_1240251066824"/>
+  </resRefBindings>
+ 
+  <resRefBindings xmi:id="ResourceRefBinding_1250005230338" jndiName="endpoints/BAPIWS">
+    <bindingResourceRef href="WEB-INF/web.xml#ResourceRef_1250005230338"/>
+  </resRefBindings>
+
+  <resRefBindings xmi:id="ResourceRefBinding_1250005230345" jndiName="endpoints/ClassifyInvolvedPartySALSAWS">
+    <bindingResourceRef href="WEB-INF/web.xml#ResourceRef_1250005230345"/>
+  </resRefBindings> 
+  <resRefBindings xmi:id="ResourceRefBinding_1250005230350" jndiName="endpoints/ThreatMatrixWS">
+    <bindingResourceRef href="WEB-INF/web.xml#ResourceRef_1250005230350"/>
+  </resRefBindings>
+
+  <resRefBindings xmi:id="ResourceRefBinding_1250005230351" jndiName="endpoints/RecordArrangementWS">
+    <bindingResourceRef href="WEB-INF/web.xml#ResourceRef_1250005230351"/>
+  </resRefBindings>
+  <resRefBindings xmi:id="ResourceRefBinding_1250005230352" jndiName="endpoints/ActivateProductSalsaPCAWS">
+    <bindingResourceRef href="WEB-INF/web.xml#ResourceRef_1250005230352"/>
+  </resRefBindings>
+  <resRefBindings xmi:id="ResourceRefBinding_1250005230353" jndiName="endpoints/RetrieveProductSalsaPCAWS">
+    <bindingResourceRef href="WEB-INF/web.xml#ResourceRef_1250005230353"/>
+  </resRefBindings>
+  <resRefBindings xmi:id="ResourceRefBinding_1250005230354" jndiName="endpoints/EligibilitySalsaPCAWS">
+    <bindingResourceRef href="WEB-INF/web.xml#ResourceRef_1250005230354"/>
+  </resRefBindings>
+  <resRefBindings xmi:id="ResourceRefBinding_1250005230355" jndiName="endpoints/PromotionalCustomerInstructionsSalsaPCAWS">
+    <bindingResourceRef href="WEB-INF/web.xml#ResourceRef_1250005230355"/>
+  </resRefBindings>
+  
+  <resRefBindings xmi:id="ResourceRefBinding_1250005230356" jndiName="endpoints/OfferProductSalsaPCAWS">
+    <bindingResourceRef href="WEB-INF/web.xml#ResourceRef_1250005230356"/>
+  </resRefBindings>
+  
+    <resRefBindings xmi:id="ResourceRefBinding_1250005230358" jndiName="endpoints/OfferProductWS">
+    <bindingResourceRef href="WEB-INF/web.xml#ResourceRef_1250005230358"/>
+  </resRefBindings>
+    <resRefBindings xmi:id="ResourceRefBinding_1250005230359" jndiName="endpoints/ActivateProductWS">
+    <bindingResourceRef href="WEB-INF/web.xml#ResourceRef_1250005230359"/>
+  </resRefBindings>
+
+   <resRefBindings xmi:id="ResourceRefBinding_1250005230398" jndiName="endpoints/ProductHoldingCFWS">
+    <bindingResourceRef href="WEB-INF/web.xml#ResourceRefBinding_1250005230398"/>
+  </resRefBindings>
+  <resRefBindings xmi:id="ResourceRefBinding_1250005230399" jndiName="endpoints/InvolvedPartyAuthorisation_PTWS">
+    <bindingResourceRef href="WEB-INF/web.xml#ResourceRefBinding_1250005230399"/>
+  </resRefBindings>
+   <resRefBindings xmi:id="ResourceRefBinding_1250005230397" jndiName="endpoints/InvolvedPartyManagement_PTWS">
+    <bindingResourceRef href="WEB-INF/web.xml#ResourceRefBinding_1250005230397"/>
+  </resRefBindings>
+  
+  <!--Docupload bindings-->
+  <resRefBindings xmi:id="ResourceRefBinding_1250005230401" jndiName="endpoints/CreateCaseV2PCA">
+    <bindingResourceRef href="WEB-INF/web.xml#ResourceRefBinding_1250005230401"/>
+  </resRefBindings>
+  <resRefBindings xmi:id="ResourceRefBinding_1250005230400" jndiName="endpoints/CreateDocumentationPCA">
+    <bindingResourceRef href="WEB-INF/web.xml#ResourceRefBinding_1250005230400"/>
+  </resRefBindings>
+    <resRefBindings xmi:id="ResourceRefBinding_1250005230402" jndiName="endpoints/RetrieveDocUploadRefDataForProcessV2">
+    <bindingResourceRef href="WEB-INF/web.xml#ResourceRefBinding_1250005230402"/>
+  </resRefBindings>
+  <resRefBindings xmi:id="ResourceRefBinding_1250005230403" jndiName="endpoints/UpdateCasePCA">
+    <bindingResourceRef href="WEB-INF/web.xml#ResourceRefBinding_1250005230403"/>
+  </resRefBindings>
+  
+   <resRefBindings xmi:id="ResourceRefBinding_1250005230404" jndiName="endpoints/RetrieveDocumentationPCA">
+    <bindingResourceRef href="WEB-INF/web.xml#ResourceRefBinding_1250005230404"/>
+  </resRefBindings>
+  
+   <resRefBindings xmi:id="ResourceRefBinding_1250005230329" jndiName="endpoints/RetrieveProductArrangementWS">
+    <bindingResourceRef href="WEB-INF/web.xml#ResourceRefBinding_1250005230329"/>
+  </resRefBindings>
+
+	<resRefBindings xmi:id="ResourceRef_1250005230357" jndiName="endpoints/FO75KYCDetailsWS">
+      <bindingResourceRef href="WEB-INF/web.xml#ResourceRef_1250005230357"/>
+  </resRefBindings>
+  <resRefBindings xmi:id="ResourceRefBinding_1250005230396" jndiName="endpoints/BankWizardSALSA">
+    <bindingResourceRef href="WEB-INF/web.xml#ResourceRefBinding_1250005230396"/>
+  </resRefBindings>
+   <resRefBindings xmi:id="ResourceRefBinding_1250005230440" jndiName="endpoints/InvolvedPartyAuthorisationFS">
+   <bindingResourceRef href="WEB-INF/web.xml#ResourceRefBinding_1250005230440"/>
+  </resRefBindings>
+  <resRefBindings xmi:id="ResourceRefBinding_1250005230397" jndiName="endpoints/InvolvedPartyManagementServicing">
+    <bindingResourceRef href="WEB-INF/web.xml#ResourceRefBinding_1250005230441"/>
+  </resRefBindings>
+  
+  <resRefBindings xmi:id="ResourceRef_1250005230413999" jndiName="endpoints/CommunicationManagementsSALSAWS">
+      <bindingResourceRef href="WEB-INF/web.xml#ResourceRef_1250005230413999"/>
+  </resRefBindings>
+  <resRefBindings xmi:id="ResourceRef_1250005230415" jndiName="endpoints/RetrievePartyDetailsPCA">
+        <bindingResourceRef href="WEB-INF/web.xml#ResourceRef_1250005230415"/>
+  </resRefBindings>
+  <resRefBindings xmi:id="ResourceRef_125000525641400" jndiName="endpoints/CommunicationDispatchComms">
+      <bindingResourceRef href="WEB-INF/web.xml#ResourceRef_125000525641400"/>
+  </resRefBindings>
+  <resRefBindings xmi:id="ResourceRef_1250005230408" jndiName="endpoints/Q226WS">
+      <bindingResourceRef href="WEB-INF/web.xml#ResourceRef_1250005230408"/>
+  </resRefBindings>
+
+  <resRefBindings xmi:id="ResourceRef_125000525641401" jndiName="endpoints/ConvertAccountCBS">
+      <bindingResourceRef href="WEB-INF/web.xml#ResourceRef_125000525641401"/>
+  </resRefBindings>
+  <resRefBindings xmi:id="ResourceRef_125000525641402" jndiName="endpoints/CreditAssessment">
+      <bindingResourceRef href="WEB-INF/web.xml#ResourceRef_125000525641402"/>
+  </resRefBindings>
+
+  <resRefBindings xmi:id="ResourceRef_125000525641403" jndiName="endpoints/G542">
+      <bindingResourceRef href="WEB-INF/web.xml#ResourceRef_125000525641403"/>
+  </resRefBindings>
+
+   <resRefBindings xmi:id="ResourceRef_125000525641551" jndiName="endpoints/LifeStyleBenfitsGR">
+      <bindingResourceRef href="WEB-INF/web.xml#ResourceRef_125000525641551"/>
+  </resRefBindings>
+  <resRefBindings xmi:id="ResourceRef_1250005230410" jndiName="endpoints/PEGAService">
+        <bindingResourceRef href="WEB-INF/web.xml#ResourceRef_1250005230410"/>
+  </resRefBindings>
+
+   <resRefBindings xmi:id="ResourceRef_1250005230411" jndiName="endpoints/E632">
+      <bindingResourceRef href="WEB-INF/web.xml#ResourceRef_1250005230411"/>
+  </resRefBindings>
+  
+   <resRefBindings xmi:id="ResourceRef_1250005230412" jndiName="endpoints/CMASCardOrder">
+      <bindingResourceRef href="WEB-INF/web.xml#ResourceRef_1250005230412"/>
+  </resRefBindings>
+
+  <resRefBindings xmi:id="ResourceRef_1250005230416" jndiName="endpoints/DocumentManagerService_SOA_WS">
+      <bindingResourceRef href="WEB-INF/web.xml#ResourceRef_1250005230416"/>
+    </resRefBindings>
+    <resRefBindings xmi:id="ResourceRefBinding_125000523040399" jndiName="endpoints/SearchCasePCA">
+       <bindingResourceRef href="WEB-INF/web.xml#ResourceRefBinding_125000523040399"/>
+  </resRefBindings>
+  <resRefBindings xmi:id="ResourceRefBinding_125000523040400" jndiName="endpoints/GenerateDocumentSALSA">
+             <bindingResourceRef href="WEB-INF/web.xml#ResourceRefBinding_125000523040400"/>
+  </resRefBindings>
+  <resRefBindings xmi:id="ResourceRefBinding_125000523040401" jndiName="endpoints/C078">
+               <bindingResourceRef href="WEB-INF/web.xml#ResourceRefBinding_125000523040401"/>
+  </resRefBindings>
+  <resRefBindings xmi:id="ResourceRefBinding_125000523040799" jndiName="endpoints/TerminateArrangementPCA">
+    <bindingResourceRef href="WEB-INF/web.xml#ResourceRefBinding_125000523040799"/>
+  </resRefBindings>
+  
+  <resRefBindings xmi:id="ResourceRefBinding_125000523040800" jndiName="endpoints/E160">
+    <bindingResourceRef href="WEB-INF/web.xml#ResourceRefBinding_125000523040800"/>
+  </resRefBindings>
+  
+  <resRefBindings xmi:id="ResourceRefBinding_125000523040801" jndiName="endpoints/E169">
+    <bindingResourceRef href="WEB-INF/web.xml#ResourceRefBinding_125000523040801"/>
+  </resRefBindings>
+  
+  <resRefBindings xmi:id="ResourceRefBinding_125000523040802" jndiName="endpoints/E170">
+    <bindingResourceRef href="WEB-INF/web.xml#ResourceRefBinding_125000523040802"/>
+  </resRefBindings>
+  
+  <resRefBindings xmi:id="ResourceRefBinding_125000523040803" jndiName="endpoints/Q122">
+    <bindingResourceRef href="WEB-INF/web.xml#ResourceRefBinding_125000523040803"/>
+  </resRefBindings>
+  
+  <resRefBindings xmi:id="ResourceRefBinding_125000523040804" jndiName="endpoints/E588">
+    <bindingResourceRef href="WEB-INF/web.xml#ResourceRefBinding_125000523040804"/>
+  </resRefBindings>
+  
+</webappbnd:WebAppBinding>

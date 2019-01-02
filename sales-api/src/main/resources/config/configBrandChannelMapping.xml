@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!DOCTYPE Root SYSTEM "./config.dtd">
+<root>
+    <section>PRODUCT_BRAND
+        <tag>
+        LLOYDS             
+        <value>IBL</value>	
+        </tag>
+         <tag>
+        HALIFAX
+        <value>IBH</value>		
+         </tag>
+        <tag>
+        BOS
+         <value>IBS</value>		
+         </tag>
+         <tag>
+        VERDE
+        <value>IBV</value>
+        </tag>
+     </section>
+     <section>BRAND_NAME_MAPPING
+        <tag>
+        IBL
+        <value>LTB</value>
+        </tag>
+         <tag>
+        IBH
+        <value>HAL</value>
+         </tag>
+        <tag>
+        IBS
+         <value>BOS</value>
+         </tag>
+         <tag>
+        IBV
+        <value>TSB</value>
+        </tag>
+     </section>
+    <section>BRAND_CODE_MAPPING
+        <tag>
+            LTB
+            <value>106</value>
+        </tag>
+        <tag>
+            HAL
+            <value>107</value>
+        </tag>
+        <tag>
+            BOS
+            <value>108</value>
+        </tag>
+    </section>
+</root>
+

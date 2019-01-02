@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+<section>
+		DatabaseQuery
+		
+		
+		<tag>
+			Retrieve_Tier1_Spendsummary
+			<value>
+				{call GLXY_MNY1_OWNER.OMM_APPS_PKG.PROC_TIER1_SPEND_SUMMARY(?,?,?,?)}			
+			</value>
+		</tag>
+		<tag>
+			ACTIVATION_PROCEDURE
+			<value>
+				{call GLXY_MNY1_OWNER.OMM_APPS_PKG.Proc_Tier2_Requests(?,?)}
+			</value>
+		</tag>		
+		<tag>
+			UpdatePartyDetails
+			<value>
+				{call GLXY_MNY1_OWNER.OMM_APPS_PKG.PROC_UPDATE_PARTY_DETAILS(?,?,?,?,?,?,?,?,?,?,?,?)}
+			</value>
+		</tag>		
+		<tag>
+			Retrieve_Party
+			<value>
+				{call GLXY_MNY1_OWNER.OMM_APPS_PKG.PROC_RETRIEVE_PARTY(?,?,?,?,?,?,?,?,?,?)}
+			</value>
+		</tag>						
+		<tag>
+		    EligibleMessages
+		    <value>  
+		    {call GLXY_MNY1_OWNER.OMM_APPS_PKG.PROC_ELIGIBLE_MSG(?,?,?)}
+		    </value>
+		</tag>
+		<tag>
+		    RetrieveArrangements
+		    <value>  
+		    {call GLXY_MNY1_OWNER.OMM_APPS_PKG.PROC_RETRIEVE_ARNGMNT(?,?,?)}
+		    </value>
+		</tag>
+		<tag>
+			Record_Messages
+			<value>
+				{call GLXY_MNY1_OWNER.OMM_APPS_PKG.Proc_Update_Messages(?,?,?)}
+			</value>
+		</tag>
+		<tag>
+			RetrieveBudgetDetails
+			<value>
+				{call GLXY_MNY1_OWNER.OMM_APPS_PKG.proc_retrieve_spnd_alerts(?,?,?,?,?,?,?,?,?,?)}
+			</value>
+		</tag>
+		<tag>
+			RetrieveGoalDetails
+			<value>
+				{call GLXY_MNY1_OWNER.OMM_APPS_PKG.proc_retrieve_svngs_goal(?,?,?,?,?,?,?)}
+			</value>
+		</tag>
+		<tag>
+			RecordBudgetDetails
+			<value>
+				{call GLXY_MNY1_OWNER.OMM_APPS_PKG.PROC_UPD_SPND_ALERTS(?,?,?,?,?,?)}				
+			</value>
+		</tag>
+		<tag>
+			UpdateGoalDetails
+			<value>
+				{call GLXY_MNY1_OWNER.OMM_APPS_PKG.PROC_UPD_SAVINGS_GOAL(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}				
+			</value>
+		</tag>
+		
+		<tag>
+			UpdateSODetails
+			<value>
+				{call GLXY_MNY1_OWNER.OMM_APPS_PKG.PROC_UPD_STANDING_ORDER(?,?,?,?,?,?,?,?,?,?,?,?,?,?)}				
+			</value>
+		</tag>
+		<tag>
+			UpdateMultipleGoals
+			<value>
+				{call GLXY_MNY1_OWNER.OMM_APPS_PKG.PROC_UPD_GOAL_AMT(?,?,?,?,?)}
+			</value>
+		</tag>
+		<tag>
+			UpdateMultipleGoals_GOAL_ETY_TBL
+			<value>
+				GLXY_MNY1_OWNER.GOAL_ETY_TBL
+			</value>
+		</tag>
+		<tag>
+			RetrieveBudgetDetails_SA_ETY_TBL
+			<value>
+				GLXY_MNY1_OWNER.SA_ETY_TBL
+			</value>
+		</tag>
+		<tag>
+			RetrieveGoals_SVNG_GOAL_ETY_TBL
+			<value>
+				GLXY_MNY1_OWNER.SVNG_GOAL_ETY_TBL
+			</value>
+		</tag>
+		
+		<tag>
+			RetrieveGoalAgreement_SG_AGR_ETY_TBL
+			<value>
+				GLXY_MNY1_OWNER.SG_AGR_ETY_TBL
+			</value>
+		</tag>
+		
+		<tag>
+			Tier1_Spend_Summary_TIER1_SPNT_ETY_TBL
+			<value>
+				GLXY_MNY1_OWNER.TIER1_SPNT_ETY_TBL
+			</value>
+		</tag>		
+		<tag>
+		    EligibleMessages_ELG_MSG_ETY_TBL
+		    <value>  
+		    GLXY_MNY1_OWNER.ELG_MSG_ETY_TBL
+		    </value>
+		</tag>
+		<tag>
+		    RetrieveArrangements_ARNGMNT_EVE_ETY_TBL
+		    <value>  
+		    GLXY_MNY1_OWNER.ARNGMNT_EVE_ETY_TBL
+		    </value>
+		</tag>
+		<tag>
+			Record_Messages_MSG_DTL_TYPE
+			<value>
+				GLXY_MNY1_OWNER.MSG_DTLS_ETY_TBL
+			</value>
+		</tag>
+		<tag>
+			Retrieve_Arrangement_ARNGMNT_ETY_TBL
+			<value>
+				GLXY_MNY1_OWNER.ARNGMNT_ETY_TBL
+			</value>
+		</tag>
+		<tag>
+			Retrieve_Categories_CATEGORY_ETY_TBL
+			<value>
+				GLXY_MNY1_OWNER.CATEGORY_ETY_TBL
+			</value>
+		</tag>
+		<tag>
+			Retrieve_Events_EVT_TRN_ETY_TBL
+			<value>
+				GLXY_MNY1_OWNER.EVT_TRN_ETY_TBL
+			</value>
+		</tag>
+		
+		<tag>
+			Retrieve_Splits_SPLIT_TYPE_ETY_TBL
+			<value>
+				GLXY_MNY1_OWNER.SPLIT_TYPE_ETY_TBL
+			</value>
+		</tag>		
+		<tag>
+			Retrieve_Splits_SPLIT_ETY_TBL
+			<value>
+				GLXY_MNY1_OWNER.SPLIT_ETY_TBL
+			</value>
+		</tag>
+		
+		<tag>
+			Retrieve_Schedules_REGULARPAYMENTS_ETY_TBL
+			<value>
+				GLXY_MNY1_OWNER.REGULARPAYMENTS_ETY_TBL
+			</value>
+		</tag>
+		<tag>
+			Retrieve_Schedules_ARNGMNT_START_DT_ETY_TBL
+			<value>
+				GLXY_MNY1_OWNER.ARNGMNT_START_DT_ETY_TBL
+			</value>
+		</tag>
+		<tag>
+			Retrieve_Transactions_TRN_ETY_TBL
+			<value>
+				GLXY_MNY1_OWNER.TRN_ETY_TBL
+			</value>
+		</tag>
+		<tag>
+			Spending_Analysis_Yearly_Spent_ETY_TBL
+			<value>
+				GLXY_MNY1_OWNER.YEARLY_SPENT_ETY_TBL
+			</value>
+		</tag>
+		<tag>
+			Spending_Analysis_Yearly_Spent_Ctgry_ETY_TBL
+			<value>
+				GLXY_MNY1_OWNER.YEARLY_SPENT_CTGRY_ETY_TBL
+			</value>
+		</tag>
+		<tag>
+			retrieveSpendingAnalysisDetails
+			<value>
+				{call GLXY_MNY1_OWNER.OMM_APPS_PKG.Proc_Spend_Summary(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}
+			</value>
+		</tag>
+		<tag>
+			retrieveSpendingAnalysisDetailsAlphaDrop3
+			<value>
+				{call GLXY_MNY1_OWNER.OMM_APPS_PKG.proc_spend_summary_alpha_drp3(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}
+			</value>
+		</tag>
+		<tag>
+			retrievePieChartDetails
+			<value>
+				{call GLXY_MNY1_OWNER.OMM_APPS_PKG.PROC_TIER2_SPEND_SUMMARY_AOV(?,?,?,?,?,?,?,?,?,?,?)}
+			</value>
+		</tag>
+		<tag>
+			retrieveCategories
+			<value>
+				{call GLXY_MNY1_OWNER.OMM_APPS_PKG.Proc_Retrieve_Categories(?,?,?,?,?,?,?,?,?)}
+			</value>
+		</tag>
+		<tag>
+			retrieveTransactions
+			<value>
+				{call GLXY_MNY1_OWNER.OMM_APPS_PKG.Proc_View_Transactions(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}
+			</value>
+		</tag>
+		<tag>
+			SystemDeleteIndicator
+			<value>
+				{call GLXY_MNY1_OWNER.OMM_APPS_PKG.Proc_Update_SystemDeletedInd(?,?,?)}
+			</value>
+		</tag>
+		  <tag>
+			CategorizeTransaction
+			<value>
+				{call GLXY_MNY1_OWNER.OMM_APPS_PKG.Proc_Categorize_Transaction(?,?,?,?,?,?,?,?)}
+			</value>
+		</tag>
+		
+		<tag>
+			SplitTransaction
+			<value>
+				{call GLXY_MNY1_OWNER.OMM_APPS_PKG.Proc_Split_Transaction(?,?,?,?,?)}
+			</value>
+		</tag>
+		
+		<tag>
+			retrieveSchedules
+			<value>
+				{call GLXY_MNY1_OWNER.OMM_APPS_PKG.Proc_Retrieve_RegularPayments(?,?,?,?,?)}
+			</value>
+		</tag>
+		<tag>
+			updateSchedule
+			<value>
+				{call GLXY_MNY1_OWNER.OMM_APPS_PKG.Proc_Update_UserReglrPmts(?,?,?,?,?,?,?,?,?,?,?,?,?)}
+			</value>
+		</tag>
+		<tag>
+			RetrieveCategoriesAverages
+			<value>
+				{call GLXY_MNY1_OWNER.OMM_APPS_PKG.proc_retrieve_category_avg(?,?,?,?,?,?,?,?,?,?,?,?)}
+			</value>
+		</tag>
+	</section>
+	
+	<section>
+		Timeout
+		<tag>
+			default
+			<value>
+				10
+			</value>
+		</tag>
+		<tag>
+			Retrieve_Tier1_Spendsummary
+			<value>
+				10
+			</value>
+		</tag>
+		<tag>
+			ACTIVATION_PROCEDURE
+			<value>
+				10
+			</value>
+		</tag>
+		<tag>
+			UpdatePartyDetails
+			<value>
+				10
+			</value>
+		</tag>
+		
+		<tag>
+			Retrieve_Party
+			<value>
+				10
+			</value>
+		</tag>
+		<tag>
+			EligibleMessages
+			<value>
+				10
+			</value>
+		</tag>
+		<tag>
+		    RetrieveArrangements
+		    	<value>
+				10	
+		    	</value>
+		</tag>
+		<tag>
+			Record_Messages
+			<value>
+				10
+			</value>
+		</tag>
+
+		<tag>
+			retrieveSpendingAnalysisDetails
+			<value>
+				20
+			</value>
+		</tag>
+		<tag>
+			retrieveSpendingAnalysisDetailsAlphaDrop3
+			<value>
+				20
+			</value>
+		</tag>	
+		<tag>
+			retrievePieChartDetails
+			<value>
+				20
+			</value>
+		</tag>				
+		<tag>
+			retrieveCategories
+			<value>
+				20
+			</value>
+		</tag>
+		<tag>
+			retrieveTransactions
+			<value>
+				20
+			</value>
+		</tag>
+		<tag>
+			SystemDeleteIndicator
+			<value>
+				10
+			</value>
+		</tag>
+		  <tag>
+			CategorizeTransaction
+			<value>
+				10
+			</value>
+		</tag>
+		<tag>
+			SplitTransaction
+			<value>
+				10
+			</value>
+		</tag>
+		<tag>
+			retrieveSchedules
+			<value>
+				10
+			</value>
+		</tag>
+		<tag>
+			updateSchedule
+			<value>
+				10
+			</value>
+		</tag>
+		<tag>
+			RetrieveBudgetDetails
+			<value>
+				10
+			</value>
+		</tag>
+		
+		<tag>
+			RetrieveGoalDetails
+			<value>
+				10
+			</value>
+		</tag>
+		<tag>
+			RecordBudgetDetails
+			<value>
+				10
+			</value>
+		</tag>
+		<tag>
+			RetrieveCategoriesAverages
+			<value>
+				10
+			</value>
+		</tag>
+		<tag>
+			UpdateGoalDetails
+			<value>
+				10
+			</value>
+		</tag>
+		<tag>
+			UpdateMultipleGoals
+			<value>
+				10
+			</value>
+		</tag>	
+		
+		<tag>
+			UpdateSODetails
+			<value>
+				10
+			</value>
+		</tag>
+		
+									
+	</section>
+	
+	<section>
+		Oracle
+		<tag>
+			1013
+			<value>
+				OMM Error:Database not responding
+			</value>
+		</tag>
+		<tag>
+			17016
+			<value>
+				OMM Error:Database not responding
+			</value>
+		</tag>
+		<tag>
+			17126
+			<value>
+				OMM Error:Database not responding
+			</value>
+		</tag>		
+	</section>
+	
+</root>

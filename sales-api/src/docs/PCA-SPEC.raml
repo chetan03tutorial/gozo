@@ -1,0 +1,1009 @@
+#%RAML 0.8
+---
+title: SALES-PCA-API
+baseUri: <ul><li>http://api-lloyds-api.lbg.eu-gb.mybluemix.net/sales-pca-api</li><li>http://api-halifax-api.lbg.eu-gb.mybluemix.net/sales-pca-api</li><li>http://api-bos-api.lbg.eu-gb.mybluemix.net/sales-pca-api</li></ul>
+version: "1.0"
+protocols: [HTTP]
+mediaType: application/json
+       
+/product/features/{urlidentifier}:
+  description: retrieve product features
+  get:
+    description: To fetch the product features associated to the product, the url identifier in parameter will be used to perform lookup in DB to get the associated product details.<ul><li>Pre-Condition-This service will be called before loading of the Personal Details Page as the response will guide showing of fields that are applicable to specific product.</li><li>Post-Condition-As response the features associated to the product will be fetched and will enable showing associated fields like OD. Also the Session cookie will be inserted as part of response.</li></ul>
+        #urlidentifier:
+        #required: true
+        #type: string
+        #description: Unique identifier associated to the product, using which help to associate the unique product
+        #example: epca#Lloyds
+    responses: 
+      200:
+        body:
+            application/json:
+              schema: Features
+              example: |
+                {
+                  "product":{
+                              name: "epca",
+                              mnemonic: "P_ESAVER",  
+                               conditions: [{ 
+                               {"IPF":"A"},
+                                {"CRD":"0"}
+                                }]
+                            },
+                  "deviceID":{
+                                "server":"https://check2.lloydsbank.co.uk",
+                                "org":"g17j1ysn",
+                                "id":"w4em"  
+                              }            
+                }
+      400:
+          description: BAD Request/Business Error
+          body:
+            application/json:
+             schema: Error   
+
+
+/products/features/UID/eligibleCustomerInstructions:
+   description: Determine Eligibility Customer Instructions
+   post:
+    description: This service validates the eligibility of the product for the given customer.
+    body: 
+       application/json:
+          schema: OfferArrangement
+          example: | 
+                    {
+                      "primaryInvolvedParty":{
+                                         	"intendSwitch":"No",
+                                         	"intendOverDraft":"false",
+                                         	"intendOdAmount":"",
+                                         	"title":"Mr",
+                                         	"firstName":"Sunny",
+                                            "middleName":"",
+                                            "lastName":"Mittal",
+                                            "dob": "1945-01-01",
+                                            "gender": "001",
+                                            "currentAddress":{
+                                                              "durationOfStay": "0505",
+                                                              "isPAFFormat": "true",
+                                                              "isBFPOAddress": "false",
+                                                              "unstructuredAddress":{
+                                                                                     "addressLine1": "2",
+                                                                                     "addressLine2": "Egremont",
+                                                                                     "addressLine3": "23",
+                                                                                     "addressLine4": "Medals Way",
+                                                                                     "addressLine5": "East Village",
+                                                                                     "addressLine6": "London",
+                                                                                     "addressLine7": "UK",
+                                                                                     "postcode": "EC1Y4XX",
+                                                                                     "deliveryPointSuffix": "1A"
+                                                                                     }
+                                                            },
+                                            "maritalStatus": "001",
+                                            "residentialStatus": "006",
+                                            "numberOfDependents": "2",
+                                            "fundSource": "3",
+                                            "purpose": "SPORI",
+                                            "mobileNumber":{
+                                                            "countryCode": "44",
+                                                            "areaCode": null,
+                                                            "number": "7466746674",
+                                                            "extNumber": null
+                                                           },
+                                            "workPhone": null,
+                                            "homePhone": null,
+                                            "email": "a@a.com",
+                                            "marketPrefPhone": "true",
+                                            "marketPrefEmail": "true",
+                                            "marketPrefText": "true",
+                                            "marketPrefPost": "true",
+                                            "ukArrivalDate": null,
+                                            "visaExpiryDate": null,
+                                            "ilrStatus": null,
+                                            "income": "1000",
+                                            "employmentStatus": "006",
+                                            "occupnType": null,
+                                            "employer": null,
+                                            "rentMortgCost": "100",
+                                            "maintnCost": "100",
+                                            "pcaAmount": "100",
+                                            "prevBankYear": null,
+                                            "prevBankMonth": null,
+                                            "birthCity": null,
+                                            "exptdMntlyDepAmt": "100",
+                                            "tinDetails": {
+                                                           "birthCountry": "GBR",
+                                                           "nationalities":["GBR"],
+                                                           "taxResidencies":[{
+                                                                             "taxResidency": "GBR"
+                                                                              }
+                                                                            ]
+                                                           }
+
+                                },
+                       "arrangementType": "SA",
+                       "mnemonic": ["P_REWARD"]
+                    }  
+    responses:
+        200:
+          description: Success Response
+          body:
+            application/json:
+              schema: ProductArrangement
+        400:
+          description: BAD Request/Business Error
+          body:
+            application/json:
+              schema: null   
+   
+/questionnaire/record:
+   description: Record Arrangement Questionnaire
+   post:
+    description: This service is used to record the user inputs selected under ICOBS questionnaries.
+    body: 
+       application/json:
+          schema: QuestionnaireBeanRequest
+          example: | 
+              {
+                "arrangementId": "123456",
+                "arrangementType": "CA",
+                "applicationType": "10001",
+                "channelCode": "001",
+                "subChannelCode": "004",
+                "communicationKey": "100044",
+                "communicationValue": "IN",
+                "customerIdentifier": "830797854",
+                "customerType": "1001",
+                "partyRole": "0001",
+                "product":{
+                           "productIdentifier": "3002",
+                           "productName": "Ultimate Reward Current Account",
+                           "productOptions":[{
+                                               "optionType": "WWTI",
+                                               "optionValue": "Y",
+                                               "productRelatedOptions":[{
+                                                                          "relatedOptionsIdentifier": "UQ1",
+                                                                          "relatedOptionsValue": "N"
+                                                                        }, 
+                                                                        {
+                                                                          "relatedOptionsIdentifier": "UQ2",
+                                                                          "relatedOptionsValue": "N"
+                                                                        }, 
+                                                                        {
+                                                                          "relatedOptionsIdentifier": "UQ6",
+                                                                          "relatedOptionsValue": "N"
+                                                                        }
+                                                                        ]
+                                              }, 
+                                              {
+                                                "optionType": "MOPI",
+                                                "optionValue": "Y"
+                                              },
+                                              {
+                                                "optionType": "AAUR",
+                                                "optionValue": "Y"
+                                              },
+                                              {
+                                                 "optionType": "HECP",
+                                                 "optionValue": "Y"
+                                              }
+                                            ],
+              "productRelatedOption":[{
+                                       "relatedOptionsIdentifier": "UQ8",
+                                       "relatedOptionsValue": "N"
+                                    }]
+                        }
+                    }      
+    responses:
+        200:
+          body:
+            application/json:
+              schema: ResultCondition             
+        400: #BAD Request/Business Error
+          body:
+            application/json:
+              schema: Error
+   
+
+/product/arrangement:
+   description: offer a product application
+   post:
+    description: This service initiates the product offer by calling Offer Product Arrangement. The {productType} identifies the type of the product the value will be pca.This service identifies the customer, validates the eligibility of the product, identify upsell/downsell, overdraft eligibility for the customer making several orchestration calls to the host systems<ul><li>Pre-Condition Customer enters the personal,financial details.</li><li>Post-condition- Returns the product arrngement object with arrangement id and application status.</li></ul>
+    body: 
+       application/json:
+          schema: OfferArrangement
+          example: | 
+              {
+                
+                  "primaryInvolvedParty": {
+                    "middleName": "p",
+                    "lastName": "test",
+                    "gender": "001",
+                    "birthCity": "London",
+                    "mobileNumber": {
+                      "countryCode": "44",
+                      "number": "7929153703"
+                    },
+                    "dob": "1935-02-01",
+                    "birthCountry": "GBR",
+                    "title": "Mr",
+                    "nationalities": ["GBR"],
+                    "currentAddress": {
+                      "durationOfStay": "0505",
+                      "isPAFFormat": true,
+                      "isBFPOAddress": false,
+                      "structuredAddress": {
+                        "district": "",
+                        "town": "LONDON",
+                        "county": "London",
+                        "organisationName": "INCOGNICO",
+                        "subBuildingName": "",
+                        "buildingName": "",
+                        "buildingNumber": "117",
+                        "addressLines": ["SHAFTESBURY AVENUE"],
+                        "postcode": "N146DS",
+                        "deliveryPointSuffix": "2B"
+                      }
+                    },
+                    "firstName": "Jim",
+                    "email": "efdsf@dsdsf.com",
+                    "employmentStatus": "003",
+                    "applicantType": "self",
+                    "frequency": "MIPF
+                    },
+                  "productArrangement": {
+                    "name": "epca",
+                    "mnemonic": "P_ESAVER",
+                    "conditions": []
+                  }
+                }               
+      
+    responses:
+        200:
+          body:
+            application/json:
+              schema: ProductArrangement             
+        400: #BAD Request/Business Error
+          body:
+            application/json:
+              schema: Error
+              
+/product/arrangement/{arrangementID}:
+  description: activate a product application
+  post:
+
+    description: This service initiates actual product activation. By opening an account at CBS, updating OCIS and performing peripheral tasks. ArrangementID is the arrangement identifier (PAM ID) received from the OfferProductArrangement.<ul><li>Pre-Condition- Offer Service has been successfully called(response Code 200) and Arrangement Object has been returned with valid arrangement id and application status is not 1004.</li><li>Post Condition-Product is fulfilled and customer is presented with success page, and ProductArrangement is returned with account number and sort code.</li></ul>
+      
+      #arrangementID:
+      #required: true
+      #pattern: Integer
+      #summary: Activate Product arrangement for the application id generated by OfferProduct arrangement response.
+
+      #type:string
+    body:  
+      application/json: 
+       schema: Activation
+       example: | 
+             {
+               "involvedPartyRole": {
+                                    "userName": "georgssde",
+                                    "password": "qwerty1234"
+                                      },
+               "accountSetup": {
+                                 "fundingSource": "1",
+                                 "interestRemittanceAccountDetails": {
+                                 "frequency" : "M"
+                                    }
+                               },
+             "conditions": []
+             }
+    responses:
+        200:
+          description: Success Response
+          body:
+            application/json:
+              schema: ProductArrangement
+              example: |
+                {
+                 productArrangement: { 
+                            "name": {"type":"string"},
+                            "category": {"type":"string"},
+                            "mnemonic": {"type":"string"},
+                            "applicationStatus": {"type":"string"},
+                            "applicationSubStatus": {"type":"string"},
+                            "arrangementID": {"type":"integer"},
+                            "accountDetails": {
+                              "accountNumber":{"type":"string"}
+                              "sortCode":{"type":"string"}
+                
+                  }
+                }
+        400:
+          description: BAD Request/Business Error
+          body:
+            application/json:
+              schema: null
+                    
+/address/postcode/{postcode}:
+  description: find an address from postcode
+  get:
+    description: Fetch Address for the post code given by customer. Post Code Address for post code address, post code is required for this call. PostCode is a string that needs to be part of the request in url and is a mandatory field.
+    responses:
+        200:
+          body:
+            application/json:
+              schema: StructuredAddress
+              example: | 
+                [{
+                  "district": "",
+                  "town": "LONDON",
+                  "county": "",
+                  "organisationName": "",
+                  "subBuildingName": "",
+                  "buildingName": "",
+                  "buildingNumber": "117",
+                  "addressLine": [{"INCOGNICO":"SHAFTESBURY AVENUE"}],
+                  "postcode": "N146DS",
+                  "deliveryPointSuffix": "2B",
+                  }]   
+              #To get the array of address basd on postcode.
+        400:
+          description: BAD Request/Business Error
+          body:
+            application/json:
+              schema: Error      
+
+/userid:
+  description: find a unique username
+  post:
+    description: As part of IB Registration on Product Options page, this service validate User ID entered by customer and if not available it delivers three possible username. <ul><li>Precondition- username is entered and is called after Offer Service with valid application status</li><li>Postcondition- Either the username supplied by customer is available or provide 3 alternative usernames which are available. Object as input is involvedPartyRole.</li></ul>
+    body:
+      application/json:
+        schema: InvolvedPartyRole
+        example: | 
+                {    
+                  "arrangementID": "120507",
+                  "username": "georgssde",
+                }
+               
+    responses:
+        200:
+          body:
+            application/json:
+              schema: Mandate
+              example: |
+                  {
+                          "name": [
+                                    "GEORGSSDE1",
+                            "GEORGSSDE2",
+                            "GEORGSSDE3"
+                          ],
+                          "available": false
+                    }
+              
+        400:
+          description: BAD Request/Business Error
+          body:
+            application/json:
+              schema: Error      
+
+/party/tin:
+  post:
+    description: Identifies if need to capture the TIN Number as part of user details. Pre-condition- Customer enters previous tax residencies and nationalities. Post-condition- a TIN Number field will be displayed if required and the details will be passed as part of Offer request (/product/arrangement).
+    body:
+      application/json:
+        schema: TinDetails
+        example: |
+              {
+                TinDetails:
+                { 
+                "birthCountry":"USA",
+                "nationalities":["DZA","USA"],
+                "taxResidencies": [{"taxResidency":"ALA", "tinNumber":null},{"taxResidency":"GBR", "tinNumber":null},{"taxResidency":"USA", "tinNumber":null}]
+                }
+              }
+        #required: true
+        #summary: Collection of country of birth and tax residencies of the applicant (last 6 since last 2 years)
+    responses:
+      200:
+        description: boolean value
+        body:
+          application/json:
+           schema: Classifications
+           example: |
+             {
+                Classifications: [
+                {
+                "countryName":"USA",
+                "tinRequired":false,
+                "regex":"[0-9]{9}"
+                },
+                {
+                "countryName":"ALA",
+                "tinRequired":false,
+                "regex":null
+                },
+                {
+                "countryName":"GBR",
+                "tinRequired":true,
+                "regex":null
+                }
+                ]
+              }
+              
+      400:
+        description: BAD Request/Business Error
+        body:
+           application/json:
+            schema: Error      
+      401: 
+        description: Unauthorised Request/Pre Condition not met     
+        body:
+          application/json:
+           schema: Error
+
+/content/{path}:
+  description: find content for a given path
+  get:
+    description: Fetch Content for a path specified by the requester.Path is a string that needs to be part of the request in url.
+    responses:
+        200:
+          body:
+            application/json:
+              schema: Content
+              example: | 
+                {
+                "productsupportingHeader" : "You're applying for a account",
+                "ibreg_heading": "Internet Banking",
+                "ibreg_subHeading": "Your application is nearly complete and should only take another minute",
+                "ibreg_username": "Create your user ID",
+                "ibreg_password": "Create your password"
+                }
+                #To get the content based on path.
+        400:
+          description: BAD Request/Business Error
+          body:
+            application/json:
+              schema: Error
+              
+/bank/validateAccount:
+  description: makes a bank wizard call to verify the account no and sort code given by customer. The service will validates the format of the account details,validates that the bank and branch exist,performs modulus checking of account details,returns UK Faster Payment information
+  post:
+    body:
+      application/json:
+        schema: BankAccountDetails
+        example: |
+              {
+                BankAccountDetails:
+                { 
+                "accountNo":"12345678",
+                "sortCode":"102030"
+                }
+               }
+    responses:
+            200:
+              body:
+                text/plain:
+                 example: true
+            400:
+             description: BAD Request/Business Error
+             body:
+              text/plain:
+               schema: Error
+            408:
+             description: The services has timed out
+             body:
+              text/plain:
+               schema: Error
+            500:
+             description: No records found.
+             body:
+              text/plain:
+               schema: Error
+            503:
+             description: The server is currently unavailable.
+             body:
+              text/plain:
+               schema: Error 
+
+schemas:
+     - Error: |
+              {
+              "": "http://json-type.org/draft-03/type",
+              "type": "object",
+              "properties": {
+                 "code": {"type": "integer", "required": true},
+                 "message": {"type": "string", "required": true}
+                        }                       
+                      }
+     - StructuredAddress: |
+                  {
+                  "": "http://json-type.org/draft-03/type",
+                  "type": "object",
+                  "properties": {
+                            "district": {"type":"string"},
+                            "town": {"type":"string"},
+                            "county": {"type":"string"},
+                            "organisationName": {"type":"string"},
+                            "subBuildingName": {"type":"string"},
+                            "buildingName": {"type":"string"},
+                            "buildingNumber": {"type":"string"},
+                            "addressLine": [{"type":"string"}],
+                            "postCode": {"type":"string","required": true},
+                            "deliveryPointSuffix": {"type":"string","required": true}
+                              }   
+                          }
+     - UnstructuredAddress: |
+                  {
+                   "": "http://json-type.org/draft-03/type",
+                   "schema": "object",
+                    "properties": {
+                              "addressLine1": {"type":"string"},
+                              "addressLine2": {"type":"string"},
+                              "addressLine3": {"type":"string"},
+                              "addressLine4": {"type":"string"},
+                              "addressLine5": {"type":"string"},
+                              "addressLine6": {"type":"string"},
+                              "addressLine7": {"type":"string"},
+                              "addressLine8": {"type":"string"},
+                              "postCode": {"type":"string","required": true},
+                              "deliveryPointSuffix": {"type":"string","required": true}
+                              
+                              }
+                    }                        
+                              
+     - PostalAddressComponent: |
+                      {
+                      "": "http://json-type.org/draft-03/type",
+                      "schema": "object",
+                      "properties": {
+                          "durationOfStay": {"type": "string"},
+                          "isPAFFormat": {"type": "boolean", "required": true},
+                          "isBFPOAddress": {"type": "boolean", "required": true},
+                          "structuredAddress": [{
+                            "district": {"type":"string"},
+                            "town": {"type":"string"},
+                            "county": {"type":"string"},
+                            "organisationName": {"type":"string"},
+                            "subBuildingName": {"type":"string"},
+                            "buildingName": {"type":"string"},
+                            "buildingNumber": {"type":"string"},
+                            "addressLine": [{"type":"string"}],
+                            "postCode": {"type":"string","required": true},
+                            "deliveryPointSuffix": {"type":"string","required": true}
+                            }],    
+                           "unstructuredAddress": {                    
+                              "addressLine1": {"type":"string"},
+                              "addressLine2": {"type":"string"},
+                              "addressLine3": {"type":"string"},
+                              "addressLine4": {"type":"string"},
+                              "addressLine5": {"type":"string"},
+                              "addressLine6": {"type":"string"},
+                              "addressLine7": {"type":"string"},
+                              "addressLine8": {"type":"string"},
+                              "postCode": {"type":"string","required": true},
+                              "deliveryPointSuffix": {"type":"string"}                              
+                              }
+                            }
+                          }      
+     - ContactNumber: |
+                        {
+                          "": "http://json-type.org/draft-03/type",
+                          "type": "object",
+                          "properties": {
+                          "countryCode":{"type":"integer", "required":true},
+                          "areaCode":{"type":"integer", "required":true},
+                          "number":{"type":"integer", "required":true},
+                          "extNumber":{"type":"integer"} 
+                           }     
+                          }
+     - PrimaryInvolvedParty: |
+              {
+              "": "http://json-type.org/draft-03/type",
+              "type": "object",
+              "properties": {
+                "title": {"type":"string","required": true},
+                "firstName": {"type":"string","required": true},
+                "middleName": {"type":"string","required": true},
+                "lastName": {"type":"string","required": true},
+                "dob": {"type":"string","required": true},
+                "gender": {"type":"string","required": true},
+                "currentAddress": {"type":"PostalAddressComponent"},
+                "previousAddress": {"type":"PostalAddressComponent","required":false},
+                "mobileNumber": {"type":"ContactNumber","required": true},
+                "email": {"type":"string","required": true},
+                "workPhone": {"type":"ContactNumber","required": true},
+                "homePhone": {"type":"ContactNumber","required": true},
+                "marketPrefPhone": {"type":"string"},
+                "marketPrefEmail": {"type":"string"},
+                "marketPrefText": {"type":"string"},
+                "marketPrefPost": {"type":"string"},
+                "birthCity": {"type":"string", "description": "City whereborn","required": true},
+                "tinDetails": {"type":"TinDetail", "description": "tax details","required": true},
+                "employmentStatus": {"type":"string","required": true},
+                "occupnType": {"type":"string"},
+                "employer": {"type":"EmployerDetails"},
+                "frequency": {"type":"string","required": false}
+                 }
+                }                
+     - EmployerDetails: |
+                {
+                "": "http://json-type.org/draft-03/type",
+                "type": "object",
+                "properties": {
+                "name": {"type":"string","required": true},
+                "addressLine1": {"type":"string"},
+                "addressLine2": {"type":"string"},
+                "postcode": {"type":"string"},
+                "elapsedYears": {"type":"integer","required": true},
+                "elapsedMonths": {"type":"integer","required": true}
+                 }
+                }                
+     - CustomerScore: |
+                {
+                 "": "http://json-type.org/draft-03/type",
+                      "type": "object",
+                      "properties": {
+                  "scoreResult": {"type":"string","required": true},
+                  "decisionCode": {"type":"string","required": true},
+                  "decisionText": {"type":"string","required": true}
+                    }
+                  }
+     - ProductArrangement: |
+                    {
+                    "": "http://json-type.org/draft-03/type",
+                    "type": "object",
+                    "properties": {
+                            "name": {"type":"string","required":true},
+                            "mnemonic": {"type":"string","required":true},
+                            "applicationStatus": {"type":"string","required":true},
+                            "applicationSubStatus": [{"type":"string"}],
+                            "arrangementID": {"type":"integer","required":true},
+                            "isIBRegistered": {"type":"boolean","required":true},
+                            "isIA": {"type":"boolean","required":true},
+                            "isPwdActive": { "type":"boolean","required":true},
+                            "isVantageEligible": {"type":"boolean", "description": "is vantage eligible"},
+                            "isOdAvailable": {"type":"boolean", "description": "Over draft is available"},
+                            "maxOdAmount": {"type":"boolean", "description": "Maximum Over draft amount"},
+                            "refNumber": {"type":"string", "description": "Reference number for the applicaiton"},
+                            "asmCode": {"type":"string", "description": "ASM decision code"},
+                            "eidvCode": {"type":"string", "description": "EIDV decision code"},
+                            "offerType": {"type":"string", "description": "Offer type be NORMAL, UPSELL AND DOWNSELL"},
+                            "productAttributes": [{"type":"Conditions","description": "This will be populated in case of downsell"}],
+                            "overDraft": {"type":"OverDraft","description": "Details about the over draft"},
+                             "conditions": {
+                              "name":  {"type":"string","required":true},
+                              "key": {"type":"integer","required":true},
+                              "value": {"type":"boolean","required":true}    
+                              },
+                            "accountDetails": {
+                              "accountNumber": {"type":"string","required":true},  
+                              "sortCode": {"type":"string","required":true}
+                              }
+                              }
+                              }
+     - AccountDetails: |
+              {
+               "": "http://json-type.org/draft-03/type",
+                                  "type": "object",
+                                  "properties": {
+                            "accountNumber": {"type":"string","required":true},
+                            "sortCode": {"type":"string","required":true}
+                          }
+                          }
+     - InvolvedPartyRole: |
+              {
+              "": "http://json-type.org/draft-03/type",
+              "type": "object",
+              "properties": {
+                            "arrangementID": {"type":"string","required":true},
+                            "userName": {"type":"string","required":true},
+                            "password": {"type":"string","required":true}
+                          }
+                          }
+     - Product: |
+              {
+              "": "http://json-type.org/draft-03/type",
+              "type": "object",
+              "properties": {
+                            "name": {"type":"string","required":true},
+                            "identifier": {"type":"integer","required":true},
+                            "productAttributes": [{"type":"Conditions","required":true}]
+                          }
+                          }
+     - Conditions: |
+              {
+              "": "http://json-type.org/draft-03/type",
+              "type": "object",
+              "properties": {
+                            "name":  {"type":"string","required":true},
+                            "key":{"type":"integer","required":true},
+                            "value": {"type":"boolean","required":true} 
+                          }  
+              }
+     - DeviceId: |
+              {
+              "": "http://json-type.org/draft-03/type",
+              "type": "object",
+              "properties": {
+                            "server":  {"type":"string","required":true},
+                            "org":  {"type":"string","required":true},
+                            "id":  {"type":"string","required":true}
+                          }  
+              }
+     - Mandate: |
+              {
+              "": "http://json-type.org/draft-03/type",
+              "type": "object",
+              "properties": {
+                            "isAvailable": {"type":"boolean","required":true},
+                            "name":[{"type":"string","required":true}]
+                          }  
+              }  
+     - Features: |
+            {
+              "": "http://json-type.org/draft-03/type",
+              "type": "object",
+              "properties":
+                {
+                  "product":{ "name": {"type":"string","required":true},
+                              "mnemonic": {"type":"integer","required":true},
+                              "productAttributes": [{
+                                "name":  {"type":"string","required":true},
+                                "key":{"type":"integer","required":true},
+                                "value": {"type":"boolean","required":true} 
+                              }]
+                             },
+                  "deviceID":{  
+                                "server":  {"type":"string","required":true},
+                                "org":  {"type":"string","required":true},
+                                "id":  {"type":"string","required":true}
+                              }
+                              }
+                              }
+        
+     - Activation: |
+              {
+              "": "http://json-type.org/draft-03/type",
+              "type": "object",
+              "properties":{
+              "involvedPartyRole": {
+                "userName": {"type":"string","required":true},
+                "password": {"type":"string","required":true}
+                },
+                "AccountSetup": {
+                "nationalInsuranceNumber": {"type":"string","required":false},
+                "interestPaidFrequency": {"type":"string","required":false},
+                "fundingSource": {"type":"string","required":true},
+                "interestRemittanceAccountDetails" : {
+                      "sortCode": {"type":"string","required":false},
+                      "accountNumber": {"type":"string","required":false},
+                      "frequency": {"type":"string","required":false},
+                      "beneficiaryName": {"type":"string","required":false},
+                      "bankNumber": {"type":"string","required":false},
+                      "nextCapitalisationDate": {"type":"java.util.Calendar","required":false},
+                      "nextChargesApplicationDate": {"type":"java.util.Calendar","required":false},
+                      "monetaryBalance": {"type":"MonetaryBalance","required":false},
+                      "feeDetails": {"type":"RuleCondition","required":false},
+                      "flags": {"type":"RuleCondition","required":false},
+                      "charges": {"type":"RuleCondition","required":false},
+                      "feePeriodDetails": {"type":"RuleCondition","required":false},
+                      "creditPaymentDetails": {"type":"RuleCondition","required":false},
+                      "totalUnclearedEffects": {"type":"Integer","required":false},
+                      "totalEarmarkedFunds": {"type":"Integer","required":false}
+                     
+                    }
+                  },
+                "overDraft": {"type":"OverDraft","description": "Details about the over draft"},
+                "isVantageOpted": {"type":"boolean","description": "Opted for vantage"},
+                "accountSwitching": {"type":"Switching","description": "Details about the switching donor account"},
+              "conditions": {
+                "name":  {"type":"string","required":true},
+                "key": {"type":"integer","required":true},
+                "value": {"type":"boolean","required":true}    
+              }
+              }
+              }
+     - TaxResidencies: |
+              {
+              "": "http://json-type.org/draft-03/type",
+              "type": "object",
+              "properties":{
+              "taxResidency": {"type":"string","description": "Country of tax residency","required":true},
+              "tinNumber":{"type":"string","description": "Tax or TIN number","required":false}
+              }
+              }  
+     - OfferArrangement: |
+              {
+              "": "http://json-type.org/draft-03/type",
+              "type": "object",
+              "properties":{
+              "primaryInvolvedParty":{
+                "title": {"type":"string","required": true},
+                "firstName": {"type":"string","required": true},
+                "middleName": {"type":"string","required": true},
+                "lastName": {"type":"string","required": true},
+                "dob": {"type":"string","required": true},
+                "gender": {"type":"string","required": true},
+                "currentAddress": {"type":"PostalAddressComponent"},
+                "previousAddress": {"type":"PostalAddressComponent","required":false},
+                 "mobileNumber": {"type":"ContactNumber","required": true},
+                "email": {"type":"string","required": true},
+                "workPhone": {"type":"ContactNumber","required": true},
+                "homePhone": {"type":"ContactNumber","required": true},
+                "marketPrefPhone": {"type":"string"},
+                "marketPrefEmail": {"type":"string"},
+                "marketPrefText": {"type":"string"},
+                "marketPrefPost": {"type":"string"}, 
+                "birthCity": {"type":"string", "description": "City where born","required": true},
+                "tinDetails": {"type":"TinDetail", "description": "tax details","required": true},                
+                "employmentStatus": {"type":"string","required": true},
+                "occupnType": {"type":"string"},
+                "employer": {"type":"EmployerDetails"}
+                },
+              "productArrangement":{
+                "name": {"type":"string","required":true},
+                "mnemonic": {"type":"integer","required":true},
+                "conditions": [{
+                  "name":  {"type":"string","required":true},
+                  "key":{"type":"integer","required":true},
+                  "value": {"type":"boolean","required":true} 
+                }]     
+              }
+              }
+              }
+     - CustomerDetails:  |
+             {
+              "": "http://json-type.org/draft-03/type",
+              "type": "object",
+              "properties":{
+              "title": {"type":"string","required":true},
+              "firstName": {"type":"boolean","required":true},
+              "lastName": {"type":"string","required":true},
+              "emailId": {"type":"string","required":true}
+              }
+              }
+     - TinDetails: |
+             {
+              "": "http://json-type.org/draft-03/type",
+              "type": "object",
+              "properties":{ 
+              "tinDetails":
+              {"type":"TinDetail", "description": "tax residencies with tin max of 6","required": true}
+              }
+              }
+     - TinDetail: |
+               {
+                "": "http://json-type.org/draft-03/type",
+                "type": "object",
+                "properties": {  
+                "birthCountry": {"type":"string", "description": "ISO Country code of birth","required": true},
+                "nationalities": [{"type":"string", "description": "Array of ISO Country code max of 6","required": true}],
+                "taxResidencies": [{"type":"TaxResidencies", "description": "Array of tax residencies with tin max of 6","required": true}] 
+                          }
+                          }
+     - RuleCondition:  |
+             {
+              "": "http://json-type.org/draft-03/type",
+              "type": "object",
+              "properties": {
+              "result": {"type":"string","required":false},
+              "currencyAmount": {"type":"CurrencyAmount","required":false},
+              "ruleCode": {"type":"string","required":false}
+              }
+              }
+     - CurrencyAmount:  |
+             {
+              "": "http://json-type.org/draft-03/type",
+              "type": "object",
+              "properties": {
+                   "amount": {"type":"BigDecimal","required":false},
+                    "currencyCode": {"type":"String","required":false}
+                           }
+              }
+     - MonetaryBalance:  |
+             {
+              "": "http://json-type.org/draft-03/type",
+              "type": "object",
+              "properties": {
+              "amount": {"type":"BigDecimal","required":false},
+              "description": {"type":"String","required":false},
+              "type": {"type":"String","required":false}
+                   }
+              }
+     - Content:  |
+             {
+             "": "http://json-schema.org/draft-03/type",
+             "type": "object",
+             "properties": {
+                             "key":{"type":"integer","required":true},
+                             "value": {"type":"boolean","required":true}
+                             }
+                	}                	
+     - InvolvedPartyRoleValue: |
+                {
+                 "": "http://json-schema.org/draft-03/type",
+                 "type": "object",
+                 "properties": {
+                   "involvedPartyRole":{"type":"String"}                             
+                           }
+                   }
+     - BankAccountDetails: |
+              {
+               "": "http://json-type.org/draft-03/type",
+               "type": "object",
+               "properties": {
+                      "accountNo": {"type":"string"},
+                      "sortCode": {"type":"string"}
+                             }
+              }              
+/switching/switchAccount/:
+   description: Switching request
+   post:
+    description: This is a standalone service which initiates a switching request from user's old bank account to the user's current account in the bank. This can be Sole-to-Sole , Joint-to-Sole, Joint-to-Joint switching request based on the number of parties in the request.
+    body:
+       application/json:
+          schema: AccountSwitchingRequest
+          example: |
+              {
+                "switchDate": "2018-03-26",
+                "canBeOverDrawn": true,
+                "payOdAmount": 34534.43,
+                "newAccountDetails": {
+                  "sortCode": "377064",
+                  "accountNumber": "515310457",
+                  "accountName": "Richard Smith",
+                  "bankName": "LTB"
+                },
+                "oldAccountDetails": {
+                  "sortCode": "203492",
+                  "accountNumber": "37442575",
+                  "accountName": "Richard Smith",
+                  "bankName": "Barclays"
+                },
+                "parties": [
+                  {
+                    "namePrefix": "Mr",
+                    "firstName": "Richard",
+                    "middleName": "Evelon",
+                    "lastName": "Smith",
+                    "nationality": "British",
+                    "cardNumber": "45455",
+                    "cardExpiryDate": "05/21",
+                    "postalAddress": {
+                      "durationOfStay": "0505",
+                      "isPAFFormat": true,
+                      "isBFPOAddress": false,
+                      "unstructuredAddress": {
+                        "addressLine1": "Empire Way",
+                        "addressLine2": "Wembley",
+                        "addressLine3": null,
+                        "addressLine4": null,
+                        "addressLine5": null,
+                        "addressLine6": null,
+                        "addressLine7": null,
+                        "addressLine8": null,
+                        "postcode": "HA9 0NH"
+                      }
+                    },
+                    "textAlert": true,
+                    "mobileNumber": "1234567890",
+                    "primary": true
+                  }
+                ]
+              }
+
+
+    responses:
+        200:
+          body:
+            application/json:
+              schema: AccountSwitchingResponse
+              example:
+              {
+                  "pegaCaseId": "TC-37073"
+              }
+
+        400: #BAD Request/Business Error
+          body:
+            application/json:
+              schema: Error

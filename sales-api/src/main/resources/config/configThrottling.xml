@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<root>
+    <section>THROTTLE
+        <tag>APPENDER_ID
+            <value>TH_1</value>
+        </tag>
+        <tag>THROTTLE_THRESHOLD
+            <value>1</value>
+        </tag>
+    </section>
+    <section>TH_1
+        <tag>THROTTLE_FACTOR
+            <value>100</value>
+        </tag>
+    </section>
+</root>

@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MBean SYSTEM "MbeanDescriptor.dtd">
+<MBean type="BrandingConfigMBean" version="5.0"
+	excludeAccessCheck="true" platform="dynamicproxy"
+	description="Logging MBean.">
+	<operation name="setControlAttributes" role="operation" type=""
+		targetObjectType="objectReference" impact="ACTION"
+		proxyInvokeType="multicall">
+		<signature>
+			<parameter name="someAttributes"
+				description="The list of attributes for this EA component"
+				type="java.lang.Object" />
+		</signature>
+	</operation>
+
+	<operation name="getExtractMechanism" role="operation"
+		type="java.lang.String" targetObjectType="objectReference"
+		impact="INFO" proxyInvokeType="multicall">
+		<signature>
+			<parameter name="" description="" type="" />
+		</signature>
+	</operation>
+
+	<operation name="getChannelScope" role="operation"
+		type="java.lang.String" targetObjectType="objectReference"
+		impact="INFO" proxyInvokeType="multicall">
+		<signature>
+			<parameter name="" description="" type="" />
+		</signature>
+	</operation>
+
+	<operation name="getChannelValidation" role="operation"
+		type="java.lang.String" targetObjectType="objectReference"
+		impact="INFO" proxyInvokeType="multicall">
+		<signature>
+			<parameter name="" description="" type="" />
+		</signature>
+	</operation>
+
+	<operation name="getSupportedChannelLTSBRetail" role="operation"
+		type="java.lang.String" targetObjectType="objectReference"
+		impact="INFO" proxyInvokeType="multicall">
+		<signature>
+			<parameter name="" description="" type="" />
+		</signature>
+	</operation>
+
+	<operation name="getSupportedChannelLTSBCommercial" role="operation"
+		type="java.lang.String" targetObjectType="objectReference"
+		impact="INFO" proxyInvokeType="multicall">
+		<signature>
+			<parameter name="" description="" type="" />
+		</signature>
+	</operation>
+
+	<operation name="getSupportedChannelBOSRetail" role="operation"
+		type="java.lang.String" targetObjectType="objectReference"
+		impact="INFO" proxyInvokeType="multicall">
+		<signature>
+			<parameter name="" description="" type="" />
+		</signature>
+	</operation>
+
+	<operation name="getSupportedChannelBOSCommercial" role="operation"
+		type="java.lang.String" targetObjectType="objectReference"
+		impact="INFO" proxyInvokeType="multicall">
+		<signature>
+			<parameter name="" description="" type="" />
+		</signature>
+	</operation>
+
+	<operation name="getSupportedChannelHALIFAXRetail" role="operation"
+		type="java.lang.String" targetObjectType="objectReference"
+		impact="INFO" proxyInvokeType="multicall">
+		<signature>
+			<parameter name="" description="" type="" />
+		</signature>
+	</operation>
+	<!-- Verde changes start -->
+	<operation name="getSupportedChannelVERDERetail" role="operation"
+		type="java.lang.String" targetObjectType="objectReference"
+		impact="INFO" proxyInvokeType="multicall">
+		<signature>
+			<parameter name="" description="" type="" />
+		</signature>
+	</operation>
+	<operation name="getSupportedChannelVERDECommercial" role="operation"
+		type="java.lang.String" targetObjectType="objectReference"
+		impact="INFO" proxyInvokeType="multicall">
+		<signature>
+			<parameter name="" description="" type="" />
+		</signature>
+	</operation>
+	<!-- Verde changes ends -->
+	<operation name="setExtractMechanism" role="operation"
+		type="java.lang.String" targetObjectType="objectReference"
+		impact="ACTION" proxyInvokeType="multicall">
+		<signature>
+			<parameter name="anExtractMechanism" description="New value"
+				type="java.lang.Object" />
+			<parameter name="anUpdateType"
+				description="Managed or Direct Update." type="java.lang.Object" />
+		</signature>
+	</operation>
+
+	<operation name="setChannelScope" role="operation"
+		type="java.lang.String" targetObjectType="objectReference"
+		impact="ACTION" proxyInvokeType="multicall">
+		<signature>
+			<parameter name="aChannelScope" description="New value"
+				type="java.lang.Object" />
+			<parameter name="anUpdateType"
+				description="Managed or Direct Update." type="java.lang.Object" />
+		</signature>
+	</operation>
+
+	<operation name="setChannelValidation" role="operation"
+		type="java.lang.String" targetObjectType="objectReference"
+		impact="ACTION" proxyInvokeType="multicall">
+		<signature>
+			<parameter name="aChannelValidation" description="New value"
+				type="java.lang.Object" />
+			<parameter name="anUpdateType"
+				description="Managed or Direct Update." type="java.lang.Object" />
+		</signature>
+	</operation>
+
+	<operation name="setSupportedChannelLTSBRetail" role="operation"
+		type="java.lang.String" targetObjectType="objectReference"
+		impact="ACTION" proxyInvokeType="multicall">
+		<signature>
+			<parameter name="aSupportedChannelLTSBRetail"
+				description="New value" type="java.lang.Object" />
+			<parameter name="anUpdateType"
+				description="Managed or Direct Update." type="java.lang.Object" />
+		</signature>
+	</operation>
+
+	<operation name="setSupportedChannelLTSBCommercial" role="operation"
+		type="java.lang.String" targetObjectType="objectReference"
+		impact="ACTION" proxyInvokeType="multicall">
+		<signature>
+			<parameter name="aSupportedChannelLTSBCommercial"
+				description="New value" type="java.lang.Object" />
+			<parameter name="anUpdateType"
+				description="Managed or Direct Update." type="java.lang.Object" />
+		</signature>
+	</operation>
+	
+	<!-- Verde changes start -->
+	<operation name="setSupportedChannelVERDERetail" role="operation"
+		type="java.lang.String" targetObjectType="objectReference"
+		impact="ACTION" proxyInvokeType="multicall">
+		<signature>
+			<parameter name="aSupportedChannelVERDERetail"
+				description="New value" type="java.lang.Object" />
+			<parameter name="anUpdateType"
+				description="Managed or Direct Update." type="java.lang.Object" />
+		</signature>
+	</operation>
+
+	<operation name="setSupportedChannelVERDECommercial" role="operation"
+		type="java.lang.String" targetObjectType="objectReference"
+		impact="ACTION" proxyInvokeType="multicall">
+		<signature>
+			<parameter name="aSupportedChannelVERDECommercial"
+				description="New value" type="java.lang.Object" />
+			<parameter name="anUpdateType"
+				description="Managed or Direct Update." type="java.lang.Object" />
+		</signature>
+	</operation>
+	<!-- Verde changes end -->
+
+	<operation name="setSupportedChannelBOSRetail" role="operation"
+		type="java.lang.String" targetObjectType="objectReference"
+		impact="ACTION" proxyInvokeType="multicall">
+		<signature>
+			<parameter name="aSupportedChannelBOSRetail"
+				description="New value" type="java.lang.Object" />
+			<parameter name="anUpdateType"
+				description="Managed or Direct Update." type="java.lang.Object" />
+		</signature>
+	</operation>
+
+	<operation name="setSupportedChannelBOSComercial" role="operation"
+		type="java.lang.String" targetObjectType="objectReference"
+		impact="ACTION" proxyInvokeType="multicall">
+		<signature>
+			<parameter name="aSupportedChannelBOSComercial"
+				description="New value" type="java.lang.Object" />
+			<parameter name="anUpdateType"
+				description="Managed or Direct Update." type="java.lang.Object" />
+		</signature>
+	</operation>
+
+	<operation name="setSupportedChannelHALIFAXRetail" role="operation"
+		type="java.lang.String" targetObjectType="objectReference"
+		impact="ACTION" proxyInvokeType="multicall">
+		<signature>
+			<parameter name="aSupportedChannelHALIFAXRetail"
+				description="New value" type="java.lang.Object" />
+			<parameter name="anUpdateType"
+				description="Managed or Direct Update." type="java.lang.Object" />
+		</signature>
+	</operation>
+
+	<operation name="getXMLConfig" role="operation"
+		type="java.lang.String" targetObjectType="objectReference"
+		impact="INFO" proxyInvokeType="multicall">
+		<signature>
+			<parameter name="" description="" type="" />
+		</signature>
+	</operation>
+
+	<operation name="updateXMLConfig" role="operation" type=""
+		targetObjectType="objectReference" impact="ACTION"
+		proxyInvokeType="multicall">
+		<signature>
+			<parameter name="anXMLConfig" description="the new XML"
+				type="java.lang.Object" />
+			<parameter name="anUpdateType"
+				description="Managed or Direct Update." type="java.lang.Object" />
+		</signature>
+	</operation>
+
+	<notification name="applicationJMXBroadcaster" severity="3">
+		<notificationType>JMX.mbean.registered</notificationType>
+	</notification>
+</MBean>

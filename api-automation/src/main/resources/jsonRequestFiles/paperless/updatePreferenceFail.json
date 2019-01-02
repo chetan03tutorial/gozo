@@ -1,0 +1,18 @@
+{
+   "accounts": [
+        {
+            "name": "Platinum",
+            "statementType": "Paper",
+            "correspondanceType": "Paperless",
+            "accountNumber": "15684660",
+            "sortCode": "770401",
+            "productType": "A",
+            "type": "T0320776000",
+            "cardNumber": null,
+            "externalSystemProductId": "1776310702",
+            "externalSystem": 4,
+            "externalSystemProductHeldId": "7704011568466000000",
+            "externalPartyIdentifierText":"77040115139406"
+        }
+    ]
+}

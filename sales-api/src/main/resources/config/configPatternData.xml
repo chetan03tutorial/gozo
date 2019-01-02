@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!DOCTYPE Root SYSTEM "./config.dtd">
+<root>
+    <section>
+        FORM_VALUE_CHECK
+        <tag>
+            OBFUSCATION_PER
+            <value>75</value>
+        </tag>
+    </section>
+</root>

@@ -1,0 +1,73 @@
+{
+                "primaryInvolvedParty": {
+                                "intendSwitch": "No",
+                                "intendOverDraft": "false",
+                                "intendOdAmount": "",
+                                "title": "Mr",
+                                "firstName": "appliedProductHldnLimit",
+                                "middleName": "",
+                                "lastName": "Mittal",
+                                "dob": "1945-01-01",
+                                "gender": "001",
+                                "currentAddress": {
+                                                "durationOfStay": "0505",
+                                                "isPAFFormat": "true",
+                                                "isBFPOAddress": "false",
+                                                "unstructuredAddress": {
+                                                                "addressLine1": "2",
+                                                                "addressLine2": "Egremont",
+                                                                "addressLine3": "23",
+                                                                "addressLine4": "Medals Way",
+                                                                "addressLine5": "East Village",
+                                                                "addressLine6": "London",
+                                                                "addressLine7": "UK",
+                                                                "postcode": "EC1Y4XX",
+                                                                "deliveryPointSuffix": "1A"
+                                                }
+
+
+                                },
+                                "maritalStatus": "001",
+                                "residentialStatus": "006",
+                                "numberOfDependents": "2",
+                                "fundSource": "3",
+                                "purpose": "SPORI",
+                                "mobileNumber": {
+                                                "countryCode": "44",
+                                                "areaCode": null,
+                                                "number": "7466746674",
+                                                "extNumber": null
+                                },
+                                "workPhone": null,
+                                "homePhone": null,
+                                "email": "a@a.com",
+                                "marketPrefPhone": "true",
+                                "marketPrefEmail": "true",
+                                "marketPrefText": "true",
+                                "marketPrefPost": "true",
+                                "ukArrivalDate": null,
+                                "visaExpiryDate": null,
+                                "ilrStatus": null,
+                                "income": "1000",
+                                "employmentStatus": "006",
+                                "occupnType": null,
+                                "employer": null,
+                                "rentMortgCost": "100",
+                                "maintnCost": "100",
+                                "savingsAmount": "100",
+                                "prevBankYear": null,
+                               "prevBankMonth": null,
+                                "birthCity": null,
+                                "exptdMntlyDepAmt": "100",
+                                "tinDetails": {
+                                                "birthCountry": "GBR",
+                                                "nationalities": ["GBR"],
+                                                "taxResidencies": [{
+                                                                "taxResidency": "GBR"
+                                                }]
+                                }
+
+                },
+                "arrangementType": "CA",
+                "mnemonic": ["P_REWARD"]
+}

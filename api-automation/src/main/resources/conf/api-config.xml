@@ -1,0 +1,81 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+						http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+						http://www.springframework.org/schema/context 
+						http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		 				http://www.springframework.org/schema/tx
+        				http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+        				http://www.springframework.org/schema/util 
+        				http://www.springframework.org/schema/util/spring-util-3.0.xsd
+        				http://www.springframework.org/schema/aop 
+    					http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+
+
+	<!-- <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"> 
+		<property name="location"> <value>classpath:/conf/${env}-app.properties</value> 
+		</property> </bean> -->
+
+	<!-- <util:properties id="environment" location="classpath:env.properties"/> -->
+
+	<aop:aspectj-autoproxy />
+	<context:property-placeholder />
+
+	<context:annotation-config />
+	<context:component-scan base-package="com.lbg.ib.api" />
+	<context:component-scan base-package="cucumber.runtime.java.spring" />
+
+	<bean id="localFileReader" class="com.lbg.ib.api.alligator.web.request.LocalFileReader"></bean>
+
+	<bean id="uriResolver" class="com.lbg.ib.api.alligator.http.UriResolver">
+		<constructor-arg type="java.lang.String" value="urls/endpoints.properties"></constructor-arg>
+	</bean>
+
+	<bean id="requestBodyHandler"
+		class="com.lbg.ib.api.alligator.annotations.handler.RequestBodyHandler">
+		<property name="readers">
+			<list>
+				<ref bean="localFileReader" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="formParamHandler"
+		class="com.lbg.ib.api.alligator.annotations.handler.FormParameterHandler" />
+	<bean id="pathParamHandler"
+		class="com.lbg.ib.api.alligator.annotations.handler.PathParameterHandler" />
+	<bean id="brandHandler"
+		class="com.lbg.ib.api.alligator.annotations.handler.BrandHandler" />
+	<bean id="queryParamHandler"
+		class="com.lbg.ib.api.alligator.annotations.handler.QueryParameterHandler" />
+	<bean id="headerParamHandler"
+		class="com.lbg.ib.api.alligator.annotations.handler.HeaderParameterHandler" />
+	<bean id="multipartParamHandler"
+		class="com.lbg.ib.api.alligator.annotations.handler.MultipartParameterHandler" />
+
+
+	<bean id="requestMapperHandler" class="com.lbg.ib.api.alligator.core.RequestMapperHandler">
+		<property name="handlers">
+			<map>
+				<entry key="com.lbg.ib.api.alligator.annotations.RequestBody"
+					value-ref="requestBodyHandler"></entry>
+				<entry key="com.lbg.ib.api.alligator.annotations.FormParameter"
+					value-ref="formParamHandler"></entry>
+				<entry key="com.lbg.ib.api.alligator.annotations.PathParameter"
+					value-ref="pathParamHandler"></entry>
+				<entry key="com.lbg.ib.api.alligator.annotations.Brand"
+					value-ref="brandHandler"></entry>
+				<entry key="com.lbg.ib.api.alligator.annotations.QueryParameter"
+					value-ref="queryParamHandler"></entry>
+				<entry key="com.lbg.ib.api.alligator.annotations.HeaderParameter"
+					value-ref="headerParamHandler"></entry>
+				<entry key="com.lbg.ib.api.alligator.annotations.MultipartParameter"
+					value-ref="multipartParamHandler"></entry>
+			</map>
+		</property>
+	</bean>
+
+
+</beans>

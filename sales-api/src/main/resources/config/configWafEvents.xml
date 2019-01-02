@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE Root SYSTEM "./config.dtd">
+<root>
+    <section>WAF_EVENT_CODE_PROCESSING
+        <tag>ENABLED
+            <value>OFF</value>
+            <!-- Possible value ON/OFF -->
+        </tag>      
+    </section>
+    <section>WAF_HEADERS_LIST
+        <tag>HEADER_ONE
+            <value>HEADER_SAMPLE</value>
+        </tag>      
+    </section>
+    <section>WAF_EVENT_ERROR_CODE_MAPPING
+        <tag>EVENT_SAMPLE
+            <value>900001</value>
+        </tag>  
+        <tag>DEFAULT_ERROR_CODE
+            <value>900000</value>
+        </tag>  
+    </section>
+    <section>WAF_EVENT_HANDLING_MAPPING
+        <tag>EVENT_SAMPLE
+            <value>LOG</value>
+            <!-- Possible value LOG/LOGOFF -->
+        </tag>      
+    </section>
+</root>

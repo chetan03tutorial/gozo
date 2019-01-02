@@ -1,0 +1,116 @@
+source ./proc.jacl
+
+#Changed by CK
+#--------------------------------------------------------------
+# Adds URLs to the Cell's default URL provider
+# Author: Jesper Madsen
+#--------------------------------------------------------------
+
+#--------------------------------------------------------------
+# Add URL PROC
+#--------------------------------------------------------------
+proc addURLs {} {
+
+    #--------------------------------------------------------------
+    # set up globals
+    #--------------------------------------------------------------
+    global AdminConfig defurlp urls props
+
+    # loop the urls list
+    foreach url $urls {
+        puts "Info: Adding url from data: $url"
+        
+        if { [llength $url] != 4 } {
+            error "Error: -- url data does not consist of 4 items"
+        }
+
+        # set props for the url
+        set urlName [lindex $url 0]
+        set desc [lindex $url 3]
+        set urlLName [list name $urlName]
+        set urlSpec [list spec [lindex $url 2]]
+        set urlDesc [list description "$desc"]
+        set urlJndi [list jndiName [lindex $url 1]]
+        set urlAttrs [list $urlLName $urlSpec $urlDesc $urlJndi]
+
+        set urlId [$AdminConfig getid "/URL:$urlName/"]
+
+        # If it exists already then modify it
+        if { [string length $urlId] > 0 } {
+            set res [$AdminConfig modify $urlId $urlAttrs]
+            if { [string length $res] > 0 } {
+                error "Error: -- unable to modify URL '$urlName' - $res"
+            } else {
+                puts "Info: Successfully modified existing URL '$urlName'."
+            }
+        }
+        # If it doesn't exist then create it
+        if { [string length $urlId] == 0 } {
+            set res [$AdminConfig create URL $defurlp $urlAttrs]
+            if { [string length $res] == 0 } {
+                error "Error: -- unable to create URL '$urlName'."
+            } else {
+                puts "Info: Successfully created URL '$res'."
+            }       
+        }
+    }
+}
+
+#--------------------------------------------------------------
+# Main
+#--------------------------------------------------------------
+
+# Get the cell name - assumes only one cell!
+set cellList [$AdminConfig list Cell]
+set cname [$AdminConfig showAttribute $cellList name]
+
+puts "Info: cell name: $cname"
+
+if { [string length $cname] == 0 } {
+    error "Error: -- no cell found."
+}
+
+set defurlp [$AdminConfig getid "/Cell:$cname/URLProvider:Default URL Provider/"]
+
+puts "Info: Def url provider for cell is: $defurlp"
+
+if { [string length $defurlp] == 0 } {
+    error "Error: -- default url provider not found for cell '$cname'."
+}
+
+#--------------------------------------------------------------
+# Add URLs to create to this section:
+#
+# The format for the url is space delimited as below:
+# set urlN {"name" "jndiName" "spec" "desc"}
+#
+# sample:
+#
+# set URL1 {"MyURLName" "endpoints/MyURLName" "http://MyURL" "The description of the url"}
+#
+# also remember to add it to the urls list.
+#--------------------------------------------------------------
+
+# WS Endpoint URLs
+
+set URL2 {"BAPIWS" "endpoints/Application" "http://10.245.211.251:22910/fserv/" "WS Endpoint URL for Application"}
+set URL4 {"EligibilityWS" "endpoints/Eligibility" "http://10.245.211.251:22910/wps/sales/v1.0/determineEligibleCustomerInstructions" "WS Endpoint URL for DetermineCustomerInstructionsEligibility"}
+
+set URL5 {"RetrieveProductWS" "endpoints/RetrieveProduct" "http://localhost:3434/" "WS Endpoint URL for RetrieveProductConditions"}
+set URL6 {"OfferProductWS" "endpoints/OfferProduct" "http://localhost:3434/" "WS Endpoint URL for OfferProductArrangement"}
+set URL7 {"ActivateProductWS" "endpoints/ActivateProduct" "http://localhost:3434/" "WS Endpoint URL for ActivateProductArrangement"}
+
+set URL8 {"PromotionalCustomerInstructionsWS" "endpoints/PromotionalCustomerInstructions" "http://10.245.211.251:22910/wps/sales/v1.0/determinePromotionalCustomerInstructions" "WS Endpoint URL for PromotionalCustomerInstructions"}
+set URL9 {"ClassifyInvolvedPartySALSAWS" "endpoints/ClassifyInvolvedParty" "http://localhost:3434" "WS Endpoint URL for ClassifyInvolvedParty"}
+set URL10 {"CommunicationManagementsServiceWS" "endpoints/CommunicationManagementsService" "http://10.245.211.251:22910/wps/sales/v1.0/sendCommunication" "WS Endpoint URL for COmmunicationMangementService"}
+set URL13 {"ThreatMatrixWS" "endpoints/ThreatMatrix" "http://10.245.211.251:22910/host/threadmatrix/" "WS Endpoint URL for ThreatMatrix"}
+
+# Add all defined urls above to the list (space delimited) below:
+set urls [list $URL2 $URL4 $URL5 $URL6 $URL7 $URL8 $URL9 $URL10 $URL13]
+
+# Call proc to add the urls
+addURLs
+
+# Save the changes
+$AdminConfig save
+

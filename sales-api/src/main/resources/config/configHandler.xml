@@ -1,0 +1,169 @@
+<?xml version="1.0"?>
+<!DOCTYPE Root SYSTEM "./config.dtd">
+<root>      
+    <section>HANDLERS
+        <tag>RESPONSE_HANDLER_KEY
+            <value>RESPONSE_HANDLER</value>
+        </tag>
+        <tag>REQUEST_HANDLER_KEY
+            <value>REQUEST_HANDLER</value>
+        </tag>
+        <!-- <tag>MALWARE_REQUEST_HANDLER_KEY
+            <value>MALWARE_REQUEST_HANDLER</value>
+        </tag> -->
+    </section>
+    <section>
+        RESPONSE_HANDLER
+        <tag>
+            IP_ADDRESS_KEY
+            <value>IP_ADDRESS_HANDLER</value>
+        </tag>
+    </section>  
+    <section>
+        REQUEST_HANDLER
+        <tag>
+            THROTTLE_HANDLER_KEY
+            <value>THROTTLE_HANDLER</value>
+        </tag>
+        <tag>
+            FORCE_LOGOUT_KEY
+            <value>FRAUD_ACTION_HANDLER</value>
+        </tag>
+    </section>  
+    <!-- <section>
+        MALWARE_REQUEST_HANDLER
+        <tag>
+            MALWARE_HANDLER_KEY
+            <value>MALWARE_HANDLER</value>
+        </tag>
+    </section> -->
+    <section>
+        IP_ADDRESS_HANDLER
+        <tag>
+            NAME
+            <value>IP_ADDRESS_HANDLER</value>
+        </tag>
+        <tag>
+            SWITCH_STATUS
+            <value>ON</value>
+            <!--  The possible values of HANDLER_ORDER are ON/OFF -->
+        </tag>
+        <tag>
+            HANDLER_ORDER
+            <value>1</value>            
+        </tag>
+        <tag>FAILOVER_ACTION
+            <value>CONTINUE</value>
+        </tag>
+        <tag>
+            HANDLER_CLASS
+            <value>
+                com.lloydstsb.ea.filters.securityfilter.handler.impl.FunctionalEventHandler
+            </value>
+        </tag>
+    </section>  
+    <section>
+        THROTTLE_HANDLER
+        <tag>
+            NAME
+            <value>THROTTLE_HANDLER</value>
+        </tag>
+        <tag>
+            SWITCH_STATUS
+            <value>ON</value>
+            <!--  The possible values of HANDLER_ORDER are ON/OFF -->
+        </tag>
+        <tag>
+            HANDLER_ORDER
+            <value>1</value>
+        </tag>
+        <tag>FAILOVER_ACTION
+            <value>CONTINUE</value>
+            <!--  The possible values of FAILOVER_ACTION are CONTINUE/ABORT -->
+        </tag>
+        <tag>
+            HANDLER_CLASS
+            <value>
+                com.lloydstsb.ea.filters.securityfilter.handler.impl.ThrottleActionHandler
+            </value>
+        </tag>
+    </section>
+    <section>
+        FRAUD_ACTION_HANDLER
+        <tag>
+            NAME
+            <value>FRAUD_ACTION_HANDLER</value>
+        </tag>
+        <tag>
+            SWITCH_STATUS
+            <value>ON</value>
+            <!--  The possible values of HANDLER_ORDER are ON/OFF -->
+        </tag>
+        <tag>
+            HANDLER_ORDER
+            <value>2</value>
+        </tag>
+        <tag>FAILOVER_ACTION
+            <value>CONTINUE</value>
+            <!--  The possible values of FAILOVER_ACTION are CONTINUE/ABORT -->
+        </tag>
+        <tag>
+            HANDLER_CLASS
+            <value>
+                com.lloydstsb.ea.filters.securityfilter.handler.impl.FraudActionHandler
+            </value>
+        </tag>
+    </section>
+    <section>
+        LOGGING_HANDLER
+        <tag>
+            NAME
+            <value>LOGGING_HANDLER</value>
+        </tag>
+        <tag>
+            SWITCH_STATUS
+            <value>ON</value>
+            <!--  The possible values of HANDLER_ORDER are ON/OFF -->
+        </tag>
+        <tag>
+            HANDLER_ORDER
+            <value>2</value>
+        </tag>
+        <tag>FAILOVER_ACTION
+            <value>CONTINUE</value>
+            <!--  The possible values of FAILOVER_ACTION are CONTINUE/ABORT -->
+        </tag>
+        <tag>
+            HANDLER_CLASS
+            <value>
+                com.lloydstsb.ea.filters.securityfilter.handler.impl.LoggingHandler
+            </value>
+        </tag>
+    </section>  
+    <!-- <section>
+        MALWARE_HANDLER
+        <tag>
+            NAME
+            <value>MALWARE_HANDLER</value>
+        </tag>
+        <tag>
+            SWITCH_STATUS
+            <value>ON</value>
+             The possible values of HANDLER_ORDER are ON/OFF
+        </tag>
+        <tag>
+            HANDLER_ORDER
+            <value>1</value>
+        </tag>
+        <tag>FAILOVER_ACTION
+            <value>CONTINUE</value>
+             The possible values of FAILOVER_ACTION are CONTINUE/ABORT
+        </tag>
+        <tag>
+            HANDLER_CLASS
+            <value>
+                com.lloydstsb.ea.malware.handler.impl.MalwareEventHandler
+            </value>
+        </tag>
+    </section> -->
+</root>

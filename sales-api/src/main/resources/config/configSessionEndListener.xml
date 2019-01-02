@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<!DOCTYPE Root SYSTEM "./config.dtd">
+<root>
+    <section>SESSION_END_HEADER_CONFIG
+        <!-- Text in <value> tag will be used to set log off header name.  -->
+        <tag>HEADER_NAME_KEY
+            <value>UNAUTH_END_SESSION</value>
+        </tag>
+        <!-- Text in <value> tag will be used to set log off header value.  -->     
+        <tag>HEADER_VALUE_KEY
+            <value>YES</value>
+        </tag>
+    </section>
+
+    <!-- This section contains view-id of pages for which log off header needs to be sent. -->
+    <section>SESSION_END_HEADER_PAGE_ID
+        <tag>PAGE_ONE_KEY
+            <value>/submitforgottenuserid/forgotUserIDsuccess.jsp</value>
+        </tag>
+        <tag>PAGE_TWO_KEY
+            <value>/submitreplaceunlockauthmechanism/successpasswordreset.jsp</value>
+        </tag>
+        <tag>PAGE_THREE_KEY
+            <value>/registration/applicationalreadyplaced.jsp</value>
+        </tag>
+        <tag>PAGE_FOUR_KEY
+            <value>/registration/helpdeskauthorization.jsp</value>
+        </tag>
+        <tag>PAGE_FIVE_KEY
+            <value>/registration/successregistration.jsp</value>
+        </tag>
+        <tag>PAGE_SIX_KEY
+            <value>/registration/registrationsuccessfull.jsp</value>
+        </tag>
+        <tag>PAGE_SEVEN_KEY
+            <value>/registration/registrationdecline.jsp</value>
+        </tag>
+        <tag>PAGE_EIGHT_KEY
+            <value>/submitreplaceunlockauthmechanism/addressdetailsrequiredmessage.jsp</value>
+        </tag>
+        <tag>PAGE_NINE_KEY
+            <value>/submitreplaceunlockauthmechanism/addressdetailsrequiredmessageretail.jsp</value>
+        </tag>      
+        <tag>PAGE_TEN_KEY
+            <value>/submitreplaceunlockauthmechanism/applicationalreadyreceived.jsp</value>
+        </tag>      
+        <tag>PAGE_ELEVEN_KEY
+            <value>/submitreplaceunlockauthmechanism/partialsuccess.jsp</value>
+        </tag>
+        <tag>PAGE_TWELVE_KEY
+            <value>/submitreplaceunlockauthmechanism/partialsuccessincorrectcode.jsp</value>
+        </tag>
+        <tag>PAGE_THIRTEEN_KEY
+            <value>/submitreplaceunlockauthmechanism/partialsuccessnomandate.jsp</value>
+        </tag>
+        <tag>PAGE_FOURTEEN_KEY
+            <value>/submitreplaceunlockauthmechanism/partialsuccessnophonenumber.jsp</value>
+        </tag>
+        <tag>PAGE_FIFTEEN_KEY
+            <value>/submitreplaceunlockauthmechanism/partialsuccessnoresponse.jsp</value>
+        </tag>
+        <tag>PAGE_SIXTEEN_KEY
+            <value>/submitreplaceunlockauthmechanism/successdeviceunlocked.jsp</value>
+        </tag>
+        <tag>PAGE_SEVENTEEN_KEY
+            <value>/submitreplaceunlockauthmechanism/successorderreplacementdevice.jsp</value>
+        </tag>
+        <tag>PAGE_EIGHTEEN_KEY
+            <value>/submitreplaceunlockauthmechanism/successpasswordandmireset.jsp</value>
+        </tag>
+        <tag>PAGE_NINETEEN_KEY
+            <value>/logon/loginIB.jsp</value>
+        </tag>  
+    </section>
+</root>

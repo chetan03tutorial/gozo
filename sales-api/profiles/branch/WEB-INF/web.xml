@@ -1,0 +1,690 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.4"
+         xmlns="http://java.sun.com/xml/ns/j2ee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+    <display-name>sales-pca-api</display-name>
+
+    <context-param>
+   		<description>The journey in which the application is running</description>
+   		<param-name>journey</param-name>
+   		<param-value>BRANCH_JOURNEY</param-value>
+   	</context-param>
+   	
+   	<context-param>
+   		<description>The path from where we are loading the context</description>
+   		<param-name>contextConfigLocation</param-name>
+   		<param-value>classpath:/context/branchContext.xml</param-value>
+   	</context-param>
+   	
+    <context-param>
+        <description>This should be the key for the configuration cache instance.</description>
+        <param-name>com.lloydstsb.ea.KEY_CONFIG_MAP</param-name>
+        <param-value>CONFIG_MAP</param-value>
+    </context-param>
+    <context-param>
+        <description>
+            This should be the namespace for the configuration cache instance.
+        </description>
+        <param-name>com.lloydstsb.ea.NAMESPACE_CONFIG_MAP</param-name>
+        <param-value>java:comp/env/dmap/UIConfigCache_products</param-value>
+    </context-param>
+    <context-param>
+        <description>
+            This should be the path for the configuration files.
+        </description>
+        <param-name>com.lloydstsb.ea.CONFIG_PATH</param-name>
+        <param-value>config</param-value>
+    </context-param>
+    <context-param>
+        <description>
+            This should be the prefix for the configuration files.
+        </description>
+        <param-name>com.lloydstsb.ea.CONFIG_PREFIX</param-name>
+        <param-value>config</param-value>
+    </context-param>
+    <context-param>
+        <description>
+            This should be the extension for the configuration files to be loaded.
+        </description>
+        <param-name>com.lloydstsb.ea.CONFIG_EXTN</param-name>
+        <param-value>xml</param-value>
+    </context-param>
+    <context-param>
+        <description>
+            This should be the digester parsing rules filename for the configuration loader.
+        </description>
+        <param-name>com.lloydstsb.ea.CONFIG_PARSER_RULES</param-name>
+        <param-value>config-parser-rules.xml</param-value>
+    </context-param>
+    <context-param>
+        <param-name>archetypes</param-name>
+        <param-value>
+            /WEB-INF/archetypes.xml
+        </param-value>
+    </context-param>
+     <session-config>
+        <session-timeout>20</session-timeout>
+    </session-config>
+    <listener>
+        <listener-class>
+            com.lloydstsb.ea.config.servlet.listener.ConfigurationListener
+        </listener-class>
+    </listener>
+    <listener>
+        <description>
+            Reference data listener to load data at server start up.
+        </description>
+        <display-name>ReferenceDataListener</display-name>
+        <listener-class>
+            com.lloydstsb.ea.referencedata.ReferenceDataListener
+        </listener-class>
+    </listener>
+    <listener>
+        <description>
+            Scheduler Service Refresh Listener to schedule service at server start up.
+        </description>
+        <display-name>SchedulerServiceRefreshListener</display-name>
+        <listener-class>
+            com.lloydstsb.ib.scheduler.SchedulerServiceRefreshListener
+        </listener-class>
+    </listener>
+
+    <listener>
+        <listener-class>
+            org.springframework.web.context.ContextLoaderListener
+        </listener-class>
+    </listener>
+    <listener>
+        <listener-class>
+            org.springframework.web.context.request.RequestContextListener
+        </listener-class>
+    </listener>
+    <!-- <listener>
+        <description>SessionExpiryListener</description>
+        <display-name>SessionExpiryListener</display-name>
+        <listener-class>
+            com.lbg.ib.api.sales.cache.SessionExpiryListener
+        </listener-class>
+    </listener>-->
+   <!--  <listener>
+        <description>SwitchesLoaderListener</description>
+        <display-name>SwitchesLoaderListener</display-name>
+        <listener-class>
+            com.lbg.ib.api.sales.switches.SwitchesLoaderListener
+        </listener-class>
+    </listener> -->
+    <listener>
+        <description>
+            This listener is used to load the data in Device capability filter at server startup.
+        </description>
+        <listener-class>com.lbg.ea.devicecapability.listener.ServletContextDeviceCapabilityConfigLoader</listener-class> 
+    </listener>
+
+
+
+	<filter>
+	<description>SecurityFilter</description>
+        <display-name>SecurityFilter</display-name>
+        <filter-name>SecurityFilter</filter-name>
+        <filter-class>
+            com.lloydstsb.ea.filters.securityfilter.SecurityFilter
+        </filter-class>
+    </filter>
+	<filter-mapping>
+        <filter-name>SecurityFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>TealeafFilter</filter-name>
+        <filter-class>com.lloydstsb.ea.filters.tealeaffilter.TealeafFilter</filter-class>
+    </filter>
+	<filter-mapping>
+        <filter-name>TealeafFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>       
+
+    <filter>
+        <description>Device capability filter</description>
+        <display-name>DeviceCapability</display-name>
+        <filter-name>DeviceCapability</filter-name>
+        <filter-class>
+            com.lbg.ea.devicecapability.filter.DeviceManagementFilter
+        </filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>DeviceCapability</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <description>ColleagueIdExtractionFilter</description>
+        <display-name>ColleagueIdExtractionFilter</display-name>
+        <filter-name>ColleagueIdExtractionFilter</filter-name>
+        <filter-class>
+            com.lbg.ib.api.sales.common.filter.ColleagueIdExtractionFilter
+        </filter-class>
+    </filter>
+	<filter-mapping>
+        <filter-name>ColleagueIdExtractionFilter</filter-name>
+        <url-pattern>/branch/*</url-pattern>
+    </filter-mapping>
+
+    <filter>
+		<filter-name>RestfulUrlMethodFilter</filter-name>
+		<filter-class>com.lbg.ib.api.sales.docupload.filter.RestfulUrlMethodFilter
+		</filter-class>
+	</filter> 
+	<filter-mapping>
+		<filter-name>RestfulUrlMethodFilter</filter-name>
+		<url-pattern>/docUpload/*</url-pattern>
+	</filter-mapping>
+    <filter-mapping>
+        <filter-name>RestfulUrlMethodFilter</filter-name>
+        <url-pattern>/account/genDocAndSave</url-pattern>
+    </filter-mapping>
+	
+	<filter>
+		<description>DocUploadServiceFilter</description>
+		<display-name>DocUploadServiceFilter</display-name>
+		<filter-name>docUploadServiceFilter</filter-name>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy
+		</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>docUploadServiceFilter</filter-name>
+		<url-pattern>/docUpload/*</url-pattern>
+	</filter-mapping>
+    <filter-mapping>
+        <filter-name>docUploadServiceFilter</filter-name>
+        <url-pattern>/account/genDocAndSave</url-pattern>
+    </filter-mapping>
+	
+	<filter>
+		<description>AuthenticateCustomerFilter</description>
+		<display-name>AuthenticateCustomerFilter</display-name>
+		<filter-name>authenticateCustomerFilter</filter-name>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy
+		</filter-class>
+	</filter>
+	<!-- 
+	<filter-mapping>
+		<filter-name>tokenAuthorisationFilter</filter-name>
+		<url-pattern>/v1/*</url-pattern>
+	</filter-mapping>
+	 -->
+	<filter-mapping>
+		<filter-name>authenticateCustomerFilter</filter-name>
+		<url-pattern>/docUpload/*</url-pattern>
+	</filter-mapping>
+    <filter-mapping>
+        <filter-name>authenticateCustomerFilter</filter-name>
+        <url-pattern>/account/genDocAndSave</url-pattern>
+    </filter-mapping>
+
+    <servlet>
+        <servlet-name>FontServlet</servlet-name>
+        <servlet-class>
+            com.lbg.ib.api.sales.common.servlet.FontServlet
+        </servlet-class>
+        <init-param>
+            <param-name>cacheMaxAge</param-name>
+            <param-value>86400</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FontServlet</servlet-name>
+        <url-pattern>/fonts/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CXFServlet</servlet-name>
+        <servlet-class>
+            org.apache.cxf.transport.servlet.CXFServlet
+        </servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>CXFServlet</servlet-name>
+        <url-pattern>/*</url-pattern>
+    </servlet-mapping>
+
+    <security-constraint>
+        <display-name>primary auth</display-name>
+        <web-resource-collection>
+            <web-resource-name>primary auth</web-resource-name>
+            <url-pattern>/*</url-pattern>
+            <http-method>GET</http-method>
+            <http-method>POST</http-method>
+       </web-resource-collection>
+        <auth-constraint>
+            <description>login auth</description>
+            <role-name>LOGIN_AUTH</role-name>
+        </auth-constraint>
+    </security-constraint>
+    <security-constraint>
+        <display-name>secondary auth</display-name>
+        <web-resource-collection>
+            <web-resource-name>secondary auth</web-resource-name>
+            <url-pattern>/*</url-pattern>
+            <http-method>GET</http-method>
+            <http-method>POST</http-method>
+        </web-resource-collection>
+        <auth-constraint>
+            <description>secondary auth</description>
+            <role-name>FULL_AUTH</role-name>
+        </auth-constraint>
+    </security-constraint>
+    
+	<security-role id="SecurityRole_LOGIN_AUTH">
+        <role-name>LOGIN_AUTH</role-name>
+	</security-role>
+	<security-role id="SecurityRole_FULL_AUTH">
+        <role-name>FULL_AUTH</role-name>
+	</security-role>	
+	
+    <resource-ref id="ResourceRef_1231348814375">
+        <description />
+        <res-ref-name>ibData</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>
+    <resource-ref id="ResourceRef_1240251066824">
+        <description />
+        <res-ref-name>ibApplicationTimerWorkManager</res-ref-name>
+        <res-type>com.ibm.websphere.asynchbeans.WorkManager</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>
+    <resource-ref id="ResourceRef_1249958355413">
+        <description/>
+        <res-ref-name>ibSchedulerServiceWorkManager</res-ref-name>
+        <res-type>com.ibm.websphere.asynchbeans.WorkManager</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>
+    <resource-ref id="ResourceRef_1250005230266">
+        <description />
+        <res-ref-name>managementData</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>
+    <resource-ref id="ResourceRef_1250005230337">
+        <description />
+        <res-ref-name>ibManagementTimerWorkManager</res-ref-name>
+        <res-type>com.ibm.websphere.asynchbeans.WorkManager</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>
+    <resource-ref id="ResourceRef_111">
+        <description />
+        <res-ref-name>mmdb</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>
+    <resource-ref id="ResourceRef_1250005230338">
+        <description />
+        <res-ref-name>BAPIWS</res-ref-name>
+        <res-type>java.net.URL</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>
+   <!--  <resource-ref id="ResourceRef_1250005230339">
+        <description />
+        <res-ref-name>EligibilityWS</res-ref-name>
+        <res-type>java.net.URL</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref> 
+    <resource-ref id="ResourceRef_1250005230340">
+        <description />
+        <res-ref-name>PromotionalCustomerInstructionsWS</res-ref-name>
+        <res-type>java.net.URL</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>-->
+
+   <!--  <resource-ref id="ResourceRef_1250005230357">
+        <description />
+        <res-ref-name>RetrieveProductWS</res-ref-name>
+        <res-type>java.net.URL</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref> -->
+    <resource-ref id="ResourceRef_1250005230358">
+        <description />
+        <res-ref-name>OfferProductWS</res-ref-name>
+        <res-type>java.net.URL</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>
+    <resource-ref id="ResourceRef_1250005230359">
+        <description />
+        <res-ref-name>ActivateProductWS</res-ref-name>
+        <res-type>java.net.URL</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>
+    <resource-ref id="ResourceRef_1250005230345">
+        <description />
+        <res-ref-name>ClassifyInvolvedPartySALSAWS</res-ref-name>
+        <res-type>java.net.URL</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>
+    <!-- For Release 463 -->
+    <resource-ref id="ResourceRef_1250005230350">
+        <description />
+        <res-ref-name>ThreatMatrixWS</res-ref-name>
+        <res-type>java.net.URL</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>
+    
+     <resource-ref id="ResourceRef_1250005230351">
+        <description />
+        <res-ref-name>RecordArrangementWS</res-ref-name>
+        <res-type>java.net.URL</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>
+
+
+    <resource-ref id="ResourceRef_1250005230352">
+        <description />
+        <res-ref-name>ActivateProductSalsaPCAWS</res-ref-name>
+        <res-type>java.net.URL</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>
+    <resource-ref id="ResourceRef_1250005230353">
+        <description />
+        <res-ref-name>RetrieveProductSalsaPCAWS</res-ref-name>
+        <res-type>java.net.URL</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>
+    <resource-ref id="ResourceRef_1250005230354">
+        <description />
+        <res-ref-name>EligibilitySalsaPCAWS</res-ref-name>
+        <res-type>java.net.URL</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>
+     <resource-ref id="ResourceRef_1250005230355">
+        <description />
+        <res-ref-name>PromotionalCustomerInstructionsSalsaPCAWS</res-ref-name>
+        <res-type>java.net.URL</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>
+    <resource-ref id="ResourceRef_1250005230356">
+        <description />
+        <res-ref-name>OfferProductSalsaPCAWS</res-ref-name>
+        <res-type>java.net.URL</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>
+    <resource-ref id="ResourceRefBinding_1250005230399">
+        <description />
+        <res-ref-name>InvolvedPartyAuthorisation_PTWS</res-ref-name>
+        <res-type>java.net.URL</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>
+	<resource-ref id="ResourceRefBinding_1250005230398">
+        <description />
+        <res-ref-name>ProductHoldingCFWS</res-ref-name>
+        <res-type>java.net.URL</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>
+	<resource-ref id="ResourceRefBinding_1250005230397">
+        <description />
+        <res-ref-name>InvolvedPartyManagement_PTWS</res-ref-name>
+        <res-type>java.net.URL</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>
+    
+    <!-- Doc upload entries -->
+    <resource-ref id="ResourceRefBinding_1250005230401">
+        <description />
+        <res-ref-name>CreateCaseV2PCA</res-ref-name>
+        <res-type>java.net.URL</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>
+	<resource-ref id="ResourceRefBinding_1250005230400">
+        <description />
+        <res-ref-name>CreateDocumentationPCA</res-ref-name>
+        <res-type>java.net.URL</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>   
+     <resource-ref id="ResourceRefBinding_1250005230402">
+        <description />
+        <res-ref-name>RetrieveDocUploadRefDataForProcessV2</res-ref-name>
+        <res-type>java.net.URL</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>
+	<resource-ref id="ResourceRefBinding_1250005230403">
+        <description />
+        <res-ref-name>UpdateCasePCA</res-ref-name>
+        <res-type>java.net.URL</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>  
+
+    <resource-ref id="ResourceRefBinding_1250005230404">
+        <description />
+        <res-ref-name>RetrieveDocumentationPCA</res-ref-name>
+        <res-type>java.net.URL</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>
+         
+    <resource-ref id="ResourceRefBinding_1250005230329">
+        <description />
+        <res-ref-name>RetrieveProductArrangementWS</res-ref-name>
+        <res-type>java.net.URL</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>  
+    
+    <resource-ref id="ResourceRef_1250005230357">
+          <description />
+          <res-ref-name>FO75KYCDetailsWS</res-ref-name>
+          <res-type>java.net.URL</res-type>
+          <res-auth>Container</res-auth>
+          <res-sharing-scope>Shareable</res-sharing-scope>
+      </resource-ref>
+	<resource-ref id="ResourceRefBinding_1250005230396">
+        <description />
+        <res-ref-name>BankWizardSALSAWS</res-ref-name>
+        <res-type>java.net.URL</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>
+	<resource-ref id="ResourceRefBinding_1250005230440">
+        <description />
+        <res-ref-name>InvolvedPartyAuthorisationFS</res-ref-name>
+        <res-type>java.net.URL</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>
+    <resource-ref id="ResourceRefBinding_1250005230441">
+        <description />
+        <res-ref-name>InvolvedPartyManagementServicing</res-ref-name>
+        <res-type>java.net.URL</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>
+     <resource-ref id="ResourceRef_1250005230413999">
+        <description />
+        <res-ref-name>CommunicationManagementsSALSAWS</res-ref-name>
+        <res-type>java.net.URL</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>
+    <resource-ref id="ResourceRef_1250005230415">
+        <description />
+        <res-ref-name>RetrievePartyDetailsPCA</res-ref-name>
+        <res-type>java.net.URL</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>
+    <resource-ref id="ResourceRef_125000525641400">
+	  <description />
+	  <res-ref-name>CommunicationDispatchComms</res-ref-name>
+	  <res-type>java.net.URL</res-type>
+	  <res-auth>Container</res-auth>
+	  <res-sharing-scope>Shareable</res-sharing-scope>
+	</resource-ref>
+	 <resource-ref id="ResourceRef_125000525641401">
+	  <description />
+	  <res-ref-name>ConvertAccountCBS</res-ref-name>
+	  <res-type>java.net.URL</res-type>
+	  <res-auth>Container</res-auth>
+	  <res-sharing-scope>Shareable</res-sharing-scope>
+	</resource-ref>
+    <resource-ref id="ResourceRef_1250005230408">
+        <description />
+        <res-ref-name>Q226WS</res-ref-name>
+        <res-type>java.net.URL</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>
+    <resource-ref id="ResourceRef_125000525641402">
+        <description />
+        <res-ref-name>CreditAssessment</res-ref-name>
+        <res-type>java.net.URL</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>
+    <resource-ref id="ResourceRef_125000525641403">
+        <description />
+        <res-ref-name>G542</res-ref-name>
+        <res-type>java.net.URL</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>
+    <resource-ref id="ResourceRef_125000525641551">
+        <description />
+        <res-ref-name>LifeStyleBenfitsGR</res-ref-name>
+        <res-type>java.net.URL</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>
+    <resource-ref id="ResourceRef_1250005230410">
+        <description />
+        <res-ref-name>PEGAService</res-ref-name>
+        <res-type>java.net.URL</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>
+	<resource-ref id="ResourceRef_1250005230411">
+        <description />
+        <res-ref-name>E632</res-ref-name>
+        <res-type>java.net.URL</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>
+    <resource-ref id="ResourceRef_1250005230412">
+        <description />
+        <res-ref-name>CMASCardOrder</res-ref-name>
+        <res-type>java.net.URL</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>
+    <resource-ref id="ResourceRef_1250005230416">
+        <description />
+        <res-ref-name>DocumentManagerService_SOA_WS</res-ref-name>
+        <res-type>java.net.URL</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>
+    <resource-ref id="ResourceRefBinding_125000523040399">
+        <description />
+        <res-ref-name>SearchCasePCA</res-ref-name>
+        <res-type>java.net.URL</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>
+    <resource-ref id="ResourceRefBinding_125000523040400">
+        <description />
+        <res-ref-name>GenerateDocumentSALSA</res-ref-name>
+        <res-type>java.net.URL</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>
+    <resource-ref id="ResourceRefBinding_125000523040401">
+        <description />
+        <res-ref-name>C078</res-ref-name>
+        <res-type>java.net.URL</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>
+
+    <resource-ref id="ResourceRefBinding_125000523040799">
+        <description />
+        <res-ref-name>TerminateArrangementPCA</res-ref-name>
+        <res-type>java.net.URL</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>
+    
+    
+    <resource-ref id="ResourceRefBinding_125000523040800">
+        <description />
+        <res-ref-name>E160</res-ref-name>
+        <res-type>java.net.URL</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>
+    
+    
+    <resource-ref id="ResourceRefBinding_125000523040801">
+        <description />
+        <res-ref-name>E169</res-ref-name>
+        <res-type>java.net.URL</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>
+    
+    <resource-ref id="ResourceRefBinding_125000523040802">
+        <description />
+        <res-ref-name>E170</res-ref-name>
+        <res-type>java.net.URL</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>
+    
+    
+    <resource-ref id="ResourceRefBinding_125000523040803">
+        <description />
+        <res-ref-name>Q122</res-ref-name>
+        <res-type>java.net.URL</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>
+
+
+	<resource-ref id="ResourceRefBinding_125000523040804">
+        <description />
+        <res-ref-name>E588</res-ref-name>
+        <res-type>java.net.URL</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>
+    
+</web-app>
+
