@@ -1,8 +1,0 @@
-{
-  "templateName": "CA_WELCOME_MSG_PDF",
-  "emailTokens":{
-    "IB.Product.Mnemonic":"P_PLAT"
-  },
-  "productMnemonic": "P_PLAT",
-  "groupEmailId":"test@test.com"
-}
