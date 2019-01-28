@@ -1,0 +1,12 @@
+meta:
+   locator: 10.20.192.0
+   address: E588
+   operation: E588
+commands:  
+   - command:  com.lbg.ib.api.sales.cbs.e588.mapper.E588MessageMapper
+     receiver: com.lbg.ib.api.sales.cbs.e588.mapper.E588MessageMapper
+   - command:  com.lbg.ib.api.sales.cbs.e588.mapper.E588MessageMapper
+     receiver: com.lbg.ib.api.sales.cbs.e588.mapper.E588MessageMapper
+   - command:  com.lbg.ib.api.sales.cbs.e588.mapper.E588MessageMapper
+   - command:  com.lbg.ib.api.sales.cbs.e588.mapper.E588MessageMapper
+     receiver: com.lbg.ib.api.sales.cbs.e588.mapper.E588MessageMapper 
